@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265EC8931ABBF33F001FE9F3 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 265EC8921ABBF33F001FE9F3 /* HttpRequest.m */; };
 		2680AE941AB6B4C000151A0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AE931AB6B4C000151A0C /* main.m */; };
 		2680AE971AB6B4C000151A0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AE961AB6B4C000151A0C /* AppDelegate.m */; };
 		2680AEAE1AB6B4C100151A0C /* YIJIaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEAD1AB6B4C100151A0C /* YIJIaTests.m */; };
@@ -121,6 +122,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		265EC8911ABBF33F001FE9F3 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		265EC8921ABBF33F001FE9F3 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
 		2680AE8E1AB6B4C000151A0C /* YIJIa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YIJIa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2680AE921AB6B4C000151A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2680AE931AB6B4C000151A0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 				2680AEBB1AB6B6DC00151A0C /* Util.h */,
 				2680AEBC1AB6B6DC00151A0C /* Util.m */,
 				26D97F461ABA94FA0043A887 /* ComMacros.h */,
+				265EC8911ABBF33F001FE9F3 /* HttpRequest.h */,
+				265EC8921ABBF33F001FE9F3 /* HttpRequest.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 				2680AECE1AB6B8DF00151A0C /* SettingViewController.m in Sources */,
 				26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */,
 				2680AEC41AB6B8A400151A0C /* MainViewController.m in Sources */,
+				265EC8931ABBF33F001FE9F3 /* HttpRequest.m in Sources */,
 				2680AEC01AB6B77B00151A0C /* UINavigationBar+CustomBar.m in Sources */,
 				2680AE941AB6B4C000151A0C /* main.m in Sources */,
 			);

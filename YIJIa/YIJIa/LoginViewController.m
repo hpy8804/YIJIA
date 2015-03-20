@@ -8,9 +8,12 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "HttpRequest.h"
 
-@interface LoginViewController ()
-
+@interface LoginViewController ()<HttpRequestDelegate>
+{
+    HttpRequest *_loginRequest;
+}
 @end
 
 @implementation LoginViewController
@@ -18,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initCurResource];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,13 +30,27 @@
 }
 
 - (IBAction)clickLoginAcction:(id)sender {
-    [self performSelector:@selector(loginSucess) withObject:nil afterDelay:1.0];
+    [_loginRequest sendRequestWithURLString:@"http://121.41.47.120/backend_service/test/getData.do"];
+    
 }
 #pragma mark -
+- (void)initCurResource
+{
+    _loginRequest = [[HttpRequest alloc] initWithDelegate:self];
+}
 - (void)loginSucess
 {
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self presentViewController:app.tabBarController animated:NO completion:nil];
+}
+
+#pragma mark - delegate method
+
+- (void)didFinishRequestWithString:(NSString *)strResult
+{
+    NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"strResult:%@", dataDic);
 }
 
 @end
