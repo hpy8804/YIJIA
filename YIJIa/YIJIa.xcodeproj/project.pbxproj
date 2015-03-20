@@ -1,0 +1,930 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2680AE941AB6B4C000151A0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AE931AB6B4C000151A0C /* main.m */; };
+		2680AE971AB6B4C000151A0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AE961AB6B4C000151A0C /* AppDelegate.m */; };
+		2680AEAE1AB6B4C100151A0C /* YIJIaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEAD1AB6B4C100151A0C /* YIJIaTests.m */; };
+		2680AEB91AB6B68600151A0C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEB81AB6B68600151A0C /* BaseViewController.m */; };
+		2680AEBD1AB6B6DC00151A0C /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEBC1AB6B6DC00151A0C /* Util.m */; };
+		2680AEC01AB6B77B00151A0C /* UINavigationBar+CustomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEBF1AB6B77B00151A0C /* UINavigationBar+CustomBar.m */; };
+		2680AEC41AB6B8A400151A0C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEC21AB6B8A400151A0C /* MainViewController.m */; };
+		2680AEC51AB6B8A400151A0C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2680AEC31AB6B8A400151A0C /* MainViewController.xib */; };
+		2680AEC91AB6B8BE00151A0C /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEC71AB6B8BE00151A0C /* HistoryViewController.m */; };
+		2680AECA1AB6B8BE00151A0C /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2680AEC81AB6B8BE00151A0C /* HistoryViewController.xib */; };
+		2680AECE1AB6B8DF00151A0C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AECC1AB6B8DF00151A0C /* SettingViewController.m */; };
+		2680AECF1AB6B8DF00151A0C /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2680AECD1AB6B8DF00151A0C /* SettingViewController.xib */; };
+		2680AF691AB6BEB700151A0C /* 首页_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF131AB6BEB700151A0C /* 首页_灰色.png */; };
+		2680AF6A1AB6BEB700151A0C /* 首页_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF141AB6BEB700151A0C /* 首页_红色.png */; };
+		2680AF6B1AB6BEB700151A0C /* 历史_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF151AB6BEB700151A0C /* 历史_灰色.png */; };
+		2680AF6C1AB6BEB700151A0C /* 历史_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF161AB6BEB700151A0C /* 历史_红色.png */; };
+		2680AF6D1AB6BEB700151A0C /* 设置_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF171AB6BEB700151A0C /* 设置_灰色.png */; };
+		2680AF6E1AB6BEB700151A0C /* 设置_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF181AB6BEB700151A0C /* 设置_红色.png */; };
+		2680AF6F1AB6BEB700151A0C /* 一级菜单底栏@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF191AB6BEB700151A0C /* 一级菜单底栏@2x.png */; };
+		2680AF711AB6BEB700151A0C /* 顶栏_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF1C1AB6BEB700151A0C /* 顶栏_红色.png */; };
+		2680AF721AB6BEB700151A0C /* 下单时间.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF1D1AB6BEB700151A0C /* 下单时间.png */; };
+		2680AF731AB6BEB700151A0C /* 预约时间.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF1E1AB6BEB700151A0C /* 预约时间.png */; };
+		2680AF741AB6BEB700151A0C /* 背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF1F1AB6BEB700151A0C /* 背景.png */; };
+		2680AF751AB6BEB700151A0C /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF201AB6BEB700151A0C /* Thumbs.db */; };
+		2680AF761AB6BEB700151A0C /* 新客.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF221AB6BEB700151A0C /* 新客.png */; };
+		2680AF771AB6BEB700151A0C /* 新客@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF231AB6BEB700151A0C /* 新客@2x.png */; };
+		2680AF781AB6BEB700151A0C /* 10.“电话”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF241AB6BEB700151A0C /* 10.“电话”图标.png */; };
+		2680AF791AB6BEB700151A0C /* 11.信息.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF251AB6BEB700151A0C /* 11.信息.png */; };
+		2680AF7A1AB6BEB700151A0C /* 12.顶栏--发送短信.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF261AB6BEB700151A0C /* 12.顶栏--发送短信.png */; };
+		2680AF7B1AB6BEB700151A0C /* 13.提示标签_粉红.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF271AB6BEB700151A0C /* 13.提示标签_粉红.png */; };
+		2680AF7C1AB6BEB700151A0C /* 14.顶栏--顾客评价.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF281AB6BEB700151A0C /* 14.顶栏--顾客评价.png */; };
+		2680AF7D1AB6BEB700151A0C /* 默认用户头像.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF291AB6BEB700151A0C /* 默认用户头像.png */; };
+		2680AF7E1AB6BEB700151A0C /* 16.顶栏--备注.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF2A1AB6BEB700151A0C /* 16.顶栏--备注.png */; };
+		2680AF7F1AB6BEB700151A0C /* 17.备注栏.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF2B1AB6BEB700151A0C /* 17.备注栏.png */; };
+		2680AF801AB6BEB700151A0C /* 18.“确认”按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF2C1AB6BEB700151A0C /* 18.“确认”按钮.png */; };
+		2680AF811AB6BEB700151A0C /* 新手.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF2D1AB6BEB700151A0C /* 新手.png */; };
+		2680AF821AB6BEB700151A0C /* 新手@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF2E1AB6BEB700151A0C /* 新手@2x.png */; };
+		2680AF831AB6BEB700151A0C /* 分享.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF2F1AB6BEB700151A0C /* 分享.png */; };
+		2680AF841AB6BEB700151A0C /* 分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF301AB6BEB700151A0C /* 分享@2x.png */; };
+		2680AF851AB6BEB700151A0C /* 4.订单底栏.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF311AB6BEB700151A0C /* 4.订单底栏.png */; };
+		2680AF861AB6BEB700151A0C /* 5.背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF321AB6BEB700151A0C /* 5.背景.png */; };
+		2680AF871AB6BEB700151A0C /* 6.顶栏--订单详情.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF331AB6BEB700151A0C /* 6.顶栏--订单详情.png */; };
+		2680AF881AB6BEB700151A0C /* 7.“预约时间”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF341AB6BEB700151A0C /* 7.“预约时间”图标.png */; };
+		2680AF891AB6BEB700151A0C /* 8.“服务地址”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF351AB6BEB700151A0C /* 8.“服务地址”图标.png */; };
+		2680AF8A1AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF361AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png */; };
+		2680AF8B1AB6BEB700151A0C /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF371AB6BEB700151A0C /* Thumbs.db */; };
+		2680AF8C1AB6BEB700151A0C /* 定位图标_蓝色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF391AB6BEB700151A0C /* 定位图标_蓝色.png */; };
+		2680AF8D1AB6BEB700151A0C /* 10.顶栏--时间表.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF3A1AB6BEB700151A0C /* 10.顶栏--时间表.png */; };
+		2680AF8E1AB6BEB700151A0C /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF3C1AB6BEB700151A0C /* Thumbs.db */; };
+		2680AF8F1AB6BEB700151A0C /* 周1_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF3D1AB6BEB700151A0C /* 周1_灰色.png */; };
+		2680AF901AB6BEB700151A0C /* 周1_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF3E1AB6BEB700151A0C /* 周1_红色.png */; };
+		2680AF911AB6BEB700151A0C /* 周2_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF3F1AB6BEB700151A0C /* 周2_灰色.png */; };
+		2680AF921AB6BEB700151A0C /* 周2_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF401AB6BEB700151A0C /* 周2_红色.png */; };
+		2680AF931AB6BEB700151A0C /* 周3_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF411AB6BEB700151A0C /* 周3_灰色.png */; };
+		2680AF941AB6BEB700151A0C /* 周3_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF421AB6BEB700151A0C /* 周3_红色.png */; };
+		2680AF951AB6BEB700151A0C /* 周4_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF431AB6BEB700151A0C /* 周4_灰色.png */; };
+		2680AF961AB6BEB700151A0C /* 周4_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF441AB6BEB700151A0C /* 周4_红色.png */; };
+		2680AF971AB6BEB700151A0C /* 周5_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF451AB6BEB700151A0C /* 周5_灰色.png */; };
+		2680AF981AB6BEB700151A0C /* 周5_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF461AB6BEB700151A0C /* 周5_红色.png */; };
+		2680AF991AB6BEB700151A0C /* 周6_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF471AB6BEB700151A0C /* 周6_灰色.png */; };
+		2680AF9A1AB6BEB700151A0C /* 周6_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF481AB6BEB700151A0C /* 周6_红色.png */; };
+		2680AF9B1AB6BEB700151A0C /* 周7_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF491AB6BEB700151A0C /* 周7_灰色.png */; };
+		2680AF9C1AB6BEB700151A0C /* 周7_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4A1AB6BEB700151A0C /* 周7_红色.png */; };
+		2680AF9D1AB6BEB700151A0C /* 12.“服务”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */; };
+		2680AF9E1AB6BEB700151A0C /* 13.“空闲”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */; };
+		2680AF9F1AB6BEB700151A0C /* 14.“休息”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */; };
+		2680AFA01AB6BEB700151A0C /* 15.顶栏--每周X排班.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4E1AB6BEB700151A0C /* 15.顶栏--每周X排班.png */; };
+		2680AFA11AB6BEB700151A0C /* 16.“休息”按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4F1AB6BEB700151A0C /* 16.“休息”按钮.png */; };
+		2680AFA21AB6BEB700151A0C /* 17.“工作”按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF501AB6BEB700151A0C /* 17.“工作”按钮.png */; };
+		2680AFA31AB6BEB700151A0C /* 18.“服务”按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF511AB6BEB700151A0C /* 18.“服务”按钮.png */; };
+		2680AFA41AB6BEB700151A0C /* 19.排班底栏.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF521AB6BEB700151A0C /* 19.排班底栏.png */; };
+		2680AFA51AB6BEB700151A0C /* 心.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF531AB6BEB700151A0C /* 心.png */; };
+		2680AFA61AB6BEB700151A0C /* 20.全选底栏.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF541AB6BEB700151A0C /* 20.全选底栏.png */; };
+		2680AFA71AB6BEB700151A0C /* 21.每周X排班底层.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF551AB6BEB700151A0C /* 21.每周X排班底层.png */; };
+		2680AFA81AB6BEB700151A0C /* 3.“钻石”.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF561AB6BEB700151A0C /* 3.“钻石”.png */; };
+		2680AFA91AB6BEB700151A0C /* 4.“蓝冠”.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF571AB6BEB700151A0C /* 4.“蓝冠”.png */; };
+		2680AFAA1AB6BEB700151A0C /* 5.“二级菜单底栏”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF581AB6BEB700151A0C /* 5.“二级菜单底栏”图标.png */; };
+		2680AFAB1AB6BEB700151A0C /* 6.“设置界面”背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF591AB6BEB700151A0C /* 6.“设置界面”背景.png */; };
+		2680AFAC1AB6BEB700151A0C /* 7.更新提示_版本升级.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF5A1AB6BEB700151A0C /* 7.更新提示_版本升级.png */; };
+		2680AFAD1AB6BEB700151A0C /* 8.更新提示_最新版本.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF5B1AB6BEB700151A0C /* 8.更新提示_最新版本.png */; };
+		2680AFAE1AB6BEB700151A0C /* 9.退出登录提示.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF5C1AB6BEB700151A0C /* 9.退出登录提示.png */; };
+		2680AFAF1AB6BEB700151A0C /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF5D1AB6BEB700151A0C /* Thumbs.db */; };
+		2680AFB01AB6BEB700151A0C /* 美容师登录.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF5F1AB6BEB700151A0C /* 美容师登录.png */; };
+		2680AFB31AB6BEB700151A0C /* 登录按钮_灰色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF621AB6BEB700151A0C /* 登录按钮_灰色@2x.png */; };
+		2680AFB41AB6BEB700151A0C /* 登录按钮_红色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF631AB6BEB700151A0C /* 登录按钮_红色@2x.png */; };
+		2680AFB51AB6BEB700151A0C /* 6.美容师登录背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF641AB6BEB700151A0C /* 6.美容师登录背景.png */; };
+		2680AFB61AB6BEB700151A0C /* 7.顶栏--免责声明.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF651AB6BEB700151A0C /* 7.顶栏--免责声明.png */; };
+		2680AFC11AB6C97E00151A0C /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */; };
+		26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */; };
+		26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */; };
+		26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F561ABA992D0043A887 /* DateTimeViewController.m */; };
+		26D97F591ABA992D0043A887 /* DateTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F571ABA992D0043A887 /* DateTimeViewController.xib */; };
+		26D97F5D1ABAA55A0043A887 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F5A1ABAA55A0043A887 /* Default.png */; };
+		26D97F5E1ABAA55A0043A887 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F5B1ABAA55A0043A887 /* Default@2x.png */; };
+		26D97F5F1ABAA55A0043A887 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F5C1ABAA55A0043A887 /* Default-568h@2x.png */; };
+		26D97F631ABACAA00043A887 /* HistoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F611ABACAA00043A887 /* HistoryViewCell.m */; };
+		26D97F641ABACAA00043A887 /* HistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F621ABACAA00043A887 /* HistoryViewCell.xib */; };
+		26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F671ABB072A0043A887 /* LoginViewController.m */; };
+		26D97F6A1ABB072A0043A887 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F681ABB072A0043A887 /* LoginViewController.xib */; };
+		26D97F711ABB1BA20043A887 /* 美容师登录-密码.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F6F1ABB1BA20043A887 /* 美容师登录-密码.png */; };
+		26D97F721ABB1BA20043A887 /* 美容师登录-手机.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F701ABB1BA20043A887 /* 美容师登录-手机.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2680AEA81AB6B4C100151A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2680AE861AB6B4C000151A0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2680AE8D1AB6B4C000151A0C;
+			remoteInfo = YIJIa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2680AE8E1AB6B4C000151A0C /* YIJIa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YIJIa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2680AE921AB6B4C000151A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2680AE931AB6B4C000151A0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2680AE951AB6B4C000151A0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2680AE961AB6B4C000151A0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2680AEA71AB6B4C100151A0C /* YIJIaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YIJIaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2680AEAC1AB6B4C100151A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2680AEAD1AB6B4C100151A0C /* YIJIaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIJIaTests.m; sourceTree = "<group>"; };
+		2680AEB71AB6B68600151A0C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2680AEB81AB6B68600151A0C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		2680AEBB1AB6B6DC00151A0C /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		2680AEBC1AB6B6DC00151A0C /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		2680AEBE1AB6B77B00151A0C /* UINavigationBar+CustomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CustomBar.h"; sourceTree = "<group>"; };
+		2680AEBF1AB6B77B00151A0C /* UINavigationBar+CustomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CustomBar.m"; sourceTree = "<group>"; };
+		2680AEC11AB6B8A400151A0C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		2680AEC21AB6B8A400151A0C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		2680AEC31AB6B8A400151A0C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		2680AEC61AB6B8BE00151A0C /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		2680AEC71AB6B8BE00151A0C /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		2680AEC81AB6B8BE00151A0C /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		2680AECB1AB6B8DF00151A0C /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		2680AECC1AB6B8DF00151A0C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		2680AECD1AB6B8DF00151A0C /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		2680AF131AB6BEB700151A0C /* 首页_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页_灰色.png"; sourceTree = "<group>"; };
+		2680AF141AB6BEB700151A0C /* 首页_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页_红色.png"; sourceTree = "<group>"; };
+		2680AF151AB6BEB700151A0C /* 历史_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史_灰色.png"; sourceTree = "<group>"; };
+		2680AF161AB6BEB700151A0C /* 历史_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史_红色.png"; sourceTree = "<group>"; };
+		2680AF171AB6BEB700151A0C /* 设置_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置_灰色.png"; sourceTree = "<group>"; };
+		2680AF181AB6BEB700151A0C /* 设置_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置_红色.png"; sourceTree = "<group>"; };
+		2680AF191AB6BEB700151A0C /* 一级菜单底栏@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一级菜单底栏@2x.png"; sourceTree = "<group>"; };
+		2680AF1C1AB6BEB700151A0C /* 顶栏_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "顶栏_红色.png"; sourceTree = "<group>"; };
+		2680AF1D1AB6BEB700151A0C /* 下单时间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下单时间.png"; sourceTree = "<group>"; };
+		2680AF1E1AB6BEB700151A0C /* 预约时间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "预约时间.png"; sourceTree = "<group>"; };
+		2680AF1F1AB6BEB700151A0C /* 背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景.png"; sourceTree = "<group>"; };
+		2680AF201AB6BEB700151A0C /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
+		2680AF221AB6BEB700151A0C /* 新客.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新客.png"; sourceTree = "<group>"; };
+		2680AF231AB6BEB700151A0C /* 新客@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新客@2x.png"; sourceTree = "<group>"; };
+		2680AF241AB6BEB700151A0C /* 10.“电话”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10.“电话”图标.png"; sourceTree = "<group>"; };
+		2680AF251AB6BEB700151A0C /* 11.信息.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11.信息.png"; sourceTree = "<group>"; };
+		2680AF261AB6BEB700151A0C /* 12.顶栏--发送短信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12.顶栏--发送短信.png"; sourceTree = "<group>"; };
+		2680AF271AB6BEB700151A0C /* 13.提示标签_粉红.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13.提示标签_粉红.png"; sourceTree = "<group>"; };
+		2680AF281AB6BEB700151A0C /* 14.顶栏--顾客评价.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14.顶栏--顾客评价.png"; sourceTree = "<group>"; };
+		2680AF291AB6BEB700151A0C /* 默认用户头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认用户头像.png"; sourceTree = "<group>"; };
+		2680AF2A1AB6BEB700151A0C /* 16.顶栏--备注.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16.顶栏--备注.png"; sourceTree = "<group>"; };
+		2680AF2B1AB6BEB700151A0C /* 17.备注栏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "17.备注栏.png"; sourceTree = "<group>"; };
+		2680AF2C1AB6BEB700151A0C /* 18.“确认”按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "18.“确认”按钮.png"; sourceTree = "<group>"; };
+		2680AF2D1AB6BEB700151A0C /* 新手.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新手.png"; sourceTree = "<group>"; };
+		2680AF2E1AB6BEB700151A0C /* 新手@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新手@2x.png"; sourceTree = "<group>"; };
+		2680AF2F1AB6BEB700151A0C /* 分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享.png"; sourceTree = "<group>"; };
+		2680AF301AB6BEB700151A0C /* 分享@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@2x.png"; sourceTree = "<group>"; };
+		2680AF311AB6BEB700151A0C /* 4.订单底栏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4.订单底栏.png"; sourceTree = "<group>"; };
+		2680AF321AB6BEB700151A0C /* 5.背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5.背景.png"; sourceTree = "<group>"; };
+		2680AF331AB6BEB700151A0C /* 6.顶栏--订单详情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6.顶栏--订单详情.png"; sourceTree = "<group>"; };
+		2680AF341AB6BEB700151A0C /* 7.“预约时间”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7.“预约时间”图标.png"; sourceTree = "<group>"; };
+		2680AF351AB6BEB700151A0C /* 8.“服务地址”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8.“服务地址”图标.png"; sourceTree = "<group>"; };
+		2680AF361AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9.“右箭头_灰色”图标.png"; sourceTree = "<group>"; };
+		2680AF371AB6BEB700151A0C /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
+		2680AF391AB6BEB700151A0C /* 定位图标_蓝色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位图标_蓝色.png"; sourceTree = "<group>"; };
+		2680AF3A1AB6BEB700151A0C /* 10.顶栏--时间表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10.顶栏--时间表.png"; sourceTree = "<group>"; };
+		2680AF3C1AB6BEB700151A0C /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
+		2680AF3D1AB6BEB700151A0C /* 周1_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周1_灰色.png"; sourceTree = "<group>"; };
+		2680AF3E1AB6BEB700151A0C /* 周1_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周1_红色.png"; sourceTree = "<group>"; };
+		2680AF3F1AB6BEB700151A0C /* 周2_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周2_灰色.png"; sourceTree = "<group>"; };
+		2680AF401AB6BEB700151A0C /* 周2_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周2_红色.png"; sourceTree = "<group>"; };
+		2680AF411AB6BEB700151A0C /* 周3_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周3_灰色.png"; sourceTree = "<group>"; };
+		2680AF421AB6BEB700151A0C /* 周3_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周3_红色.png"; sourceTree = "<group>"; };
+		2680AF431AB6BEB700151A0C /* 周4_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周4_灰色.png"; sourceTree = "<group>"; };
+		2680AF441AB6BEB700151A0C /* 周4_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周4_红色.png"; sourceTree = "<group>"; };
+		2680AF451AB6BEB700151A0C /* 周5_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周5_灰色.png"; sourceTree = "<group>"; };
+		2680AF461AB6BEB700151A0C /* 周5_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周5_红色.png"; sourceTree = "<group>"; };
+		2680AF471AB6BEB700151A0C /* 周6_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周6_灰色.png"; sourceTree = "<group>"; };
+		2680AF481AB6BEB700151A0C /* 周6_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周6_红色.png"; sourceTree = "<group>"; };
+		2680AF491AB6BEB700151A0C /* 周7_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周7_灰色.png"; sourceTree = "<group>"; };
+		2680AF4A1AB6BEB700151A0C /* 周7_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周7_红色.png"; sourceTree = "<group>"; };
+		2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12.“服务”图标.png"; sourceTree = "<group>"; };
+		2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13.“空闲”图标.png"; sourceTree = "<group>"; };
+		2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14.“休息”图标.png"; sourceTree = "<group>"; };
+		2680AF4E1AB6BEB700151A0C /* 15.顶栏--每周X排班.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "15.顶栏--每周X排班.png"; sourceTree = "<group>"; };
+		2680AF4F1AB6BEB700151A0C /* 16.“休息”按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16.“休息”按钮.png"; sourceTree = "<group>"; };
+		2680AF501AB6BEB700151A0C /* 17.“工作”按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "17.“工作”按钮.png"; sourceTree = "<group>"; };
+		2680AF511AB6BEB700151A0C /* 18.“服务”按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "18.“服务”按钮.png"; sourceTree = "<group>"; };
+		2680AF521AB6BEB700151A0C /* 19.排班底栏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19.排班底栏.png"; sourceTree = "<group>"; };
+		2680AF531AB6BEB700151A0C /* 心.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "心.png"; sourceTree = "<group>"; };
+		2680AF541AB6BEB700151A0C /* 20.全选底栏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20.全选底栏.png"; sourceTree = "<group>"; };
+		2680AF551AB6BEB700151A0C /* 21.每周X排班底层.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "21.每周X排班底层.png"; sourceTree = "<group>"; };
+		2680AF561AB6BEB700151A0C /* 3.“钻石”.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3.“钻石”.png"; sourceTree = "<group>"; };
+		2680AF571AB6BEB700151A0C /* 4.“蓝冠”.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4.“蓝冠”.png"; sourceTree = "<group>"; };
+		2680AF581AB6BEB700151A0C /* 5.“二级菜单底栏”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5.“二级菜单底栏”图标.png"; sourceTree = "<group>"; };
+		2680AF591AB6BEB700151A0C /* 6.“设置界面”背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6.“设置界面”背景.png"; sourceTree = "<group>"; };
+		2680AF5A1AB6BEB700151A0C /* 7.更新提示_版本升级.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7.更新提示_版本升级.png"; sourceTree = "<group>"; };
+		2680AF5B1AB6BEB700151A0C /* 8.更新提示_最新版本.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8.更新提示_最新版本.png"; sourceTree = "<group>"; };
+		2680AF5C1AB6BEB700151A0C /* 9.退出登录提示.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9.退出登录提示.png"; sourceTree = "<group>"; };
+		2680AF5D1AB6BEB700151A0C /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
+		2680AF5F1AB6BEB700151A0C /* 美容师登录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "美容师登录.png"; sourceTree = "<group>"; };
+		2680AF621AB6BEB700151A0C /* 登录按钮_灰色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录按钮_灰色@2x.png"; sourceTree = "<group>"; };
+		2680AF631AB6BEB700151A0C /* 登录按钮_红色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录按钮_红色@2x.png"; sourceTree = "<group>"; };
+		2680AF641AB6BEB700151A0C /* 6.美容师登录背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6.美容师登录背景.png"; sourceTree = "<group>"; };
+		2680AF651AB6BEB700151A0C /* 7.顶栏--免责声明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7.顶栏--免责声明.png"; sourceTree = "<group>"; };
+		2680AFBF1AB6C97E00151A0C /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
+		2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
+		26D97F461ABA94FA0043A887 /* ComMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacros.h; sourceTree = "<group>"; };
+		26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTimeViewController.h; sourceTree = "<group>"; };
+		26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTimeViewController.m; sourceTree = "<group>"; };
+		26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTimeViewController.xib; sourceTree = "<group>"; };
+		26D97F551ABA992D0043A887 /* DateTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeViewController.h; sourceTree = "<group>"; };
+		26D97F561ABA992D0043A887 /* DateTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeViewController.m; sourceTree = "<group>"; };
+		26D97F571ABA992D0043A887 /* DateTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTimeViewController.xib; sourceTree = "<group>"; };
+		26D97F5A1ABAA55A0043A887 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		26D97F5B1ABAA55A0043A887 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		26D97F5C1ABAA55A0043A887 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		26D97F601ABACAA00043A887 /* HistoryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewCell.h; sourceTree = "<group>"; };
+		26D97F611ABACAA00043A887 /* HistoryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewCell.m; sourceTree = "<group>"; };
+		26D97F621ABACAA00043A887 /* HistoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewCell.xib; sourceTree = "<group>"; };
+		26D97F661ABB072A0043A887 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		26D97F671ABB072A0043A887 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		26D97F681ABB072A0043A887 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		26D97F6F1ABB1BA20043A887 /* 美容师登录-密码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "美容师登录-密码.png"; sourceTree = "<group>"; };
+		26D97F701ABB1BA20043A887 /* 美容师登录-手机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "美容师登录-手机.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2680AE8B1AB6B4C000151A0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2680AEA41AB6B4C100151A0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2680AE851AB6B4C000151A0C = {
+			isa = PBXGroup;
+			children = (
+				2680AE901AB6B4C000151A0C /* YIJIa */,
+				2680AEAA1AB6B4C100151A0C /* YIJIaTests */,
+				2680AE8F1AB6B4C000151A0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2680AE8F1AB6B4C000151A0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2680AE8E1AB6B4C000151A0C /* YIJIa.app */,
+				2680AEA71AB6B4C100151A0C /* YIJIaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2680AE901AB6B4C000151A0C /* YIJIa */ = {
+			isa = PBXGroup;
+			children = (
+				26D97F481ABA985B0043A887 /* ViewControllers */,
+				2680AFBE1AB6C97000151A0C /* Views */,
+				2680AF111AB6BE9C00151A0C /* images */,
+				2680AEBA1AB6B6C800151A0C /* Utils */,
+				2680AE951AB6B4C000151A0C /* AppDelegate.h */,
+				2680AE961AB6B4C000151A0C /* AppDelegate.m */,
+				2680AE911AB6B4C000151A0C /* Supporting Files */,
+			);
+			path = YIJIa;
+			sourceTree = "<group>";
+		};
+		2680AE911AB6B4C000151A0C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2680AE921AB6B4C000151A0C /* Info.plist */,
+				2680AE931AB6B4C000151A0C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2680AEAA1AB6B4C100151A0C /* YIJIaTests */ = {
+			isa = PBXGroup;
+			children = (
+				2680AEAD1AB6B4C100151A0C /* YIJIaTests.m */,
+				2680AEAB1AB6B4C100151A0C /* Supporting Files */,
+			);
+			path = YIJIaTests;
+			sourceTree = "<group>";
+		};
+		2680AEAB1AB6B4C100151A0C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2680AEAC1AB6B4C100151A0C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2680AEBA1AB6B6C800151A0C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2680AEBE1AB6B77B00151A0C /* UINavigationBar+CustomBar.h */,
+				2680AEBF1AB6B77B00151A0C /* UINavigationBar+CustomBar.m */,
+				2680AEBB1AB6B6DC00151A0C /* Util.h */,
+				2680AEBC1AB6B6DC00151A0C /* Util.m */,
+				26D97F461ABA94FA0043A887 /* ComMacros.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		2680AF111AB6BE9C00151A0C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				26D97F5A1ABAA55A0043A887 /* Default.png */,
+				26D97F5B1ABAA55A0043A887 /* Default@2x.png */,
+				26D97F5C1ABAA55A0043A887 /* Default-568h@2x.png */,
+				2680AF121AB6BEB700151A0C /* 0.一级菜单栏 */,
+				2680AF1B1AB6BEB700151A0C /* 1.首页 */,
+				2680AF211AB6BEB700151A0C /* 2.历史订单 */,
+				2680AF381AB6BEB700151A0C /* 3.设置 */,
+				2680AF5E1AB6BEB700151A0C /* 4.美容师登录 */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		2680AF121AB6BEB700151A0C /* 0.一级菜单栏 */ = {
+			isa = PBXGroup;
+			children = (
+				2680AF131AB6BEB700151A0C /* 首页_灰色.png */,
+				2680AF141AB6BEB700151A0C /* 首页_红色.png */,
+				2680AF151AB6BEB700151A0C /* 历史_灰色.png */,
+				2680AF161AB6BEB700151A0C /* 历史_红色.png */,
+				2680AF171AB6BEB700151A0C /* 设置_灰色.png */,
+				2680AF181AB6BEB700151A0C /* 设置_红色.png */,
+				2680AF191AB6BEB700151A0C /* 一级菜单底栏@2x.png */,
+			);
+			path = "0.一级菜单栏";
+			sourceTree = "<group>";
+		};
+		2680AF1B1AB6BEB700151A0C /* 1.首页 */ = {
+			isa = PBXGroup;
+			children = (
+				2680AF1C1AB6BEB700151A0C /* 顶栏_红色.png */,
+				2680AF1D1AB6BEB700151A0C /* 下单时间.png */,
+				2680AF1E1AB6BEB700151A0C /* 预约时间.png */,
+				2680AF1F1AB6BEB700151A0C /* 背景.png */,
+				2680AF201AB6BEB700151A0C /* Thumbs.db */,
+			);
+			path = "1.首页";
+			sourceTree = "<group>";
+		};
+		2680AF211AB6BEB700151A0C /* 2.历史订单 */ = {
+			isa = PBXGroup;
+			children = (
+				2680AF221AB6BEB700151A0C /* 新客.png */,
+				2680AF231AB6BEB700151A0C /* 新客@2x.png */,
+				2680AF241AB6BEB700151A0C /* 10.“电话”图标.png */,
+				2680AF251AB6BEB700151A0C /* 11.信息.png */,
+				2680AF261AB6BEB700151A0C /* 12.顶栏--发送短信.png */,
+				2680AF271AB6BEB700151A0C /* 13.提示标签_粉红.png */,
+				2680AF281AB6BEB700151A0C /* 14.顶栏--顾客评价.png */,
+				2680AF291AB6BEB700151A0C /* 默认用户头像.png */,
+				2680AF2A1AB6BEB700151A0C /* 16.顶栏--备注.png */,
+				2680AF2B1AB6BEB700151A0C /* 17.备注栏.png */,
+				2680AF2C1AB6BEB700151A0C /* 18.“确认”按钮.png */,
+				2680AF2D1AB6BEB700151A0C /* 新手.png */,
+				2680AF2E1AB6BEB700151A0C /* 新手@2x.png */,
+				2680AF2F1AB6BEB700151A0C /* 分享.png */,
+				2680AF301AB6BEB700151A0C /* 分享@2x.png */,
+				2680AF311AB6BEB700151A0C /* 4.订单底栏.png */,
+				2680AF321AB6BEB700151A0C /* 5.背景.png */,
+				2680AF331AB6BEB700151A0C /* 6.顶栏--订单详情.png */,
+				2680AF341AB6BEB700151A0C /* 7.“预约时间”图标.png */,
+				2680AF351AB6BEB700151A0C /* 8.“服务地址”图标.png */,
+				2680AF361AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png */,
+				2680AF371AB6BEB700151A0C /* Thumbs.db */,
+			);
+			path = "2.历史订单";
+			sourceTree = "<group>";
+		};
+		2680AF381AB6BEB700151A0C /* 3.设置 */ = {
+			isa = PBXGroup;
+			children = (
+				2680AF391AB6BEB700151A0C /* 定位图标_蓝色.png */,
+				2680AF3A1AB6BEB700151A0C /* 10.顶栏--时间表.png */,
+				2680AF3B1AB6BEB700151A0C /* 11.排班圆形图标 */,
+				2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */,
+				2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */,
+				2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */,
+				2680AF4E1AB6BEB700151A0C /* 15.顶栏--每周X排班.png */,
+				2680AF4F1AB6BEB700151A0C /* 16.“休息”按钮.png */,
+				2680AF501AB6BEB700151A0C /* 17.“工作”按钮.png */,
+				2680AF511AB6BEB700151A0C /* 18.“服务”按钮.png */,
+				2680AF521AB6BEB700151A0C /* 19.排班底栏.png */,
+				2680AF531AB6BEB700151A0C /* 心.png */,
+				2680AF541AB6BEB700151A0C /* 20.全选底栏.png */,
+				2680AF551AB6BEB700151A0C /* 21.每周X排班底层.png */,
+				2680AF561AB6BEB700151A0C /* 3.“钻石”.png */,
+				2680AF571AB6BEB700151A0C /* 4.“蓝冠”.png */,
+				2680AF581AB6BEB700151A0C /* 5.“二级菜单底栏”图标.png */,
+				2680AF591AB6BEB700151A0C /* 6.“设置界面”背景.png */,
+				2680AF5A1AB6BEB700151A0C /* 7.更新提示_版本升级.png */,
+				2680AF5B1AB6BEB700151A0C /* 8.更新提示_最新版本.png */,
+				2680AF5C1AB6BEB700151A0C /* 9.退出登录提示.png */,
+				2680AF5D1AB6BEB700151A0C /* Thumbs.db */,
+			);
+			path = "3.设置";
+			sourceTree = "<group>";
+		};
+		2680AF3B1AB6BEB700151A0C /* 11.排班圆形图标 */ = {
+			isa = PBXGroup;
+			children = (
+				2680AF3C1AB6BEB700151A0C /* Thumbs.db */,
+				2680AF3D1AB6BEB700151A0C /* 周1_灰色.png */,
+				2680AF3E1AB6BEB700151A0C /* 周1_红色.png */,
+				2680AF3F1AB6BEB700151A0C /* 周2_灰色.png */,
+				2680AF401AB6BEB700151A0C /* 周2_红色.png */,
+				2680AF411AB6BEB700151A0C /* 周3_灰色.png */,
+				2680AF421AB6BEB700151A0C /* 周3_红色.png */,
+				2680AF431AB6BEB700151A0C /* 周4_灰色.png */,
+				2680AF441AB6BEB700151A0C /* 周4_红色.png */,
+				2680AF451AB6BEB700151A0C /* 周5_灰色.png */,
+				2680AF461AB6BEB700151A0C /* 周5_红色.png */,
+				2680AF471AB6BEB700151A0C /* 周6_灰色.png */,
+				2680AF481AB6BEB700151A0C /* 周6_红色.png */,
+				2680AF491AB6BEB700151A0C /* 周7_灰色.png */,
+				2680AF4A1AB6BEB700151A0C /* 周7_红色.png */,
+			);
+			path = "11.排班圆形图标";
+			sourceTree = "<group>";
+		};
+		2680AF5E1AB6BEB700151A0C /* 4.美容师登录 */ = {
+			isa = PBXGroup;
+			children = (
+				26D97F6F1ABB1BA20043A887 /* 美容师登录-密码.png */,
+				26D97F701ABB1BA20043A887 /* 美容师登录-手机.png */,
+				2680AF5F1AB6BEB700151A0C /* 美容师登录.png */,
+				2680AF621AB6BEB700151A0C /* 登录按钮_灰色@2x.png */,
+				2680AF631AB6BEB700151A0C /* 登录按钮_红色@2x.png */,
+				2680AF641AB6BEB700151A0C /* 6.美容师登录背景.png */,
+				2680AF651AB6BEB700151A0C /* 7.顶栏--免责声明.png */,
+			);
+			path = "4.美容师登录";
+			sourceTree = "<group>";
+		};
+		2680AFBE1AB6C97000151A0C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2680AFBF1AB6C97E00151A0C /* CustomSegmentControl.h */,
+				2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		26D97F481ABA985B0043A887 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				26D97F651ABB06EF0043A887 /* Login */,
+				26D97F4C1ABA98810043A887 /* Base */,
+				26D97F4B1ABA987A0043A887 /* Setting */,
+				26D97F4A1ABA98730043A887 /* History */,
+				26D97F491ABA98690043A887 /* Main */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		26D97F491ABA98690043A887 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2680AEC11AB6B8A400151A0C /* MainViewController.h */,
+				2680AEC21AB6B8A400151A0C /* MainViewController.m */,
+				2680AEC31AB6B8A400151A0C /* MainViewController.xib */,
+				26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */,
+				26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */,
+				26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */,
+				26D97F551ABA992D0043A887 /* DateTimeViewController.h */,
+				26D97F561ABA992D0043A887 /* DateTimeViewController.m */,
+				26D97F571ABA992D0043A887 /* DateTimeViewController.xib */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		26D97F4A1ABA98730043A887 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				2680AEC61AB6B8BE00151A0C /* HistoryViewController.h */,
+				2680AEC71AB6B8BE00151A0C /* HistoryViewController.m */,
+				2680AEC81AB6B8BE00151A0C /* HistoryViewController.xib */,
+				26D97F601ABACAA00043A887 /* HistoryViewCell.h */,
+				26D97F611ABACAA00043A887 /* HistoryViewCell.m */,
+				26D97F621ABACAA00043A887 /* HistoryViewCell.xib */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		26D97F4B1ABA987A0043A887 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2680AECB1AB6B8DF00151A0C /* SettingViewController.h */,
+				2680AECC1AB6B8DF00151A0C /* SettingViewController.m */,
+				2680AECD1AB6B8DF00151A0C /* SettingViewController.xib */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		26D97F4C1ABA98810043A887 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2680AEB71AB6B68600151A0C /* BaseViewController.h */,
+				2680AEB81AB6B68600151A0C /* BaseViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		26D97F651ABB06EF0043A887 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				26D97F661ABB072A0043A887 /* LoginViewController.h */,
+				26D97F671ABB072A0043A887 /* LoginViewController.m */,
+				26D97F681ABB072A0043A887 /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2680AE8D1AB6B4C000151A0C /* YIJIa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2680AEB11AB6B4C100151A0C /* Build configuration list for PBXNativeTarget "YIJIa" */;
+			buildPhases = (
+				2680AE8A1AB6B4C000151A0C /* Sources */,
+				2680AE8B1AB6B4C000151A0C /* Frameworks */,
+				2680AE8C1AB6B4C000151A0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YIJIa;
+			productName = YIJIa;
+			productReference = 2680AE8E1AB6B4C000151A0C /* YIJIa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2680AEA61AB6B4C100151A0C /* YIJIaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2680AEB41AB6B4C100151A0C /* Build configuration list for PBXNativeTarget "YIJIaTests" */;
+			buildPhases = (
+				2680AEA31AB6B4C100151A0C /* Sources */,
+				2680AEA41AB6B4C100151A0C /* Frameworks */,
+				2680AEA51AB6B4C100151A0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2680AEA91AB6B4C100151A0C /* PBXTargetDependency */,
+			);
+			name = YIJIaTests;
+			productName = YIJIaTests;
+			productReference = 2680AEA71AB6B4C100151A0C /* YIJIaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2680AE861AB6B4C000151A0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "sven@abovelink";
+				TargetAttributes = {
+					2680AE8D1AB6B4C000151A0C = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					2680AEA61AB6B4C100151A0C = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 2680AE8D1AB6B4C000151A0C;
+					};
+				};
+			};
+			buildConfigurationList = 2680AE891AB6B4C000151A0C /* Build configuration list for PBXProject "YIJIa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2680AE851AB6B4C000151A0C;
+			productRefGroup = 2680AE8F1AB6B4C000151A0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2680AE8D1AB6B4C000151A0C /* YIJIa */,
+				2680AEA61AB6B4C100151A0C /* YIJIaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2680AE8C1AB6B4C000151A0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2680AFB51AB6BEB700151A0C /* 6.美容师登录背景.png in Resources */,
+				2680AF781AB6BEB700151A0C /* 10.“电话”图标.png in Resources */,
+				2680AFA81AB6BEB700151A0C /* 3.“钻石”.png in Resources */,
+				2680AF9D1AB6BEB700151A0C /* 12.“服务”图标.png in Resources */,
+				2680AECF1AB6B8DF00151A0C /* SettingViewController.xib in Resources */,
+				2680AFB01AB6BEB700151A0C /* 美容师登录.png in Resources */,
+				2680AFB31AB6BEB700151A0C /* 登录按钮_灰色@2x.png in Resources */,
+				2680AFA11AB6BEB700151A0C /* 16.“休息”按钮.png in Resources */,
+				2680AFAC1AB6BEB700151A0C /* 7.更新提示_版本升级.png in Resources */,
+				2680AF861AB6BEB700151A0C /* 5.背景.png in Resources */,
+				2680AF991AB6BEB700151A0C /* 周6_灰色.png in Resources */,
+				2680AF801AB6BEB700151A0C /* 18.“确认”按钮.png in Resources */,
+				26D97F5E1ABAA55A0043A887 /* Default@2x.png in Resources */,
+				2680AF6B1AB6BEB700151A0C /* 历史_灰色.png in Resources */,
+				2680AF741AB6BEB700151A0C /* 背景.png in Resources */,
+				2680AFA01AB6BEB700151A0C /* 15.顶栏--每周X排班.png in Resources */,
+				2680AF6D1AB6BEB700151A0C /* 设置_灰色.png in Resources */,
+				2680AF771AB6BEB700151A0C /* 新客@2x.png in Resources */,
+				2680AFAA1AB6BEB700151A0C /* 5.“二级菜单底栏”图标.png in Resources */,
+				2680AF961AB6BEB700151A0C /* 周4_红色.png in Resources */,
+				2680AFB41AB6BEB700151A0C /* 登录按钮_红色@2x.png in Resources */,
+				2680AF981AB6BEB700151A0C /* 周5_红色.png in Resources */,
+				2680AF7D1AB6BEB700151A0C /* 默认用户头像.png in Resources */,
+				2680AF871AB6BEB700151A0C /* 6.顶栏--订单详情.png in Resources */,
+				2680AFAB1AB6BEB700151A0C /* 6.“设置界面”背景.png in Resources */,
+				2680AFA61AB6BEB700151A0C /* 20.全选底栏.png in Resources */,
+				2680AF731AB6BEB700151A0C /* 预约时间.png in Resources */,
+				2680AF751AB6BEB700151A0C /* Thumbs.db in Resources */,
+				2680AFA91AB6BEB700151A0C /* 4.“蓝冠”.png in Resources */,
+				2680AF6C1AB6BEB700151A0C /* 历史_红色.png in Resources */,
+				2680AFB61AB6BEB700151A0C /* 7.顶栏--免责声明.png in Resources */,
+				2680AF7C1AB6BEB700151A0C /* 14.顶栏--顾客评价.png in Resources */,
+				2680AF791AB6BEB700151A0C /* 11.信息.png in Resources */,
+				2680AF8B1AB6BEB700151A0C /* Thumbs.db in Resources */,
+				2680AF9F1AB6BEB700151A0C /* 14.“休息”图标.png in Resources */,
+				2680AF9B1AB6BEB700151A0C /* 周7_灰色.png in Resources */,
+				2680AF9C1AB6BEB700151A0C /* 周7_红色.png in Resources */,
+				2680AF821AB6BEB700151A0C /* 新手@2x.png in Resources */,
+				2680AF8F1AB6BEB700151A0C /* 周1_灰色.png in Resources */,
+				2680AF691AB6BEB700151A0C /* 首页_灰色.png in Resources */,
+				2680AF7B1AB6BEB700151A0C /* 13.提示标签_粉红.png in Resources */,
+				2680AF971AB6BEB700151A0C /* 周5_灰色.png in Resources */,
+				26D97F721ABB1BA20043A887 /* 美容师登录-手机.png in Resources */,
+				2680AF911AB6BEB700151A0C /* 周2_灰色.png in Resources */,
+				2680AF9A1AB6BEB700151A0C /* 周6_红色.png in Resources */,
+				2680AF8A1AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png in Resources */,
+				2680AFA71AB6BEB700151A0C /* 21.每周X排班底层.png in Resources */,
+				2680AF831AB6BEB700151A0C /* 分享.png in Resources */,
+				2680AF931AB6BEB700151A0C /* 周3_灰色.png in Resources */,
+				2680AFA41AB6BEB700151A0C /* 19.排班底栏.png in Resources */,
+				2680AF921AB6BEB700151A0C /* 周2_红色.png in Resources */,
+				26D97F641ABACAA00043A887 /* HistoryViewCell.xib in Resources */,
+				2680AF851AB6BEB700151A0C /* 4.订单底栏.png in Resources */,
+				2680AF9E1AB6BEB700151A0C /* 13.“空闲”图标.png in Resources */,
+				2680AF811AB6BEB700151A0C /* 新手.png in Resources */,
+				2680AF8D1AB6BEB700151A0C /* 10.顶栏--时间表.png in Resources */,
+				2680AF8E1AB6BEB700151A0C /* Thumbs.db in Resources */,
+				2680AF721AB6BEB700151A0C /* 下单时间.png in Resources */,
+				26D97F5F1ABAA55A0043A887 /* Default-568h@2x.png in Resources */,
+				2680AF7F1AB6BEB700151A0C /* 17.备注栏.png in Resources */,
+				2680AFAD1AB6BEB700151A0C /* 8.更新提示_最新版本.png in Resources */,
+				2680AECA1AB6B8BE00151A0C /* HistoryViewController.xib in Resources */,
+				2680AFA51AB6BEB700151A0C /* 心.png in Resources */,
+				2680AF6F1AB6BEB700151A0C /* 一级菜单底栏@2x.png in Resources */,
+				2680AF7E1AB6BEB700151A0C /* 16.顶栏--备注.png in Resources */,
+				2680AFA21AB6BEB700151A0C /* 17.“工作”按钮.png in Resources */,
+				26D97F5D1ABAA55A0043A887 /* Default.png in Resources */,
+				2680AF891AB6BEB700151A0C /* 8.“服务地址”图标.png in Resources */,
+				26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */,
+				2680AF8C1AB6BEB700151A0C /* 定位图标_蓝色.png in Resources */,
+				26D97F591ABA992D0043A887 /* DateTimeViewController.xib in Resources */,
+				2680AF881AB6BEB700151A0C /* 7.“预约时间”图标.png in Resources */,
+				2680AFA31AB6BEB700151A0C /* 18.“服务”按钮.png in Resources */,
+				2680AF941AB6BEB700151A0C /* 周3_红色.png in Resources */,
+				2680AF951AB6BEB700151A0C /* 周4_灰色.png in Resources */,
+				2680AF901AB6BEB700151A0C /* 周1_红色.png in Resources */,
+				2680AF841AB6BEB700151A0C /* 分享@2x.png in Resources */,
+				2680AFAF1AB6BEB700151A0C /* Thumbs.db in Resources */,
+				26D97F6A1ABB072A0043A887 /* LoginViewController.xib in Resources */,
+				26D97F711ABB1BA20043A887 /* 美容师登录-密码.png in Resources */,
+				2680AF761AB6BEB700151A0C /* 新客.png in Resources */,
+				2680AF6E1AB6BEB700151A0C /* 设置_红色.png in Resources */,
+				2680AF6A1AB6BEB700151A0C /* 首页_红色.png in Resources */,
+				2680AF7A1AB6BEB700151A0C /* 12.顶栏--发送短信.png in Resources */,
+				2680AF711AB6BEB700151A0C /* 顶栏_红色.png in Resources */,
+				2680AFAE1AB6BEB700151A0C /* 9.退出登录提示.png in Resources */,
+				2680AEC51AB6B8A400151A0C /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2680AEA51AB6B4C100151A0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2680AE8A1AB6B4C000151A0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2680AFC11AB6C97E00151A0C /* CustomSegmentControl.m in Sources */,
+				26D97F631ABACAA00043A887 /* HistoryViewCell.m in Sources */,
+				26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */,
+				2680AEBD1AB6B6DC00151A0C /* Util.m in Sources */,
+				26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */,
+				2680AEB91AB6B68600151A0C /* BaseViewController.m in Sources */,
+				2680AEC91AB6B8BE00151A0C /* HistoryViewController.m in Sources */,
+				2680AE971AB6B4C000151A0C /* AppDelegate.m in Sources */,
+				2680AECE1AB6B8DF00151A0C /* SettingViewController.m in Sources */,
+				26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */,
+				2680AEC41AB6B8A400151A0C /* MainViewController.m in Sources */,
+				2680AEC01AB6B77B00151A0C /* UINavigationBar+CustomBar.m in Sources */,
+				2680AE941AB6B4C000151A0C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2680AEA31AB6B4C100151A0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2680AEAE1AB6B4C100151A0C /* YIJIaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2680AEA91AB6B4C100151A0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2680AE8D1AB6B4C000151A0C /* YIJIa */;
+			targetProxy = 2680AEA81AB6B4C100151A0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2680AEAF1AB6B4C100151A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2680AEB01AB6B4C100151A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2680AEB21AB6B4C100151A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YIJIa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2680AEB31AB6B4C100151A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YIJIa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2680AEB51AB6B4C100151A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YIJIaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YIJIa.app/YIJIa";
+			};
+			name = Debug;
+		};
+		2680AEB61AB6B4C100151A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YIJIaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YIJIa.app/YIJIa";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2680AE891AB6B4C000151A0C /* Build configuration list for PBXProject "YIJIa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2680AEAF1AB6B4C100151A0C /* Debug */,
+				2680AEB01AB6B4C100151A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2680AEB11AB6B4C100151A0C /* Build configuration list for PBXNativeTarget "YIJIa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2680AEB21AB6B4C100151A0C /* Debug */,
+				2680AEB31AB6B4C100151A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2680AEB41AB6B4C100151A0C /* Build configuration list for PBXNativeTarget "YIJIaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2680AEB51AB6B4C100151A0C /* Debug */,
+				2680AEB61AB6B4C100151A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2680AE861AB6B4C000151A0C /* Project object */;
+}
