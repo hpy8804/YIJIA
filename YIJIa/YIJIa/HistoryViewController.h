@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface HistoryViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

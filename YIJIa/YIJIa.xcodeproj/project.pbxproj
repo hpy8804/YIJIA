@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		265EC8931ABBF33F001FE9F3 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 265EC8921ABBF33F001FE9F3 /* HttpRequest.m */; };
+		265EC89B1ABC170A001FE9F3 /* TimePlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265EC8991ABC170A001FE9F3 /* TimePlanViewController.m */; };
+		265EC89C1ABC170A001FE9F3 /* TimePlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265EC89A1ABC170A001FE9F3 /* TimePlanViewController.xib */; };
+		265EC8A31ABC18AD001FE9F3 /* 历史_灰色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265EC89D1ABC18AD001FE9F3 /* 历史_灰色@2x.png */; };
+		265EC8A41ABC18AD001FE9F3 /* 历史_红色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265EC89E1ABC18AD001FE9F3 /* 历史_红色@2x.png */; };
+		265EC8A51ABC18AD001FE9F3 /* 设置_灰色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265EC89F1ABC18AD001FE9F3 /* 设置_灰色@2x.png */; };
+		265EC8A61ABC18AD001FE9F3 /* 设置_红色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265EC8A01ABC18AD001FE9F3 /* 设置_红色@2x.png */; };
+		265EC8A71ABC18AD001FE9F3 /* 首页_灰色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265EC8A11ABC18AD001FE9F3 /* 首页_灰色@2x.png */; };
+		265EC8A81ABC18AD001FE9F3 /* 首页_红色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265EC8A21ABC18AD001FE9F3 /* 首页_红色@2x.png */; };
 		2680AE941AB6B4C000151A0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AE931AB6B4C000151A0C /* main.m */; };
 		2680AE971AB6B4C000151A0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AE961AB6B4C000151A0C /* AppDelegate.m */; };
 		2680AEAE1AB6B4C100151A0C /* YIJIaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AEAD1AB6B4C100151A0C /* YIJIaTests.m */; };
@@ -109,6 +117,8 @@
 		26D97F6A1ABB072A0043A887 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F681ABB072A0043A887 /* LoginViewController.xib */; };
 		26D97F711ABB1BA20043A887 /* 美容师登录-密码.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F6F1ABB1BA20043A887 /* 美容师登录-密码.png */; };
 		26D97F721ABB1BA20043A887 /* 美容师登录-手机.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F701ABB1BA20043A887 /* 美容师登录-手机.png */; };
+		26DDE8D01AC00531003F27B3 /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DDE8CF1AC00531003F27B3 /* HUD.m */; };
+		D7B73C45F8A4AC255EDC3EBC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8CCF259AFE04DCA186EA71F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +134,15 @@
 /* Begin PBXFileReference section */
 		265EC8911ABBF33F001FE9F3 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		265EC8921ABBF33F001FE9F3 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		265EC8981ABC170A001FE9F3 /* TimePlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePlanViewController.h; sourceTree = "<group>"; };
+		265EC8991ABC170A001FE9F3 /* TimePlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePlanViewController.m; sourceTree = "<group>"; };
+		265EC89A1ABC170A001FE9F3 /* TimePlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePlanViewController.xib; sourceTree = "<group>"; };
+		265EC89D1ABC18AD001FE9F3 /* 历史_灰色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史_灰色@2x.png"; sourceTree = "<group>"; };
+		265EC89E1ABC18AD001FE9F3 /* 历史_红色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史_红色@2x.png"; sourceTree = "<group>"; };
+		265EC89F1ABC18AD001FE9F3 /* 设置_灰色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置_灰色@2x.png"; sourceTree = "<group>"; };
+		265EC8A01ABC18AD001FE9F3 /* 设置_红色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置_红色@2x.png"; sourceTree = "<group>"; };
+		265EC8A11ABC18AD001FE9F3 /* 首页_灰色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页_灰色@2x.png"; sourceTree = "<group>"; };
+		265EC8A21ABC18AD001FE9F3 /* 首页_红色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页_红色@2x.png"; sourceTree = "<group>"; };
 		2680AE8E1AB6B4C000151A0C /* YIJIa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YIJIa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2680AE921AB6B4C000151A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2680AE931AB6B4C000151A0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -242,6 +261,11 @@
 		26D97F681ABB072A0043A887 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		26D97F6F1ABB1BA20043A887 /* 美容师登录-密码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "美容师登录-密码.png"; sourceTree = "<group>"; };
 		26D97F701ABB1BA20043A887 /* 美容师登录-手机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "美容师登录-手机.png"; sourceTree = "<group>"; };
+		26DDE8CE1AC00531003F27B3 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		26DDE8CF1AC00531003F27B3 /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
+		402A90FA952FE9B61E33F203 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C8CCF259AFE04DCA186EA71F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFBDA1D4114A2AE9639669C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B73C45F8A4AC255EDC3EBC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +293,8 @@
 				2680AE901AB6B4C000151A0C /* YIJIa */,
 				2680AEAA1AB6B4C100151A0C /* YIJIaTests */,
 				2680AE8F1AB6B4C000151A0C /* Products */,
+				7BC4DDD0B6EE13AEEBCDBD08 /* Pods */,
+				F040E786936A558108E39502 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,6 +350,8 @@
 		2680AEBA1AB6B6C800151A0C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				26DDE8CE1AC00531003F27B3 /* HUD.h */,
+				26DDE8CF1AC00531003F27B3 /* HUD.m */,
 				2680AEBE1AB6B77B00151A0C /* UINavigationBar+CustomBar.h */,
 				2680AEBF1AB6B77B00151A0C /* UINavigationBar+CustomBar.m */,
 				2680AEBB1AB6B6DC00151A0C /* Util.h */,
@@ -352,6 +381,12 @@
 		2680AF121AB6BEB700151A0C /* 0.一级菜单栏 */ = {
 			isa = PBXGroup;
 			children = (
+				265EC89D1ABC18AD001FE9F3 /* 历史_灰色@2x.png */,
+				265EC89E1ABC18AD001FE9F3 /* 历史_红色@2x.png */,
+				265EC89F1ABC18AD001FE9F3 /* 设置_灰色@2x.png */,
+				265EC8A01ABC18AD001FE9F3 /* 设置_红色@2x.png */,
+				265EC8A11ABC18AD001FE9F3 /* 首页_灰色@2x.png */,
+				265EC8A21ABC18AD001FE9F3 /* 首页_红色@2x.png */,
 				2680AF131AB6BEB700151A0C /* 首页_灰色.png */,
 				2680AF141AB6BEB700151A0C /* 首页_红色.png */,
 				2680AF151AB6BEB700151A0C /* 历史_灰色.png */,
@@ -525,6 +560,9 @@
 				2680AECB1AB6B8DF00151A0C /* SettingViewController.h */,
 				2680AECC1AB6B8DF00151A0C /* SettingViewController.m */,
 				2680AECD1AB6B8DF00151A0C /* SettingViewController.xib */,
+				265EC8981ABC170A001FE9F3 /* TimePlanViewController.h */,
+				265EC8991ABC170A001FE9F3 /* TimePlanViewController.m */,
+				265EC89A1ABC170A001FE9F3 /* TimePlanViewController.xib */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -548,6 +586,23 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		7BC4DDD0B6EE13AEEBCDBD08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				402A90FA952FE9B61E33F203 /* Pods.debug.xcconfig */,
+				DDFBDA1D4114A2AE9639669C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F040E786936A558108E39502 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8CCF259AFE04DCA186EA71F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -555,9 +610,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2680AEB11AB6B4C100151A0C /* Build configuration list for PBXNativeTarget "YIJIa" */;
 			buildPhases = (
+				B0CB0D2DCD94AC46C31D6361 /* Check Pods Manifest.lock */,
 				2680AE8A1AB6B4C000151A0C /* Sources */,
 				2680AE8B1AB6B4C000151A0C /* Frameworks */,
 				2680AE8C1AB6B4C000151A0C /* Resources */,
+				1F9384932547281B4DE803F4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -631,6 +688,7 @@
 				2680AFB51AB6BEB700151A0C /* 6.美容师登录背景.png in Resources */,
 				2680AF781AB6BEB700151A0C /* 10.“电话”图标.png in Resources */,
 				2680AFA81AB6BEB700151A0C /* 3.“钻石”.png in Resources */,
+				265EC8A31ABC18AD001FE9F3 /* 历史_灰色@2x.png in Resources */,
 				2680AF9D1AB6BEB700151A0C /* 12.“服务”图标.png in Resources */,
 				2680AECF1AB6B8DF00151A0C /* SettingViewController.xib in Resources */,
 				2680AFB01AB6BEB700151A0C /* 美容师登录.png in Resources */,
@@ -643,6 +701,7 @@
 				26D97F5E1ABAA55A0043A887 /* Default@2x.png in Resources */,
 				2680AF6B1AB6BEB700151A0C /* 历史_灰色.png in Resources */,
 				2680AF741AB6BEB700151A0C /* 背景.png in Resources */,
+				265EC8A41ABC18AD001FE9F3 /* 历史_红色@2x.png in Resources */,
 				2680AFA01AB6BEB700151A0C /* 15.顶栏--每周X排班.png in Resources */,
 				2680AF6D1AB6BEB700151A0C /* 设置_灰色.png in Resources */,
 				2680AF771AB6BEB700151A0C /* 新客@2x.png in Resources */,
@@ -656,6 +715,7 @@
 				2680AFA61AB6BEB700151A0C /* 20.全选底栏.png in Resources */,
 				2680AF731AB6BEB700151A0C /* 预约时间.png in Resources */,
 				2680AF751AB6BEB700151A0C /* Thumbs.db in Resources */,
+				265EC89C1ABC170A001FE9F3 /* TimePlanViewController.xib in Resources */,
 				2680AFA91AB6BEB700151A0C /* 4.“蓝冠”.png in Resources */,
 				2680AF6C1AB6BEB700151A0C /* 历史_红色.png in Resources */,
 				2680AFB61AB6BEB700151A0C /* 7.顶栏--免责声明.png in Resources */,
@@ -682,6 +742,7 @@
 				26D97F641ABACAA00043A887 /* HistoryViewCell.xib in Resources */,
 				2680AF851AB6BEB700151A0C /* 4.订单底栏.png in Resources */,
 				2680AF9E1AB6BEB700151A0C /* 13.“空闲”图标.png in Resources */,
+				265EC8A51ABC18AD001FE9F3 /* 设置_灰色@2x.png in Resources */,
 				2680AF811AB6BEB700151A0C /* 新手.png in Resources */,
 				2680AF8D1AB6BEB700151A0C /* 10.顶栏--时间表.png in Resources */,
 				2680AF8E1AB6BEB700151A0C /* Thumbs.db in Resources */,
@@ -701,13 +762,16 @@
 				26D97F591ABA992D0043A887 /* DateTimeViewController.xib in Resources */,
 				2680AF881AB6BEB700151A0C /* 7.“预约时间”图标.png in Resources */,
 				2680AFA31AB6BEB700151A0C /* 18.“服务”按钮.png in Resources */,
+				265EC8A71ABC18AD001FE9F3 /* 首页_灰色@2x.png in Resources */,
 				2680AF941AB6BEB700151A0C /* 周3_红色.png in Resources */,
 				2680AF951AB6BEB700151A0C /* 周4_灰色.png in Resources */,
 				2680AF901AB6BEB700151A0C /* 周1_红色.png in Resources */,
 				2680AF841AB6BEB700151A0C /* 分享@2x.png in Resources */,
 				2680AFAF1AB6BEB700151A0C /* Thumbs.db in Resources */,
+				265EC8A81ABC18AD001FE9F3 /* 首页_红色@2x.png in Resources */,
 				26D97F6A1ABB072A0043A887 /* LoginViewController.xib in Resources */,
 				26D97F711ABB1BA20043A887 /* 美容师登录-密码.png in Resources */,
+				265EC8A61ABC18AD001FE9F3 /* 设置_红色@2x.png in Resources */,
 				2680AF761AB6BEB700151A0C /* 新客.png in Resources */,
 				2680AF6E1AB6BEB700151A0C /* 设置_红色.png in Resources */,
 				2680AF6A1AB6BEB700151A0C /* 首页_红色.png in Resources */,
@@ -727,18 +791,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F9384932547281B4DE803F4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0CB0D2DCD94AC46C31D6361 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2680AE8A1AB6B4C000151A0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2680AFC11AB6C97E00151A0C /* CustomSegmentControl.m in Sources */,
+				26DDE8D01AC00531003F27B3 /* HUD.m in Sources */,
 				26D97F631ABACAA00043A887 /* HistoryViewCell.m in Sources */,
 				26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */,
 				2680AEBD1AB6B6DC00151A0C /* Util.m in Sources */,
 				26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */,
 				2680AEB91AB6B68600151A0C /* BaseViewController.m in Sources */,
 				2680AEC91AB6B8BE00151A0C /* HistoryViewController.m in Sources */,
+				265EC89B1ABC170A001FE9F3 /* TimePlanViewController.m in Sources */,
 				2680AE971AB6B4C000151A0C /* AppDelegate.m in Sources */,
 				2680AECE1AB6B8DF00151A0C /* SettingViewController.m in Sources */,
 				26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */,
@@ -846,6 +945,7 @@
 		};
 		2680AEB21AB6B4C100151A0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 402A90FA952FE9B61E33F203 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YIJIa/Info.plist;
@@ -857,6 +957,7 @@
 		};
 		2680AEB31AB6B4C100151A0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDFBDA1D4114A2AE9639669C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YIJIa/Info.plist;

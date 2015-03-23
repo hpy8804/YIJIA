@@ -7,6 +7,7 @@
 //
 
 #import "HttpRequest.h"
+#import "HUD.h"
 
 @interface HttpRequest ()<NSURLConnectionDataDelegate>
 {
@@ -28,6 +29,7 @@
     NSURL *URL = [NSURL URLWithString:[strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [HUD showUIBlockingIndicator];
   
 }
 
@@ -46,6 +48,7 @@
     NSString *strReturn = [[NSString alloc]initWithData:_backData encoding:NSUTF8StringEncoding];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishRequestWithString:)]) {
+        [HUD hideUIBlockingIndicator];
         [self.delegate didFinishRequestWithString:strReturn];
     }
 }
@@ -55,6 +58,7 @@
     NSString *strError = [error localizedDescription];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFailedRequestWithErrorString:)]) {
+        [HUD hideUIBlockingIndicator];
         [self.delegate didFailedRequestWithErrorString:strError];
     }
 }

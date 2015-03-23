@@ -8,11 +8,9 @@
 
 #import "HistoryViewController.h"
 #import "HistoryViewCell.h"
+#import "MJRefresh.h"
 
 @interface HistoryViewController ()<UITableViewDataSource, UITableViewDelegate>
-{
-    UITableView *_tableView;
-}
 @end
 
 @implementation HistoryViewController
@@ -21,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customSelfUI];
+    [self setupRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,11 +31,19 @@
 - (void)customSelfUI
 {
     self.title = @"历史纪录";
-    
-    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+}
+
+- (void)setupRefresh{
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:@"tabledate"];
+}
+
+- (void)headerRereshing{
+    [self fetchHistoryData];
+}
+
+- (void)fetchHistoryData
+{
+    [self.tableView headerEndRefreshing];
 }
 
 #pragma mark - tableview delegate & datasource

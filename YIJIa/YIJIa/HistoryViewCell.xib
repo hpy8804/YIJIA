@@ -15,16 +15,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="新客.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tgg-OR-WZt">
-                        <rect key="frame" x="8" y="8" width="30" height="20"/>
+                        <rect key="frame" x="14" y="8" width="30" height="20"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="分享.png" translatesAutoresizingMaskIntoConstraints="NO" id="73j-hv-bo6">
-                        <rect key="frame" x="45" y="8" width="30" height="20"/>
+                        <rect key="frame" x="51" y="8" width="30" height="20"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="新手.png" translatesAutoresizingMaskIntoConstraints="NO" id="hZX-sz-02g">
-                        <rect key="frame" x="82" y="8" width="30" height="20"/>
+                        <rect key="frame" x="88" y="8" width="30" height="20"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="默认用户头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="FQd-Pb-yLs">
-                        <rect key="frame" x="8" y="37" width="104" height="88"/>
+                        <rect key="frame" x="14" y="37" width="104" height="88"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="水妍润泽护理" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jf-d7-2CW">
                         <rect key="frame" x="136" y="37" width="102" height="21"/>

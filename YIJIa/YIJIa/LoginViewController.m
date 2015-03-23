@@ -51,6 +51,8 @@
     NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
     NSLog(@"strResult:%@", dataDic);
+    sleep(2);
+    [self loginSucess];
 }
 
 @end

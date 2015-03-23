@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "TimePlanViewController.h"
 
 @interface SettingViewController ()
 {
@@ -69,7 +70,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    switch (indexPath.row) {
+        case 0:
+        {
+            TimePlanViewController *vcTimePlan = [[TimePlanViewController alloc] initWithNibName:@"TimePlanViewController" bundle:nil];
+            [self.navigationController pushViewController:vcTimePlan animated:YES];
+        }
+            break;
+        case 1:
+        {
+            
+        }
+            break;
+        case 2:
+        {
+            
+        }
+            break;
+        case 3:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end
