@@ -9,6 +9,7 @@
 #import "HistoryViewController.h"
 #import "HistoryViewCell.h"
 #import "MJRefresh.h"
+#import "HistoryDetailViewController.h"
 
 @interface HistoryViewController ()<UITableViewDataSource, UITableViewDelegate>
 @end
@@ -70,6 +71,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    HistoryDetailViewController *vcHistoryDetail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+    [self.navigationController pushViewController:vcHistoryDetail animated:YES];
 }
 @end

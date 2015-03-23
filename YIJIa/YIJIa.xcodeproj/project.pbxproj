@@ -104,6 +104,8 @@
 		2680AFB51AB6BEB700151A0C /* 6.美容师登录背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF641AB6BEB700151A0C /* 6.美容师登录背景.png */; };
 		2680AFB61AB6BEB700151A0C /* 7.顶栏--免责声明.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF651AB6BEB700151A0C /* 7.顶栏--免责声明.png */; };
 		2680AFC11AB6C97E00151A0C /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */; };
+		26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */; };
+		26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */; };
 		26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */; };
 		26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */; };
 		26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F561ABA992D0043A887 /* DateTimeViewController.m */; };
@@ -243,6 +245,9 @@
 		2680AF651AB6BEB700151A0C /* 7.顶栏--免责声明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7.顶栏--免责声明.png"; sourceTree = "<group>"; };
 		2680AFBF1AB6C97E00151A0C /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
 		2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
+		26B3000D1AC0499D0066E2C8 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
+		26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
+		26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
 		26D97F461ABA94FA0043A887 /* ComMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacros.h; sourceTree = "<group>"; };
 		26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTimeViewController.h; sourceTree = "<group>"; };
 		26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTimeViewController.m; sourceTree = "<group>"; };
@@ -550,6 +555,9 @@
 				26D97F601ABACAA00043A887 /* HistoryViewCell.h */,
 				26D97F611ABACAA00043A887 /* HistoryViewCell.m */,
 				26D97F621ABACAA00043A887 /* HistoryViewCell.xib */,
+				26B3000D1AC0499D0066E2C8 /* HistoryDetailViewController.h */,
+				26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */,
+				26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -722,6 +730,7 @@
 				2680AF7C1AB6BEB700151A0C /* 14.顶栏--顾客评价.png in Resources */,
 				2680AF791AB6BEB700151A0C /* 11.信息.png in Resources */,
 				2680AF8B1AB6BEB700151A0C /* Thumbs.db in Resources */,
+				26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */,
 				2680AF9F1AB6BEB700151A0C /* 14.“休息”图标.png in Resources */,
 				2680AF9B1AB6BEB700151A0C /* 周7_灰色.png in Resources */,
 				2680AF9C1AB6BEB700151A0C /* 周7_红色.png in Resources */,
@@ -834,6 +843,7 @@
 				26D97F631ABACAA00043A887 /* HistoryViewCell.m in Sources */,
 				26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */,
 				2680AEBD1AB6B6DC00151A0C /* Util.m in Sources */,
+				26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */,
 				26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */,
 				2680AEB91AB6B68600151A0C /* BaseViewController.m in Sources */,
 				2680AEC91AB6B8BE00151A0C /* HistoryViewController.m in Sources */,

@@ -41,6 +41,7 @@
 {
     if (self.navigationController) {
         [Util setNavigationCtrollerBackImg:self.navigationController];
+        self.hidesBottomBarWhenPushed = YES;
         self.navigationItem.backBarButtonItem.title = nil;
     }
 }
