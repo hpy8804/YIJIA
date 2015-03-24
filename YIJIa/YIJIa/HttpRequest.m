@@ -29,7 +29,7 @@
     NSURL *URL = [NSURL URLWithString:[strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [HUD showUIBlockingIndicator];
+    [HUD showUIBlockingIndicatorWithText:@"请稍候..."];
   
 }
 

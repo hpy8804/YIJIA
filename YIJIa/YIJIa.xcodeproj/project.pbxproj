@@ -106,6 +106,7 @@
 		2680AFC11AB6C97E00151A0C /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */; };
 		26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */; };
 		26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */; };
+		26B3001B1AC19F950066E2C8 /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3001A1AC19F950066E2C8 /* HistoryModel.m */; };
 		26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */; };
 		26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */; };
 		26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F561ABA992D0043A887 /* DateTimeViewController.m */; };
@@ -248,6 +249,9 @@
 		26B3000D1AC0499D0066E2C8 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
 		26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
+		26B300171AC154110066E2C8 /* httpConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = httpConfigure.h; sourceTree = "<group>"; };
+		26B300191AC19F950066E2C8 /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
+		26B3001A1AC19F950066E2C8 /* HistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryModel.m; sourceTree = "<group>"; };
 		26D97F461ABA94FA0043A887 /* ComMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacros.h; sourceTree = "<group>"; };
 		26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTimeViewController.h; sourceTree = "<group>"; };
 		26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTimeViewController.m; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 		2680AE901AB6B4C000151A0C /* YIJIa */ = {
 			isa = PBXGroup;
 			children = (
+				26B300181AC19E7B0066E2C8 /* Model */,
 				26D97F481ABA985B0043A887 /* ViewControllers */,
 				2680AFBE1AB6C97000151A0C /* Views */,
 				2680AF111AB6BE9C00151A0C /* images */,
@@ -364,6 +369,7 @@
 				26D97F461ABA94FA0043A887 /* ComMacros.h */,
 				265EC8911ABBF33F001FE9F3 /* HttpRequest.h */,
 				265EC8921ABBF33F001FE9F3 /* HttpRequest.m */,
+				26B300171AC154110066E2C8 /* httpConfigure.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -516,6 +522,15 @@
 				2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		26B300181AC19E7B0066E2C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26B300191AC19F950066E2C8 /* HistoryModel.h */,
+				26B3001A1AC19F950066E2C8 /* HistoryModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		26D97F481ABA985B0043A887 /* ViewControllers */ = {
@@ -852,6 +867,7 @@
 				2680AECE1AB6B8DF00151A0C /* SettingViewController.m in Sources */,
 				26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */,
 				2680AEC41AB6B8A400151A0C /* MainViewController.m in Sources */,
+				26B3001B1AC19F950066E2C8 /* HistoryModel.m in Sources */,
 				265EC8931ABBF33F001FE9F3 /* HttpRequest.m in Sources */,
 				2680AEC01AB6B77B00151A0C /* UINavigationBar+CustomBar.m in Sources */,
 				2680AE941AB6B4C000151A0C /* main.m in Sources */,

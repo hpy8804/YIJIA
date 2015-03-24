@@ -53,9 +53,13 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="adress" destination="xFG-I0-SbN" id="6XV-t9-tul"/>
                 <outlet property="guest" destination="Tgg-OR-WZt" id="lCp-yd-NLg"/>
                 <outlet property="iconImg" destination="FQd-Pb-yLs" id="Ht9-Vi-2mH"/>
+                <outlet property="order_time" destination="EGf-zq-7Te" id="axT-4t-7Ps"/>
+                <outlet property="price" destination="YIg-Ps-H9w" id="Qft-vW-aFi"/>
                 <outlet property="share" destination="73j-hv-bo6" id="Ona-oo-YHk"/>
+                <outlet property="sub_name" destination="7jf-d7-2CW" id="98m-5n-nkc"/>
                 <outlet property="young" destination="hZX-sz-02g" id="Tse-1u-piQ"/>
             </connections>
             <point key="canvasLocation" x="355" y="414"/>

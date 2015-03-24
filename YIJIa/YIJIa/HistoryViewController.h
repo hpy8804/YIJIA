@@ -10,5 +10,5 @@
 
 @interface HistoryViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, nonatomic) NSMutableArray *mutArrDatas;
 @end

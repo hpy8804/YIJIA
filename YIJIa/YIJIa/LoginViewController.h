@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface LoginViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UITextField *userName;
 
+@property (weak, nonatomic) IBOutlet UITextField *password;
 @end
