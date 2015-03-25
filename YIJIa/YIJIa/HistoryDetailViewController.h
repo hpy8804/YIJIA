@@ -7,8 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "HistoryModel.h"
 
 @interface HistoryDetailViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UITableView *detailTableView;
+@property (strong, nonatomic) HistoryModel *modelHistory;
 
 @end

@@ -13,4 +13,5 @@
 @interface Util : NSObject
 + (void)setNavigationCtrollerBackImg:(UINavigationController *)naviCtl;
 + (UIImage*)imageWithColor:(UIColor*)color;
++ (NSString *)countTimeFromTimeCount:(double)timeCount;
 @end

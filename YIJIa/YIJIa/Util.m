@@ -30,4 +30,18 @@
     
     return image;
 }
+
++ (NSString *)countTimeFromTimeCount:(double)timeCount
+{
+    double lastactivityInterval = timeCount/1000;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY年MM月dd日 HH:mm"];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+    
+    NSString* dateString = [formatter stringFromDate:date];
+    return dateString;
+}
 @end

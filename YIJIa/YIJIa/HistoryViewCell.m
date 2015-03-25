@@ -28,6 +28,7 @@
         NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
         cell = (HistoryViewCell *)[nibArray objectAtIndex:0];
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }

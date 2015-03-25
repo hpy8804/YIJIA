@@ -58,8 +58,8 @@
 		2680AF851AB6BEB700151A0C /* 4.订单底栏.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF311AB6BEB700151A0C /* 4.订单底栏.png */; };
 		2680AF861AB6BEB700151A0C /* 5.背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF321AB6BEB700151A0C /* 5.背景.png */; };
 		2680AF871AB6BEB700151A0C /* 6.顶栏--订单详情.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF331AB6BEB700151A0C /* 6.顶栏--订单详情.png */; };
-		2680AF881AB6BEB700151A0C /* 7.“预约时间”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF341AB6BEB700151A0C /* 7.“预约时间”图标.png */; };
-		2680AF891AB6BEB700151A0C /* 8.“服务地址”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF351AB6BEB700151A0C /* 8.“服务地址”图标.png */; };
+		2680AF881AB6BEB700151A0C /* 预约时间图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF341AB6BEB700151A0C /* 预约时间图标@2x.png */; };
+		2680AF891AB6BEB700151A0C /* 服务地址图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF351AB6BEB700151A0C /* 服务地址图标@2x.png */; };
 		2680AF8A1AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF361AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png */; };
 		2680AF8B1AB6BEB700151A0C /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF371AB6BEB700151A0C /* Thumbs.db */; };
 		2680AF8C1AB6BEB700151A0C /* 定位图标_蓝色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF391AB6BEB700151A0C /* 定位图标_蓝色.png */; };
@@ -199,8 +199,8 @@
 		2680AF311AB6BEB700151A0C /* 4.订单底栏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4.订单底栏.png"; sourceTree = "<group>"; };
 		2680AF321AB6BEB700151A0C /* 5.背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5.背景.png"; sourceTree = "<group>"; };
 		2680AF331AB6BEB700151A0C /* 6.顶栏--订单详情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6.顶栏--订单详情.png"; sourceTree = "<group>"; };
-		2680AF341AB6BEB700151A0C /* 7.“预约时间”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7.“预约时间”图标.png"; sourceTree = "<group>"; };
-		2680AF351AB6BEB700151A0C /* 8.“服务地址”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8.“服务地址”图标.png"; sourceTree = "<group>"; };
+		2680AF341AB6BEB700151A0C /* 预约时间图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "预约时间图标@2x.png"; sourceTree = "<group>"; };
+		2680AF351AB6BEB700151A0C /* 服务地址图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "服务地址图标@2x.png"; sourceTree = "<group>"; };
 		2680AF361AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9.“右箭头_灰色”图标.png"; sourceTree = "<group>"; };
 		2680AF371AB6BEB700151A0C /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		2680AF391AB6BEB700151A0C /* 定位图标_蓝色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位图标_蓝色.png"; sourceTree = "<group>"; };
@@ -442,8 +442,8 @@
 				2680AF311AB6BEB700151A0C /* 4.订单底栏.png */,
 				2680AF321AB6BEB700151A0C /* 5.背景.png */,
 				2680AF331AB6BEB700151A0C /* 6.顶栏--订单详情.png */,
-				2680AF341AB6BEB700151A0C /* 7.“预约时间”图标.png */,
-				2680AF351AB6BEB700151A0C /* 8.“服务地址”图标.png */,
+				2680AF341AB6BEB700151A0C /* 预约时间图标@2x.png */,
+				2680AF351AB6BEB700151A0C /* 服务地址图标@2x.png */,
 				2680AF361AB6BEB700151A0C /* 9.“右箭头_灰色”图标.png */,
 				2680AF371AB6BEB700151A0C /* Thumbs.db */,
 			);
@@ -780,11 +780,11 @@
 				2680AF7E1AB6BEB700151A0C /* 16.顶栏--备注.png in Resources */,
 				2680AFA21AB6BEB700151A0C /* 17.“工作”按钮.png in Resources */,
 				26D97F5D1ABAA55A0043A887 /* Default.png in Resources */,
-				2680AF891AB6BEB700151A0C /* 8.“服务地址”图标.png in Resources */,
+				2680AF891AB6BEB700151A0C /* 服务地址图标@2x.png in Resources */,
 				26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */,
 				2680AF8C1AB6BEB700151A0C /* 定位图标_蓝色.png in Resources */,
 				26D97F591ABA992D0043A887 /* DateTimeViewController.xib in Resources */,
-				2680AF881AB6BEB700151A0C /* 7.“预约时间”图标.png in Resources */,
+				2680AF881AB6BEB700151A0C /* 预约时间图标@2x.png in Resources */,
 				2680AFA31AB6BEB700151A0C /* 18.“服务”按钮.png in Resources */,
 				265EC8A71ABC18AD001FE9F3 /* 首页_灰色@2x.png in Resources */,
 				2680AF941AB6BEB700151A0C /* 周3_红色.png in Resources */,

@@ -13,6 +13,7 @@
 #import "HttpRequest.h"
 #import "httpConfigure.h"
 #import "HistoryModel.h"
+#import "Util.h"
 
 @interface HistoryViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -39,6 +40,7 @@
 - (void)customSelfUI
 {
     self.title = @"历史纪录";
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)setupRefresh{
@@ -77,10 +79,9 @@
     static NSString *strIndentifier = @"HistoryViewCell";
     HistoryViewCell *cell = [HistoryViewCell reuseableCell:tableView WithCellIdentifier:strIndentifier];
     HistoryModel *modelData = _mutArrDatas[indexPath.row];
-    NSLog(@"create time:%@", modelData.create_time);
     cell.sub_name.text = modelData.sub_name;
     cell.price.text = [NSString stringWithFormat:@"%@元", modelData.indent_price];
-    cell.order_time.text = [NSString stringWithFormat:@"%@", modelData.create_time];
+    cell.order_time.text = [NSString stringWithFormat:@"%@", modelData.subscribe_time];
     cell.adress.text = modelData.address;
     
     return cell;
@@ -93,7 +94,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     HistoryDetailViewController *vcHistoryDetail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+    vcHistoryDetail.modelHistory = _mutArrDatas[indexPath.row];
     vcHistoryDetail.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vcHistoryDetail animated:YES];
 }
@@ -112,15 +116,15 @@
         historyModel.sub_id = dataArr[i][@"SUB_ID"];
         historyModel.sub_name = dataArr[i][@"SUB_NAME"];
         historyModel.person_number = dataArr[i][@"PERSON_NUMBER"];
-        historyModel.subscribe_time = dataArr[i][@"SUBSCRIBE_TIME"];
-        historyModel.indent_price = dataArr[i][@"INDENT_PRICE"];
+        historyModel.subscribe_time = [Util countTimeFromTimeCount:[dataArr[i][@"SUBSCRIBE_TIME"] doubleValue]];
+        historyModel.indent_price = [NSString stringWithFormat:@"%f", [dataArr[i][@"INDENT_PRICE"]doubleValue]];
         historyModel.pay_status = dataArr[i][@"PAY_STATUS"];
         historyModel.finish_status = dataArr[i][@"FINISH_STATUS"];
         historyModel.comment_status = dataArr[i][@"COMMENT_STATUS"];
         historyModel.coupon_code = dataArr[i][@"COUPON_CODE"];
         historyModel.cash_status = dataArr[i][@"CASH_STATUS"];
-        historyModel.create_time = dataArr[i][@"CREATE_TIME"];
-        historyModel.update_time = dataArr[i][@"UPDATE_TIME"];
+        historyModel.create_time = [Util countTimeFromTimeCount:[dataArr[i][@"CREATE_TIME"] doubleValue]];
+        historyModel.update_time = [Util countTimeFromTimeCount:[dataArr[i][@"UPDATE_TIME"] doubleValue]];
         historyModel.address = dataArr[i][@"ADDRESS"];
         historyModel.mobile = dataArr[i][@"MOBILE"];
         historyModel.user_name = dataArr[i][@"USER_NAME"];

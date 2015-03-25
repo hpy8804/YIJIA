@@ -7,11 +7,10 @@
 //
 
 #import "HistoryDetailViewController.h"
+#import "ComMacros.h"
 
 @interface HistoryDetailViewController ()
-{
-    NSArray *_arrData;
-}
+
 @end
 
 @implementation HistoryDetailViewController
@@ -32,9 +31,7 @@
 
 - (void)customSelfData
 {
-    _arrData = @[@[@{@"dajunze":@"18116144722"}, @{@"预约时间":@"01月24日 16:00"}, @{@"服务地址":@"徐汇区中山南二路1057弄协昌小区4号楼103室"}],
-                 @[@{@"优惠券":@"新手礼券 ¥88.00"}, @{@"服务收入":@"¥38.00"}],
-                 @[@{@"下单时间":@"01月24日 16:00"}]];
+
 }
 - (void)customSelfUI
 {
@@ -80,8 +77,86 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:strIndentifier];
     }
-    cell.textLabel.text = @"hello test";
-    cell.detailTextLabel.text = @"telephone";
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                cell.textLabel.text = _modelHistory.user_name;
+                cell.detailTextLabel.text = _modelHistory.mobile;
+            }
+                break;
+            case 1:
+            {
+                cell.imageView.image = [UIImage imageNamed:@"预约时间图标"];
+                cell.textLabel.text = @"预约时间";
+                cell.detailTextLabel.text = _modelHistory.create_time;
+            }
+                break;
+            case 2:
+            {
+                cell.imageView.image = [UIImage imageNamed:@"服务地址图标"];
+                cell.textLabel.text = @"服务地址";
+                cell.detailTextLabel.text = _modelHistory.address;
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+        switch (indexPath.row) {
+            case 0:
+            {
+                
+            }
+                break;
+            case 1:
+            {
+                cell.textLabel.text = @"优惠券";
+                cell.detailTextLabel.text = @"未使用";
+            }
+                break;
+            case 2:
+            {
+                cell.textLabel.text = @"服务价格";
+                cell.detailTextLabel.text = _modelHistory.indent_price;
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 2){
+        switch (indexPath.row) {
+            case 0:
+            {
+                cell.textLabel.text = @"下单时间";
+                cell.detailTextLabel.text = _modelHistory.create_time;
+            }
+                break;
+            case 1:
+            {
+                cell.textLabel.text = @"订单状态";
+                cell.detailTextLabel.text = @"已完成";
+            }
+                break;
+            case 2:
+            {
+                cell.textLabel.text = @"用户评价";
+                cell.detailTextLabel.text = @"好评";
+            }
+                break;
+            case 3:
+            {
+                cell.textLabel.text = @"添加备注";
+                cell.detailTextLabel.text = @"这是个新客户，没有产品使用经验，可以忽悠";
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
     
     return cell;
 }
