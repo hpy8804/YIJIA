@@ -10,7 +10,7 @@
                 <outlet property="age" destination="BgH-hR-rUc" id="LFg-c7-gFA"/>
                 <outlet property="experience" destination="N0O-Z1-kjz" id="O6n-uC-Ics"/>
                 <outlet property="finishedWork" destination="2qk-b9-JO3" id="ocp-gI-vGM"/>
-                <outlet property="location" destination="N0O-Z1-kjz" id="Y5m-p7-VTQ"/>
+                <outlet property="location" destination="dDx-iD-ySd" id="ezR-2R-1U2"/>
                 <outlet property="name" destination="zrD-ey-VRo" id="46n-ML-S6Q"/>
                 <outlet property="portrait" destination="uBU-dq-rIN" id="cmG-of-X7g"/>
                 <outlet property="tableView" destination="BRh-kc-iNC" id="8I5-Iq-BHM"/>

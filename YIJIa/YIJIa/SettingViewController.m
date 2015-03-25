@@ -8,10 +8,14 @@
 
 #import "SettingViewController.h"
 #import "TimePlanViewController.h"
+#import "HttpRequest.h"
+#import "httpConfigure.h"
+#import "AppDelegate.h"
 
 @interface SettingViewController ()
 {
     NSArray *arrAllDatas;
+    HttpRequest *requestHttp;
 }
 @end
 
@@ -20,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self sendRequest];
     [self initSelfData];
     [self customSelfUI];
 }
@@ -31,6 +36,14 @@
 
 #pragma mark -
 
+- (void)sendRequest
+{
+    requestHttp = [[HttpRequest alloc] initWithDelegate:self];
+    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+    NSString *strUserName = [defaultUser objectForKey:kUserName];
+    NSString *strReq = [NSString stringWithFormat:kTechnician, strUserName];
+    [requestHttp sendRequestWithURLString:strReq];
+}
 - (void)initSelfData
 {
     arrAllDatas = @[@"时间安排", @"我的二维码", @"检查更新", @"退出登录"];
@@ -70,6 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
         {
@@ -89,7 +103,12 @@
             break;
         case 3:
         {
-            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                                message:@"确定要退出登录吗?"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"取消"
+                                                      otherButtonTitles:@"确定", nil];
+            [alertView show];
         }
             break;
             
@@ -98,4 +117,26 @@
     }
 }
 
+#pragma mark delegate -
+- (void)didFinishRequestWithString:(NSString *)strResult
+{
+    NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray * dataArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    NSDictionary *tech_info = dataArr[0];
+    _name.text = tech_info[@"TECH_NAME"];
+    _age.text = [NSString stringWithFormat:@"%d岁", [tech_info[@"TECH_AGE"] integerValue]];
+    _location.text = tech_info[@"ADDRESS"];
+    _experience.text = tech_info[@"TECH_INTRO"];
+}
+
+#pragma mark - UIAlertView delegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [app.tabBarController dismissViewControllerAnimated:NO completion:^{
+            [app customTabbarController];
+        }];
+    }
+}
 @end
