@@ -107,6 +107,8 @@
 		26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */; };
 		26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */; };
 		26B3001B1AC19F950066E2C8 /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3001A1AC19F950066E2C8 /* HistoryModel.m */; };
+		26B300251AC2FF5E0066E2C8 /* CustomWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B300241AC2FF5E0066E2C8 /* CustomWeekView.m */; };
+		26B300271AC2FF7A0066E2C8 /* CustomWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B300261AC2FF7A0066E2C8 /* CustomWeekView.xib */; };
 		26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */; };
 		26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */; };
 		26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F561ABA992D0043A887 /* DateTimeViewController.m */; };
@@ -252,6 +254,9 @@
 		26B300171AC154110066E2C8 /* httpConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = httpConfigure.h; sourceTree = "<group>"; };
 		26B300191AC19F950066E2C8 /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
 		26B3001A1AC19F950066E2C8 /* HistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryModel.m; sourceTree = "<group>"; };
+		26B300231AC2FF5E0066E2C8 /* CustomWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWeekView.h; sourceTree = "<group>"; };
+		26B300241AC2FF5E0066E2C8 /* CustomWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWeekView.m; sourceTree = "<group>"; };
+		26B300261AC2FF7A0066E2C8 /* CustomWeekView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomWeekView.xib; sourceTree = "<group>"; };
 		26D97F461ABA94FA0043A887 /* ComMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacros.h; sourceTree = "<group>"; };
 		26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTimeViewController.h; sourceTree = "<group>"; };
 		26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTimeViewController.m; sourceTree = "<group>"; };
@@ -520,6 +525,9 @@
 			children = (
 				2680AFBF1AB6C97E00151A0C /* CustomSegmentControl.h */,
 				2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */,
+				26B300231AC2FF5E0066E2C8 /* CustomWeekView.h */,
+				26B300241AC2FF5E0066E2C8 /* CustomWeekView.m */,
+				26B300261AC2FF7A0066E2C8 /* CustomWeekView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -777,6 +785,7 @@
 				2680AECA1AB6B8BE00151A0C /* HistoryViewController.xib in Resources */,
 				2680AFA51AB6BEB700151A0C /* 心.png in Resources */,
 				2680AF6F1AB6BEB700151A0C /* 一级菜单底栏@2x.png in Resources */,
+				26B300271AC2FF7A0066E2C8 /* CustomWeekView.xib in Resources */,
 				2680AF7E1AB6BEB700151A0C /* 16.顶栏--备注.png in Resources */,
 				2680AFA21AB6BEB700151A0C /* 17.“工作”按钮.png in Resources */,
 				26D97F5D1ABAA55A0043A887 /* Default.png in Resources */,
@@ -858,6 +867,7 @@
 				26D97F631ABACAA00043A887 /* HistoryViewCell.m in Sources */,
 				26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */,
 				2680AEBD1AB6B6DC00151A0C /* Util.m in Sources */,
+				26B300251AC2FF5E0066E2C8 /* CustomWeekView.m in Sources */,
 				26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */,
 				26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */,
 				2680AEB91AB6B68600151A0C /* BaseViewController.m in Sources */,

@@ -7,9 +7,13 @@
 //
 
 #import "TimePlanViewController.h"
+#import "CustomWeekView.h"
+#import "ComMacros.h"
 
 @interface TimePlanViewController ()
-
+{
+    CustomWeekView *weekView;
+}
 @end
 
 @implementation TimePlanViewController
@@ -28,6 +32,12 @@
 - (void)customSelfUI
 {
     self.title = @"时间表";
+    weekView = [CustomWeekView detailView];
+    weekView.frame = CGRectMake(0, 10, APP_Frame_Width, 50);
+    UIView *headerView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, APP_Frame_Width, 70)];
+    headerView.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1.0];
+    [headerView addSubview:weekView];
+    _tableView.tableHeaderView = headerView;
 }
 
 @end
