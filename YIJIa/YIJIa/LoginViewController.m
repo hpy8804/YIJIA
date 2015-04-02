@@ -33,7 +33,7 @@
 }
 
 - (IBAction)clickLoginAcction:(id)sender {
-    NSString *strReq = [NSString stringWithFormat:kLoginAuth, _userName.text, _password.text];
+    NSString *strReq = kLoginAuth(_userName.text, _password.text);
     [_loginRequest sendRequestWithURLString:strReq];
     
 }

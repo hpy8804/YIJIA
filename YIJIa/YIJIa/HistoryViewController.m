@@ -63,7 +63,7 @@
     _historyRequest = [[HttpRequest alloc] initWithDelegate:self];
     NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
     NSString *strUserName = [defaultUser objectForKey:kUserName];
-    NSString *strReq = [NSString stringWithFormat:kHistoryList, strUserName];
+    NSString *strReq = kHistoryList(strUserName);
     [_historyRequest sendRequestWithURLString:strReq];
 }
 

@@ -8,9 +8,13 @@
 
 #import "HistoryDetailViewController.h"
 #import "ComMacros.h"
+#import "httpConfigure.h"
+#import "HttpRequest.h"
 
 @interface HistoryDetailViewController ()
-
+{
+    NSString *strComment;
+}
 @end
 
 @implementation HistoryDetailViewController
@@ -20,6 +24,7 @@
     // Do any additional setup after loading the view from its nib.
     [self customSelfData];
     [self customSelfUI];
+    [self fetchComment];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +41,13 @@
 - (void)customSelfUI
 {
     self.title = @"订单详情";
+}
+
+- (void)fetchComment
+{
+    HttpRequest *_historyRequest = [[HttpRequest alloc] initWithDelegate:self];
+    NSString *strReq = kComment(_modelHistory.order_id);
+    [_historyRequest sendRequestWithURLString:strReq];
 }
 
 #pragma mark - tableview delegate & datasource
@@ -143,7 +155,7 @@
             case 2:
             {
                 cell.textLabel.text = @"用户评价";
-                cell.detailTextLabel.text = @"好评";
+                cell.detailTextLabel.text = strComment;
             }
                 break;
             case 3:
@@ -170,6 +182,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+#pragma mark delegate -
+- (void)didFinishRequestWithString:(NSString *)strResult
+{
+    NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary * dataArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    strComment = dataArr[@"CONTENT"];
+    [self.detailTableView reloadData];
 }
 
 @end
