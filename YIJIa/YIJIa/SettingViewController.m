@@ -88,6 +88,7 @@
         case 0:
         {
             TimePlanViewController *vcTimePlan = [[TimePlanViewController alloc] initWithNibName:@"TimePlanViewController" bundle:nil];
+            vcTimePlan.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vcTimePlan animated:YES];
         }
             break;

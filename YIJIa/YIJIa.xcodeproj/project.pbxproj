@@ -77,8 +77,8 @@
 		2680AF981AB6BEB700151A0C /* 周5_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF461AB6BEB700151A0C /* 周5_红色.png */; };
 		2680AF991AB6BEB700151A0C /* 周6_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF471AB6BEB700151A0C /* 周6_灰色.png */; };
 		2680AF9A1AB6BEB700151A0C /* 周6_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF481AB6BEB700151A0C /* 周6_红色.png */; };
-		2680AF9B1AB6BEB700151A0C /* 周7_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF491AB6BEB700151A0C /* 周7_灰色.png */; };
-		2680AF9C1AB6BEB700151A0C /* 周7_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4A1AB6BEB700151A0C /* 周7_红色.png */; };
+		2680AF9B1AB6BEB700151A0C /* 周0_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF491AB6BEB700151A0C /* 周0_灰色.png */; };
+		2680AF9C1AB6BEB700151A0C /* 周0_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4A1AB6BEB700151A0C /* 周0_红色.png */; };
 		2680AF9D1AB6BEB700151A0C /* 12.“服务”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */; };
 		2680AF9E1AB6BEB700151A0C /* 13.“空闲”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */; };
 		2680AF9F1AB6BEB700151A0C /* 14.“休息”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */; };
@@ -104,11 +104,12 @@
 		2680AFB51AB6BEB700151A0C /* 6.美容师登录背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF641AB6BEB700151A0C /* 6.美容师登录背景.png */; };
 		2680AFB61AB6BEB700151A0C /* 7.顶栏--免责声明.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF651AB6BEB700151A0C /* 7.顶栏--免责声明.png */; };
 		2680AFC11AB6C97E00151A0C /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */; };
+		268911BF1AD3851100C21106 /* TouchPropagatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 268911BE1AD3851100C21106 /* TouchPropagatedScrollView.m */; };
+		268911C21AD3AAFB00C21106 /* CustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 268911C11AD3AAFB00C21106 /* CustomCollectionView.m */; };
+		268911CA1AD3C08C00C21106 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 268911C91AD3C08C00C21106 /* CollectionViewCell.m */; };
 		26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */; };
 		26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */; };
 		26B3001B1AC19F950066E2C8 /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3001A1AC19F950066E2C8 /* HistoryModel.m */; };
-		26B300251AC2FF5E0066E2C8 /* CustomWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B300241AC2FF5E0066E2C8 /* CustomWeekView.m */; };
-		26B300271AC2FF7A0066E2C8 /* CustomWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B300261AC2FF7A0066E2C8 /* CustomWeekView.xib */; };
 		26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */; };
 		26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */; };
 		26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F561ABA992D0043A887 /* DateTimeViewController.m */; };
@@ -220,8 +221,8 @@
 		2680AF461AB6BEB700151A0C /* 周5_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周5_红色.png"; sourceTree = "<group>"; };
 		2680AF471AB6BEB700151A0C /* 周6_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周6_灰色.png"; sourceTree = "<group>"; };
 		2680AF481AB6BEB700151A0C /* 周6_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周6_红色.png"; sourceTree = "<group>"; };
-		2680AF491AB6BEB700151A0C /* 周7_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周7_灰色.png"; sourceTree = "<group>"; };
-		2680AF4A1AB6BEB700151A0C /* 周7_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周7_红色.png"; sourceTree = "<group>"; };
+		2680AF491AB6BEB700151A0C /* 周0_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周0_灰色.png"; sourceTree = "<group>"; };
+		2680AF4A1AB6BEB700151A0C /* 周0_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周0_红色.png"; sourceTree = "<group>"; };
 		2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12.“服务”图标.png"; sourceTree = "<group>"; };
 		2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13.“空闲”图标.png"; sourceTree = "<group>"; };
 		2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14.“休息”图标.png"; sourceTree = "<group>"; };
@@ -248,15 +249,18 @@
 		2680AF651AB6BEB700151A0C /* 7.顶栏--免责声明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7.顶栏--免责声明.png"; sourceTree = "<group>"; };
 		2680AFBF1AB6C97E00151A0C /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
 		2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
+		268911BD1AD3851100C21106 /* TouchPropagatedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchPropagatedScrollView.h; sourceTree = "<group>"; };
+		268911BE1AD3851100C21106 /* TouchPropagatedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchPropagatedScrollView.m; sourceTree = "<group>"; };
+		268911C01AD3AAFB00C21106 /* CustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionView.h; sourceTree = "<group>"; };
+		268911C11AD3AAFB00C21106 /* CustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionView.m; sourceTree = "<group>"; };
+		268911C81AD3C08C00C21106 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		268911C91AD3C08C00C21106 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		26B3000D1AC0499D0066E2C8 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
 		26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
 		26B300171AC154110066E2C8 /* httpConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = httpConfigure.h; sourceTree = "<group>"; };
 		26B300191AC19F950066E2C8 /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
 		26B3001A1AC19F950066E2C8 /* HistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryModel.m; sourceTree = "<group>"; };
-		26B300231AC2FF5E0066E2C8 /* CustomWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWeekView.h; sourceTree = "<group>"; };
-		26B300241AC2FF5E0066E2C8 /* CustomWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWeekView.m; sourceTree = "<group>"; };
-		26B300261AC2FF7A0066E2C8 /* CustomWeekView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomWeekView.xib; sourceTree = "<group>"; };
 		26D97F461ABA94FA0043A887 /* ComMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacros.h; sourceTree = "<group>"; };
 		26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTimeViewController.h; sourceTree = "<group>"; };
 		26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTimeViewController.m; sourceTree = "<group>"; };
@@ -500,8 +504,8 @@
 				2680AF461AB6BEB700151A0C /* 周5_红色.png */,
 				2680AF471AB6BEB700151A0C /* 周6_灰色.png */,
 				2680AF481AB6BEB700151A0C /* 周6_红色.png */,
-				2680AF491AB6BEB700151A0C /* 周7_灰色.png */,
-				2680AF4A1AB6BEB700151A0C /* 周7_红色.png */,
+				2680AF491AB6BEB700151A0C /* 周0_灰色.png */,
+				2680AF4A1AB6BEB700151A0C /* 周0_红色.png */,
 			);
 			path = "11.排班圆形图标";
 			sourceTree = "<group>";
@@ -523,11 +527,14 @@
 		2680AFBE1AB6C97000151A0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				268911C81AD3C08C00C21106 /* CollectionViewCell.h */,
+				268911C91AD3C08C00C21106 /* CollectionViewCell.m */,
+				268911BD1AD3851100C21106 /* TouchPropagatedScrollView.h */,
+				268911BE1AD3851100C21106 /* TouchPropagatedScrollView.m */,
 				2680AFBF1AB6C97E00151A0C /* CustomSegmentControl.h */,
 				2680AFC01AB6C97E00151A0C /* CustomSegmentControl.m */,
-				26B300231AC2FF5E0066E2C8 /* CustomWeekView.h */,
-				26B300241AC2FF5E0066E2C8 /* CustomWeekView.m */,
-				26B300261AC2FF7A0066E2C8 /* CustomWeekView.xib */,
+				268911C01AD3AAFB00C21106 /* CustomCollectionView.h */,
+				268911C11AD3AAFB00C21106 /* CustomCollectionView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -755,8 +762,8 @@
 				2680AF8B1AB6BEB700151A0C /* Thumbs.db in Resources */,
 				26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */,
 				2680AF9F1AB6BEB700151A0C /* 14.“休息”图标.png in Resources */,
-				2680AF9B1AB6BEB700151A0C /* 周7_灰色.png in Resources */,
-				2680AF9C1AB6BEB700151A0C /* 周7_红色.png in Resources */,
+				2680AF9B1AB6BEB700151A0C /* 周0_灰色.png in Resources */,
+				2680AF9C1AB6BEB700151A0C /* 周0_红色.png in Resources */,
 				2680AF821AB6BEB700151A0C /* 新手@2x.png in Resources */,
 				2680AF8F1AB6BEB700151A0C /* 周1_灰色.png in Resources */,
 				2680AF691AB6BEB700151A0C /* 首页_灰色.png in Resources */,
@@ -785,7 +792,6 @@
 				2680AECA1AB6B8BE00151A0C /* HistoryViewController.xib in Resources */,
 				2680AFA51AB6BEB700151A0C /* 心.png in Resources */,
 				2680AF6F1AB6BEB700151A0C /* 一级菜单底栏@2x.png in Resources */,
-				26B300271AC2FF7A0066E2C8 /* CustomWeekView.xib in Resources */,
 				2680AF7E1AB6BEB700151A0C /* 16.顶栏--备注.png in Resources */,
 				2680AFA21AB6BEB700151A0C /* 17.“工作”按钮.png in Resources */,
 				26D97F5D1ABAA55A0043A887 /* Default.png in Resources */,
@@ -867,19 +873,21 @@
 				26D97F631ABACAA00043A887 /* HistoryViewCell.m in Sources */,
 				26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */,
 				2680AEBD1AB6B6DC00151A0C /* Util.m in Sources */,
-				26B300251AC2FF5E0066E2C8 /* CustomWeekView.m in Sources */,
 				26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */,
 				26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */,
+				268911C21AD3AAFB00C21106 /* CustomCollectionView.m in Sources */,
 				2680AEB91AB6B68600151A0C /* BaseViewController.m in Sources */,
 				2680AEC91AB6B8BE00151A0C /* HistoryViewController.m in Sources */,
 				265EC89B1ABC170A001FE9F3 /* TimePlanViewController.m in Sources */,
 				2680AE971AB6B4C000151A0C /* AppDelegate.m in Sources */,
+				268911CA1AD3C08C00C21106 /* CollectionViewCell.m in Sources */,
 				2680AECE1AB6B8DF00151A0C /* SettingViewController.m in Sources */,
 				26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */,
 				2680AEC41AB6B8A400151A0C /* MainViewController.m in Sources */,
 				26B3001B1AC19F950066E2C8 /* HistoryModel.m in Sources */,
 				265EC8931ABBF33F001FE9F3 /* HttpRequest.m in Sources */,
 				2680AEC01AB6B77B00151A0C /* UINavigationBar+CustomBar.m in Sources */,
+				268911BF1AD3851100C21106 /* TouchPropagatedScrollView.m in Sources */,
 				2680AE941AB6B4C000151A0C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

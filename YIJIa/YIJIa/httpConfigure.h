@@ -25,4 +25,18 @@
 #define kComment(_order_id) [NSString stringWithFormat:@"%@/standInterface/queryOne.do?sql=select * from ayj_user_comment where order_id='%@'", kBaseURL, _order_id]
 
 #define kTechnician @"http://121.41.47.120/backend_service/standInterface/queryList.do?sql=select * from ayj_technician where tech_number='%@'"
+
+//查询排班
+#define kTechnician_time(_name) [NSString stringWithFormat:@"%@/standInterface/queryList.do?sql=select * from ayj_technician_rest where tech_number='%@'", kBaseURL, _name]
+
+//week
+typedef enum {
+    Sun = 0,
+    Mon,
+    Tues,
+    Wed,
+    Thur,
+    Fri,
+    Sat
+}WeekDay;
 #endif
