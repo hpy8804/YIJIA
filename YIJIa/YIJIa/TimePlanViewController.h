@@ -10,5 +10,4 @@
 
 @interface TimePlanViewController : BaseViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end

@@ -14,6 +14,10 @@
 {
     CustomWeekView *weekView;
 }
+@property (weak, nonatomic) IBOutlet UIView *baseWeekView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *bottonView;
+
 @end
 
 @implementation TimePlanViewController
@@ -33,11 +37,9 @@
 {
     self.title = @"时间表";
     weekView = [CustomWeekView detailView];
-    weekView.frame = CGRectMake(0, 10, APP_Frame_Width, 50);
-    UIView *headerView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, APP_Frame_Width, 70)];
-    headerView.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1.0];
-    [headerView addSubview:weekView];
-    _tableView.tableHeaderView = headerView;
+    weekView.frame = _baseWeekView.bounds;
+    [_baseWeekView addSubview:weekView];
+    
 }
 
 @end
