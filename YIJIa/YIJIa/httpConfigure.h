@@ -29,6 +29,9 @@
 //查询排班
 #define kTechnician_time(_name) [NSString stringWithFormat:@"%@/standInterface/queryList.do?sql=select * from ayj_technician_rest where tech_number='%@'", kBaseURL, _name]
 
+//修改排班
+#define kModefy_technician_time(_name, _week, _changeValue) [NSString stringWithFormat:@"%@/standInterface/updateBatch.do?sql0=delete from ayj_technician_rest where tech_number = '%@' and week =%d;&sql1=INSERT INTO ayj_technician_rest (start_time,tech_number,week) VALUES %@", kBaseURL, _name, _week, _changeValue]
+
 //week
 typedef enum {
     Sun = 0,

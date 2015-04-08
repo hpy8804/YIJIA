@@ -46,9 +46,8 @@
 //数据接受结束时调用这个方法
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
     NSString *strReturn = [[NSString alloc]initWithData:_backData encoding:NSUTF8StringEncoding];
-    
+    [HUD hideUIBlockingIndicator];
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishRequestWithString:)]) {
-        [HUD hideUIBlockingIndicator];
         [self.delegate didFinishRequestWithString:strReturn];
     }
 }

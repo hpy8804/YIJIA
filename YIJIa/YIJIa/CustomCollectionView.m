@@ -14,7 +14,6 @@
 
 @interface CustomCollectionView ()
 {
-    NSMutableArray *_arrData;
     NSArray *_constArrData;
 }
 @end
@@ -89,8 +88,6 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    //    cell.backgroundColor = [UIColor redColor];
     if (self.bIsChanging) {
         NSString *strTitleTime = _constArrData[indexPath.row];
         if ([_arrData containsObject:strTitleTime]) {
@@ -100,10 +97,7 @@
         }
         
         [self reloadData];
-    }else{
-        NSLog(@"do nothing");
     }
-    
 }
 
 @end

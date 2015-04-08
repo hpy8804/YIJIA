@@ -205,13 +205,18 @@
 
 - (void)handleChangeWork
 {
+    int tag = _scrollV.contentOffset.x/APP_Frame_Width+1;
+    CustomCollectionView *subView = (CustomCollectionView *)[_scrollV viewWithTag:tag];
     if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"修改排班"]) {
         bIsChangeWork = YES;
         self.navigationItem.rightBarButtonItem.title = @"保存";
     }else{
         bIsChangeWork = NO;
         self.navigationItem.rightBarButtonItem.title = @"修改排班";
+        
+        [self saveTimeArange:subView.arrData week:tag];
     }
+    subView.bIsChanging = bIsChangeWork;
     
     [UIView animateWithDuration:0.3f animations:^{
         if (bIsChangeWork) {
@@ -226,10 +231,22 @@
     } completion:^(BOOL finished) {
         
     }];
+}
+
+- (void)saveTimeArange:(NSMutableArray *)mutArr week:(NSInteger)week
+{
+    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+    NSString *strUserName = [defaultUser objectForKey:kUserName];
     
-    int tag = _scrollV.contentOffset.x/APP_Frame_Width+1;
-    CustomCollectionView *subView = (CustomCollectionView *)[_scrollV viewWithTag:tag];
-    subView.bIsChanging = bIsChangeWork;
+    NSMutableString *mutStrChangeValue = [NSMutableString string];
+    for (int i = 0; i< mutArr.count; i++) {
+        [mutStrChangeValue appendFormat:[NSString stringWithFormat:@"('%@','%@', %d),", mutArr[i], strUserName, week-1]];
+    }
+    [mutStrChangeValue replaceCharactersInRange:NSMakeRange(mutStrChangeValue.length-1, 1) withString:@";"];
+    
+    HttpRequest *requestHttpModify = [[HttpRequest alloc] initWithDelegate:nil];
+    NSString *strReq = kModefy_technician_time(strUserName, week-1, mutStrChangeValue);
+    [requestHttpModify sendRequestWithURLString:strReq];
 }
 
 
