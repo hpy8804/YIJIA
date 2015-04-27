@@ -53,6 +53,8 @@
 {
     self.title = @"设置";
     _tableView.tableFooterView = [[UIView alloc] init];
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.scrollEnabled = NO;
 }
 
 #pragma mark - tableview delegate & datasource
@@ -127,7 +129,7 @@
     _name.text = tech_info[@"TECH_NAME"];
     _age.text = [NSString stringWithFormat:@"%d岁", [tech_info[@"TECH_AGE"] integerValue]];
     _location.text = tech_info[@"ADDRESS"];
-    _experience.text = tech_info[@"TECH_INTRO"];
+    _experience.text = [tech_info[@"TECH_INTRO"] substringToIndex:6];
 }
 
 #pragma mark - UIAlertView delegate methods

@@ -23,8 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self customSelfUI];
     [self initCurResource];
+    [self customSelfUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +44,10 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     _userName.text = [userDefault objectForKey:kUserName];
     _password.text = [userDefault objectForKey:kUserPassword];
+    
+    if ([_userName.text length] != 0 && [_password.text length] != 0) {
+        [self clickLoginAcction:nil];
+    }
 }
 - (void)initCurResource
 {
