@@ -38,11 +38,11 @@
 
 - (void)sendRequest
 {
-    requestHttp = [[HttpRequest alloc] initWithDelegate:self];
-    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
-    NSString *strUserName = [defaultUser objectForKey:kUserName];
-    NSString *strReq = [NSString stringWithFormat:kTechnician, strUserName];
-    [requestHttp sendRequestWithURLString:strReq];
+//    requestHttp = [[HttpRequest alloc] initWithDelegate:self];
+//    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+//    NSString *strUserNO = [defaultUser objectForKey:kTech_Number];
+//    NSString *strReq = kTechnician_info(strUserNO);
+//    [requestHttp sendRequestWithURLString:strReq];
 }
 - (void)initSelfData
 {
@@ -124,12 +124,11 @@
 - (void)didFinishRequestWithString:(NSString *)strResult
 {
     NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray * dataArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    NSDictionary *tech_info = dataArr[0];
-    _name.text = tech_info[@"TECH_NAME"];
-    _age.text = [NSString stringWithFormat:@"%d岁", [tech_info[@"TECH_AGE"] integerValue]];
-    _location.text = tech_info[@"ADDRESS"];
-    _experience.text = [tech_info[@"TECH_INTRO"] substringToIndex:6];
+    NSDictionary *tech_info = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    _name.text = tech_info[@"list"][0][@"TECH_NAME"];
+    _age.text = [NSString stringWithFormat:@"%d岁", [tech_info[@"list"][0][@"TECH_AGE"] integerValue]];
+    _location.text = tech_info[@"list"][0][@"ADDRESS"];
+    _experience.text = [tech_info[@"list"][0][@"TECH_INTRO"] substringToIndex:6];
 }
 
 #pragma mark - UIAlertView delegate methods

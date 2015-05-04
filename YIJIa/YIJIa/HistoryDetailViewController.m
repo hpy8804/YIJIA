@@ -45,9 +45,9 @@
 
 - (void)fetchComment
 {
-    HttpRequest *_historyRequest = [[HttpRequest alloc] initWithDelegate:self];
-    NSString *strReq = kComment(_modelHistory.order_id);
-    [_historyRequest sendRequestWithURLString:strReq];
+//    HttpRequest *_historyRequest = [[HttpRequest alloc] initWithDelegate:self];
+//    NSString *strReq = kComment(_modelHistory.order_id);
+//    [_historyRequest sendRequestWithURLString:strReq];
 }
 
 #pragma mark - tableview delegate & datasource

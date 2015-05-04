@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@protocol HttpRequestDelegate <NSObject>
-@optional
-- (void)didFinishRequestWithString:(NSString *)strResult;
-- (void)didFailedRequestWithErrorString:(NSString *)strError;
-@end
-
+#import "Singleton.h"
+typedef void (^BlockHttpRespond)(NSString *strFeedback);
 @interface HttpRequest : NSObject
-- (id)initWithDelegate:(id)delegate;
-- (void)sendRequestWithURLString:(NSString *)strURL;
-@property (assign, nonatomic) id <HttpRequestDelegate>delegate;
+{
+    BlockHttpRespond _finishBlock;
+    BlockHttpRespond _errorBlock;
+}
+
+singleton_interface(HttpRequest)
+
+- (void)postUrl:(NSString *)strURL withParam:(NSDictionary *)dicParam didFinishBlock:(BlockHttpRespond)finishBlock didFailedBlock:(BlockHttpRespond)failedBlock;
 @end

@@ -41,11 +41,11 @@
 
 - (void)sendRequest
 {
-    requestHttp = [[HttpRequest alloc] initWithDelegate:self];
-    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
-    NSString *strUserName = [defaultUser objectForKey:kUserName];
-    NSString *strReq = kTechnician_time(strUserName);
-    [requestHttp sendRequestWithURLString:strReq];
+//    requestHttp = [[HttpRequest alloc] initWithDelegate:self];
+//    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+//    NSString *strUserName = [defaultUser objectForKey:kUserName];
+//    NSString *strReq = kTechnician_time(strUserName);
+//    [requestHttp sendRequestWithURLString:strReq];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -235,18 +235,18 @@
 
 - (void)saveTimeArange:(NSMutableArray *)mutArr week:(NSInteger)week
 {
-    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
-    NSString *strUserName = [defaultUser objectForKey:kUserName];
-    
-    NSMutableString *mutStrChangeValue = [NSMutableString string];
-    for (int i = 0; i< mutArr.count; i++) {
-        [mutStrChangeValue appendFormat:[NSString stringWithFormat:@"('%@','%@', %d),", mutArr[i], strUserName, week-1]];
-    }
-    [mutStrChangeValue replaceCharactersInRange:NSMakeRange(mutStrChangeValue.length-1, 1) withString:@";"];
-    
-    HttpRequest *requestHttpModify = [[HttpRequest alloc] initWithDelegate:nil];
-    NSString *strReq = kModefy_technician_time(strUserName, week-1, mutStrChangeValue);
-    [requestHttpModify sendRequestWithURLString:strReq];
+//    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+//    NSString *strUserName = [defaultUser objectForKey:kUserName];
+//    
+//    NSMutableString *mutStrChangeValue = [NSMutableString string];
+//    for (int i = 0; i< mutArr.count; i++) {
+//        [mutStrChangeValue appendFormat:[NSString stringWithFormat:@"('%@','%@', %d),", mutArr[i], strUserName, week-1]];
+//    }
+//    [mutStrChangeValue replaceCharactersInRange:NSMakeRange(mutStrChangeValue.length-1, 1) withString:@";"];
+//    
+//    HttpRequest *requestHttpModify = [[HttpRequest alloc] initWithDelegate:nil];
+//    NSString *strReq = kModefy_technician_time(strUserName, week-1, mutStrChangeValue);
+//    [requestHttpModify sendRequestWithURLString:strReq];
 }
 
 

@@ -12,7 +12,7 @@
 #import "httpConfigure.h"
 #import "HUD.h"
 
-@interface LoginViewController ()<HttpRequestDelegate>
+@interface LoginViewController ()
 {
     HttpRequest *_loginRequest;
 }
@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self initCurResource];
     [self customSelfUI];
 }
 
@@ -33,8 +32,19 @@
 }
 
 - (IBAction)clickLoginAcction:(id)sender {
-    NSString *strReq = kLoginAuth(_userName.text, _password.text);
-    [_loginRequest sendRequestWithURLString:strReq];
+    k_WeakSelf
+    NSDictionary *dic = @{@"mobile":_userName.text, @"password":_password.text};
+    [[HttpRequest sharedHttpRequest] postUrl:kLoginURL withParam:dic didFinishBlock:^(NSString *strFeedback) {
+        NSData * data = [strFeedback dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        if ([dic[@"sucess"] boolValue]) {
+            [weakSelf loginSucessWithInfo:dic];
+        }else {
+            [weakSelf loginFailed];
+        }
+    } didFailedBlock:^(NSString *strFeedback) {
+        
+    }];
     
 }
 #pragma mark -
@@ -49,16 +59,14 @@
         [self clickLoginAcction:nil];
     }
 }
-- (void)initCurResource
-{
-    _loginRequest = [[HttpRequest alloc] initWithDelegate:self];
-}
-- (void)loginSucess
+
+- (void)loginSucessWithInfo:(NSDictionary *)dataInfo
 {
     //store login data
     NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
     [defaultUser setObject:_userName.text forKey:kUserName];
     [defaultUser setObject:_password.text forKey:kUserPassword];
+    [defaultUser setObject:dataInfo[@"obj"][kTech_Number] forKey:kTech_Number];
     [defaultUser synchronize];
     
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -68,20 +76,6 @@
 - (void)loginFailed
 {
     [HUD showUIBlockingIndicatorWithText:@"用户名或者密码错误" withTimeout:kTimeoutCount];
-}
-
-#pragma mark - delegate method
-
-- (void)didFinishRequestWithString:(NSString *)strResult
-{
-    NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    if ([dataDic[@"result"] isEqualToString:@"true"]) {
-        [self loginSucess];
-    }else{
-        [self loginFailed];
-    }
-    
 }
 
 @end

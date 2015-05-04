@@ -5,60 +5,76 @@
 //  Created by sven on 3/20/15.
 //  Copyright (c) 2015 sven@abovelink. All rights reserved.
 //
-
 #import "HttpRequest.h"
 #import "HUD.h"
-
-@interface HttpRequest ()<NSURLConnectionDataDelegate>
+@interface HttpRequest()
 {
-    NSURLConnection *_connection;
-    NSMutableData *_backData;
+    NSMutableData *_mutRecvData;
 }
 @end
 
 @implementation HttpRequest
-- (id)initWithDelegate:(id)delegate
+
+singleton_implementation(HttpRequest)
+
+- (void)postUrl:(NSString *)strURL withParam:(NSDictionary *)dicParam didFinishBlock:(BlockHttpRespond)finishBlock didFailedBlock:(BlockHttpRespond)failedBlock
 {
-    if (self = [super init]) {
-        self.delegate = delegate;
-    }
-    return self;
-}
-- (void)sendRequestWithURLString:(NSString *)strURL
-{
-    NSURL *URL = [NSURL URLWithString:[strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
-    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [HUD showUIBlockingIndicatorWithText:@"请稍候..."];
-  
-}
-
-//接受到respone,这里面包含了HTTP请求状态码和数据头信息，包括数据长度、编码格式等
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    _backData = [[NSMutableData alloc]init];
-}
-
-//接受到数据时调用
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-    [_backData appendData:data];
-}
-
-//数据接受结束时调用这个方法
--(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    NSString *strReturn = [[NSString alloc]initWithData:_backData encoding:NSUTF8StringEncoding];
-    [HUD hideUIBlockingIndicator];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishRequestWithString:)]) {
-        [self.delegate didFinishRequestWithString:strReturn];
-    }
-}
-
-//这是请求出错是调用
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    NSString *strError = [error localizedDescription];
+    _finishBlock = finishBlock;
+    _errorBlock = failedBlock;
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didFailedRequestWithErrorString:)]) {
-        [HUD hideUIBlockingIndicator];
-        [self.delegate didFailedRequestWithErrorString:strError];
+    NSMutableString *mutBodyString = [NSMutableString string];
+    [mutBodyString appendString:@"?"];
+    for (NSString *strKey in [dicParam allKeys]) {
+        NSString *subString = [NSString stringWithFormat:@"%@=%@", strKey, dicParam[strKey]];
+        [mutBodyString appendString:subString];
+        [mutBodyString appendString:@"&"];
     }
+    [mutBodyString replaceCharactersInRange:NSMakeRange(mutBodyString.length-1, 1) withString:@""];
+    
+    NSURL *postURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", strURL, mutBodyString]];
+    NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:postURL];
+    
+    NSURLConnection *connect = [[NSURLConnection alloc] initWithRequest:req delegate:self];
+    [HUD showUIBlockingIndicatorWithText:@"请稍候..."];
+    if (connect) {
+        _mutRecvData = [NSMutableData data];
+    }
+}
+
+#pragma mark NSURLConnection delegate
+-(void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [_mutRecvData setLength:0];
+}
+
+-(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data
+{
+    [_mutRecvData appendData:data];
+}
+
+-(BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
+        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+    
+    [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection*)connection
+{
+    NSString *strResult = [[NSString alloc] initWithData:_mutRecvData encoding:NSUTF8StringEncoding];
+    [HUD hideUIBlockingIndicator];
+    _finishBlock(strResult);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSString *strError = [error localizedFailureReason];
+    [HUD hideUIBlockingIndicator];
+    _errorBlock(strError);
 }
 @end

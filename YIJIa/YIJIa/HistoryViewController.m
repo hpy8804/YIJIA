@@ -60,11 +60,11 @@
 
 - (void)fetchHistoryData
 {
-    _historyRequest = [[HttpRequest alloc] initWithDelegate:self];
-    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
-    NSString *strUserName = [defaultUser objectForKey:kUserName];
-    NSString *strReq = kHistoryList(strUserName);
-    [_historyRequest sendRequestWithURLString:strReq];
+//    _historyRequest = [[HttpRequest alloc] initWithDelegate:self];
+//    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+//    NSString *strUserName = [defaultUser objectForKey:kUserName];
+//    NSString *strReq = kHistoryList(strUserName);
+//    [_historyRequest sendRequestWithURLString:strReq];
 }
 
 #pragma mark - tableview delegate & datasource

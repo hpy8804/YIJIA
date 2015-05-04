@@ -142,6 +142,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2610A4581AF762E00050F8B0 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		261EE6731AD4D66200DBED02 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		262F9C8F1AD60A6600A89C31 /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57.png; sourceTree = "<group>"; };
 		262F9C901AD60A6600A89C31 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
@@ -378,6 +379,7 @@
 		2680AEBA1AB6B6C800151A0C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2610A4581AF762E00050F8B0 /* Singleton.h */,
 				26DDE8CE1AC00531003F27B3 /* HUD.h */,
 				26DDE8CF1AC00531003F27B3 /* HUD.m */,
 				2680AEBE1AB6B77B00151A0C /* UINavigationBar+CustomBar.h */,
