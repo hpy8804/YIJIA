@@ -38,11 +38,34 @@
 
 - (void)sendRequest
 {
-//    requestHttp = [[HttpRequest alloc] initWithDelegate:self];
-//    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
-//    NSString *strUserNO = [defaultUser objectForKey:kTech_Number];
-//    NSString *strReq = kTechnician_info(strUserNO);
-//    [requestHttp sendRequestWithURLString:strReq];
+    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+    NSString *strTechNO = [defaultUser objectForKey:kTech_Number];
+    NSDictionary *dic = @{@"techNumber":strTechNO};
+    [[HttpRequest sharedHttpRequest] postUrl:kTechInfoURL withParam:dic didFinishBlock:^(NSString *strFeedback) {
+        NSData * data = [strFeedback dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *tech_info = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        if ([tech_info[@"success"] boolValue]){
+            _name.text = tech_info[@"list"][0][@"TECH_NAME"];
+            _age.text = [NSString stringWithFormat:@"%d岁", [tech_info[@"list"][0][@"TECH_AGE"] integerValue]];
+            _location.text = tech_info[@"list"][0][@"ADDRESS"];
+            _experience.text = [tech_info[@"list"][0][@"TECH_INTRO"] substringToIndex:6];
+            _experience.hidden = YES;
+            _finishedWork.text = [NSString stringWithFormat:@"%d单", [tech_info[@"list"][1][@"COUNT"] integerValue]];
+        }
+        
+    } didFailedBlock:^(NSString *strFeedback) {
+        
+    }];
+    
+    //obtain portrait
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *strURL = [NSString stringWithFormat:@"%@?techNumber=%@", kTechPortrait, strTechNO];
+        NSData *dataImg = [NSData dataWithContentsOfURL:[NSURL URLWithString:strURL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _portrait.image = [UIImage imageWithData:dataImg];
+        });
+    });
+    
 }
 - (void)initSelfData
 {
@@ -118,17 +141,6 @@
         default:
             break;
     }
-}
-
-#pragma mark delegate -
-- (void)didFinishRequestWithString:(NSString *)strResult
-{
-    NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *tech_info = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    _name.text = tech_info[@"list"][0][@"TECH_NAME"];
-    _age.text = [NSString stringWithFormat:@"%d岁", [tech_info[@"list"][0][@"TECH_AGE"] integerValue]];
-    _location.text = tech_info[@"list"][0][@"ADDRESS"];
-    _experience.text = [tech_info[@"list"][0][@"TECH_INTRO"] substringToIndex:6];
 }
 
 #pragma mark - UIAlertView delegate methods

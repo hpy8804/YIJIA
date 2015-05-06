@@ -37,7 +37,7 @@
     [[HttpRequest sharedHttpRequest] postUrl:kLoginURL withParam:dic didFinishBlock:^(NSString *strFeedback) {
         NSData * data = [strFeedback dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        if ([dic[@"sucess"] boolValue]) {
+        if ([dic[@"success"] boolValue]) {
             [weakSelf loginSucessWithInfo:dic];
         }else {
             [weakSelf loginFailed];

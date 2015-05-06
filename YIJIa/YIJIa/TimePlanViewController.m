@@ -46,6 +46,19 @@
 //    NSString *strUserName = [defaultUser objectForKey:kUserName];
 //    NSString *strReq = kTechnician_time(strUserName);
 //    [requestHttp sendRequestWithURLString:strReq];
+    
+    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+    NSString *strTechNO = [defaultUser objectForKey:kTech_Number];
+    NSDictionary *dic = @{@"techNumber":strTechNO};
+    [[HttpRequest sharedHttpRequest] postUrl:kTechTimeURL withParam:dic didFinishBlock:^(NSString *strFeedback) {
+        NSData * data = [strFeedback dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        if ([dic[@"success"] boolValue]) {
+            NSLog(@"list:%@", dic[@"list"]);
+        }
+    } didFailedBlock:^(NSString *strFeedback) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
