@@ -11,6 +11,7 @@
 #import "HttpRequest.h"
 #import "httpConfigure.h"
 #import "AppDelegate.h"
+#import "UIImageView+WebCache.h"
 
 @interface SettingViewController ()
 {
@@ -58,13 +59,8 @@
     }];
     
     //obtain portrait
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSString *strURL = [NSString stringWithFormat:@"%@?techNumber=%@", kTechPortrait, strTechNO];
-        NSData *dataImg = [NSData dataWithContentsOfURL:[NSURL URLWithString:strURL]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _portrait.image = [UIImage imageWithData:dataImg];
-        });
-    });
+    NSString *strURL = [NSString stringWithFormat:@"%@?techNumber=%@", kTechPortrait, strTechNO];
+    [_portrait sd_setImageWithURL:[NSURL URLWithString:strURL] placeholderImage:[UIImage imageNamed:@"默认用户头像"]];
     
 }
 - (void)initSelfData

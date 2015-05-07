@@ -10,6 +10,9 @@
 #import "ComMacros.h"
 #import "httpConfigure.h"
 #import "HttpRequest.h"
+#import "UIImageView+WebCache.h"
+
+#define kImgCellHeight 120
 
 @interface HistoryDetailViewController ()
 {
@@ -82,6 +85,7 @@
     return 0;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *strIndentifier = @"HistoryViewDetailCell";
@@ -89,6 +93,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:strIndentifier];
     }
+    
+    for (UIView *subView in cell.contentView.subviews) {
+        [subView removeFromSuperview];
+    }
+    
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
@@ -108,6 +117,8 @@
             {
                 cell.imageView.image = [UIImage imageNamed:@"服务地址图标"];
                 cell.textLabel.text = @"服务地址";
+                cell.detailTextLabel.numberOfLines = 2;
+                cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
                 cell.detailTextLabel.text = _modelHistory.address;
             }
                 break;
@@ -119,7 +130,10 @@
         switch (indexPath.row) {
             case 0:
             {
-                
+                UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, APP_Frame_Width, kImgCellHeight-1)];
+                [cell.contentView addSubview:imgView];
+                NSString *strURL = [NSString stringWithFormat:@"http://www.meiyanmeijia.com/wx/aiyijia/subject-image.jsp?subId=%@", _modelHistory.sub_id];
+                [imgView sd_setImageWithURL:[NSURL URLWithString:strURL] placeholderImage:nil];
             }
                 break;
             case 1:
@@ -175,8 +189,11 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self tableView:_detailTableView cellForRowAtIndexPath:indexPath];
-    return cell.frame.size.height;
+    if (indexPath.section == 1 && (indexPath.row == 0)) {
+        return kImgCellHeight;
+    }else{
+        return 44;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

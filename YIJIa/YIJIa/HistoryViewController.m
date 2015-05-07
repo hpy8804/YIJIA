@@ -14,6 +14,7 @@
 #import "httpConfigure.h"
 #import "HistoryModel.h"
 #import "Util.h"
+#import "UIImageView+WebCache.h"
 
 @interface HistoryViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -71,34 +72,39 @@
     [[HttpRequest sharedHttpRequest] postUrl:kHistoryListURL withParam:dic didFinishBlock:^(NSString *strFeedback) {
         NSData * data = [strFeedback dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        NSArray *array = dataDic[@"list"];
-//        _mutArrDatas = [NSMutableArray array];
-//        for (int i = 0; i < dataArr.count; i++) {
-//            HistoryModel *historyModel = [[HistoryModel alloc] init];
-//            historyModel.order_id = dataArr[i][@"ORDER_ID"];
-//            historyModel.open_id = dataArr[i][@"OPEN_ID"];
-//            historyModel.tech_number = dataArr[i][@"TECH_NUMBER"];
-//            historyModel.sub_id = dataArr[i][@"SUB_ID"];
-//            historyModel.sub_name = dataArr[i][@"SUB_NAME"];
-//            historyModel.person_number = dataArr[i][@"PERSON_NUMBER"];
-//            historyModel.subscribe_time = [Util countTimeFromTimeCount:[dataArr[i][@"SUBSCRIBE_TIME"] doubleValue]];
-//            historyModel.indent_price = [NSString stringWithFormat:@"%f", [dataArr[i][@"INDENT_PRICE"]doubleValue]];
-//            historyModel.pay_status = dataArr[i][@"PAY_STATUS"];
-//            historyModel.finish_status = dataArr[i][@"FINISH_STATUS"];
-//            historyModel.comment_status = dataArr[i][@"COMMENT_STATUS"];
-//            historyModel.coupon_code = dataArr[i][@"COUPON_CODE"];
-//            historyModel.cash_status = dataArr[i][@"CASH_STATUS"];
-//            historyModel.create_time = [Util countTimeFromTimeCount:[dataArr[i][@"CREATE_TIME"] doubleValue]];
-//            historyModel.update_time = [Util countTimeFromTimeCount:[dataArr[i][@"UPDATE_TIME"] doubleValue]];
-//            historyModel.address = dataArr[i][@"ADDRESS"];
-//            historyModel.mobile = dataArr[i][@"MOBILE"];
-//            historyModel.user_name = dataArr[i][@"USER_NAME"];
-//            historyModel.length = dataArr[i][@"LENGTH"];
-//            historyModel.order_code = dataArr[i][@"ORDER_CODE"];
-//            historyModel.delete_status = dataArr[i][@"DELETE_STATUS"];
-//            
-//            [_mutArrDatas addObject:historyModel];
-//        }
+        NSArray *dataArr = dataDic[@"list"][0];
+        NSArray *dataDetailArr = dataDic[@"list"][3];
+        _mutArrDatas = [NSMutableArray array];
+        for (int i = 0; i < dataArr.count; i++) {
+            NSDictionary *subDic = dataArr[i];
+            if (![[subDic allKeys] containsObject:@"ADDRESS"]) {
+                continue;
+            }
+            HistoryModel *historyModel = [[HistoryModel alloc] init];
+            historyModel.order_id = dataArr[i][@"ORDER_ID"];
+            historyModel.open_id = dataArr[i][@"OPEN_ID"];
+            historyModel.tech_number = dataArr[i][@"TECH_NUMBER"];
+            historyModel.sub_id = dataDetailArr[i][0][@"SUB_ID"];
+            historyModel.sub_name = dataDetailArr[i][0][@"SUB_NAME"];
+            historyModel.person_number = dataArr[i][@"PERSON_NUMBER"];
+            historyModel.subscribe_time = [Util countTimeFromTimeCount:[dataArr[i][@"SUBSCRIBE_TIME"] doubleValue]];
+            historyModel.indent_price = [NSString stringWithFormat:@"%.1f", [dataArr[i][@"INDENT_PRICE"]doubleValue]];
+            historyModel.pay_status = dataArr[i][@"PAY_STATUS"];
+            historyModel.finish_status = dataArr[i][@"FINISH_STATUS"];
+            historyModel.comment_status = dataArr[i][@"COMMENT_STATUS"];
+            historyModel.coupon_code = dataArr[i][@"COUPON_CODE"];
+            historyModel.cash_status = dataArr[i][@"CASH_STATUS"];
+            historyModel.create_time = [Util countTimeFromTimeCount:[dataArr[i][@"CREATE_TIME"] doubleValue]];
+            historyModel.update_time = [Util countTimeFromTimeCount:[dataArr[i][@"UPDATE_TIME"] doubleValue]];
+            historyModel.address = dataArr[i][@"ADDRESS"];
+            historyModel.mobile = dataArr[i][@"MOBILE"];
+            historyModel.user_name = dataArr[i][@"USER_NAME"];
+            historyModel.length = dataArr[i][@"LENGTH"];
+            historyModel.order_code = dataArr[i][@"ORDER_CODE"];
+            historyModel.delete_status = dataArr[i][@"DELETE_STATUS"];
+            
+            [_mutArrDatas addObject:historyModel];
+        }
         [self.tableView reloadData];
         [self.tableView headerEndRefreshing];
     } didFailedBlock:^(NSString *strFeedback) {
@@ -124,13 +130,15 @@
     cell.price.text = [NSString stringWithFormat:@"%@元", modelData.indent_price];
     cell.order_time.text = [NSString stringWithFormat:@"%@", modelData.subscribe_time];
     cell.adress.text = modelData.address;
-    
+
+    NSString *strURL = [NSString stringWithFormat:@"http://www.meiyanmeijia.com/wx/aiyijia/subject-image2.jsp?subId=%@", modelData.sub_id];
+    [cell.iconImg sd_setImageWithURL:[NSURL URLWithString:strURL] placeholderImage:nil];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 140;
+    return 125;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
