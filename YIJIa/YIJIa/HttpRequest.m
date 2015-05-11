@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 sven@abovelink. All rights reserved.
 //
 #import "HttpRequest.h"
+#import "httpConfigure.h"
 #import "HUD.h"
 @interface HttpRequest()
 {
@@ -73,8 +74,9 @@ singleton_implementation(HttpRequest)
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSString *strError = [error localizedFailureReason];
+    NSString *strError = [error domain];
     [HUD hideUIBlockingIndicator];
+    [HUD showUIBlockingIndicatorWithText:@"用户名或者密码错误" withTimeout:kTimeoutCount];
     _errorBlock(strError);
 }
 @end

@@ -17,12 +17,12 @@
         // Initialization code
         self.backgroundColor = [UIColor whiteColor];
         
-        self.text = [[UILabel alloc]initWithFrame:CGRectMake(2, 2, CGRectGetWidth(self.frame)-10, 20)];
+        self.text = [[UILabel alloc]initWithFrame:CGRectMake(0, 2, CGRectGetWidth(self.frame)-10, 20)];
         self.text.backgroundColor = [UIColor clearColor];
         self.text.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.text];
         
-        self.textStatus = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetMaxY(self.text.frame)+20, CGRectGetWidth(self.frame)-10, 20)];
+        self.textStatus = [[UILabel alloc]initWithFrame:CGRectMake(7, CGRectGetMaxY(self.text.frame)+8, CGRectGetWidth(self.frame)-10, 20)];
         self.textStatus.backgroundColor = [UIColor clearColor];
         self.textStatus.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.textStatus];

@@ -43,7 +43,7 @@
     [self registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:CELLIDENTIFIER];
     self.delegate = self;
     self.dataSource = self;
-    self.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundColor = [UIColor colorWithRed:243/255.0f green:242/255.0f blue:240/255.0f alpha:1.0];
 }
 
 #pragma mark -
@@ -74,7 +74,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((APP_Frame_Width-4)/4, (APP_Frame_Width-4)/4);
+    return CGSizeMake((APP_Frame_Width-4)/4, (APP_Frame_Width-4)/6);
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

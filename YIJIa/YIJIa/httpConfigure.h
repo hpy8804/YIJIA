@@ -39,15 +39,4 @@
 
 //修改排班
 #define kModefy_technician_time(_name, _week, _changeValue) [NSString stringWithFormat:@"%@/standInterface/updateBatch.do?sql0=delete from ayj_technician_rest where tech_number = '%@' and week =%d;&sql1=INSERT INTO ayj_technician_rest (start_time,tech_number,week) VALUES %@", kBaseURL, _name, _week, _changeValue]
-
-//week
-typedef enum {
-    Sun = 0,
-    Mon,
-    Tues,
-    Wed,
-    Thur,
-    Fri,
-    Sat
-}WeekDay;
 #endif

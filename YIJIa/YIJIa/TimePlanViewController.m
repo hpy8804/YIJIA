@@ -12,6 +12,7 @@
 #import "CustomCollectionView.h"
 #import "HttpRequest.h"
 #import "httpConfigure.h"
+#import "Util.h"
 
 #define MENU_HEIGHT 40
 #define MENU_BUTTON_WIDTH  40
@@ -54,7 +55,13 @@
         NSData * data = [strFeedback dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
         if ([dic[@"success"] boolValue]) {
-            NSLog(@"list:%@", dic[@"list"]);
+            NSLog(@"list:%@", dic[@"list"][1]);
+            NSArray *arrDatas = dic[@"list"][1];
+            for (int i = 0; i < arrDatas.count; i++) {
+                NSLog(@"arrdatas[%d]:%@", i, arrDatas[i]);
+            }
+            
+            [self customSelfUI];
         }
     } didFailedBlock:^(NSString *strFeedback) {
         
@@ -75,11 +82,17 @@
     
     _navScrollV = [[TouchPropagatedScrollView alloc] initWithFrame:CGRectMake(0, 5, APP_Frame_Width, 44)];
     [_navScrollV setShowsHorizontalScrollIndicator:NO];
-    for (int i = 0; i < 7; i++) {
+    NSArray *arrWeek = [Util judgeOneWeekDayFromNow];
+    
+    for (int i = 0; i < 6; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setFrame:CGRectMake((MENU_BUTTON_WIDTH+5) * i, 0, MENU_BUTTON_WIDTH, MENU_HEIGHT)];
+        [btn setFrame:CGRectMake((MENU_BUTTON_WIDTH+13) * i+4, 0, MENU_BUTTON_WIDTH, MENU_HEIGHT)];
         NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", i];
         [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
+        [btn setTitle:arrWeek[i] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:11.0f];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(15.0, 2, 2, 2)];
         btn.tag = i + 1;
         if (i == 0) {
             [self changeColorForButton:btn red:1];
@@ -89,7 +102,7 @@
         [btn addTarget:self action:@selector(actionbtn:) forControlEvents:UIControlEventTouchUpInside];
         [_navScrollV addSubview:btn];
     }
-    [_navScrollV setContentSize:CGSizeMake(MENU_BUTTON_WIDTH * 7, MENU_HEIGHT)];
+    [_navScrollV setContentSize:CGSizeMake(MENU_BUTTON_WIDTH * 6, MENU_HEIGHT)];
     [self.view addSubview:_navScrollV];
     
     _scrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navScrollV.frame), APP_Frame_Width, APP_Frame_Height_Use)];
@@ -98,9 +111,9 @@
     [self.view addSubview:_scrollV];
     _scrollV.delegate = self;
     [_scrollV.panGestureRecognizer addTarget:self action:@selector(scrollHandlePan:)];
-    _scrollV.backgroundColor = [UIColor lightGrayColor];
+    _scrollV.backgroundColor = [UIColor colorWithRed:243/255.0f green:242/255.0f blue:240/255.0f alpha:1.0];
     
-    NSArray *arT = @[@"0", @"1",@"2",@"3",@"4",@"5",@"6"];
+    NSArray *arT = @[@"0", @"1",@"2",@"3",@"4",@"5"];
     [self addView2Page:_scrollV array:arT];
 }
 
@@ -125,11 +138,13 @@
 - (void)changeColorForButton:(UIButton *)btn red:(float)nRedPercent
 {
     if (nRedPercent == 1) {
-        NSString *strImage = [NSString stringWithFormat:@"周%d_红色", btn.tag-1];
+        NSString *strImage = [NSString stringWithFormat:@"周%d_红色", btn.tag];
         [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }else{
-        NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", btn.tag-1];
+        NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", btn.tag];
         [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }
 }
 
@@ -204,15 +219,11 @@
     }
     UIButton *btn = (UIButton *)[_navScrollV viewWithTag:sT];
     float percent = (startX - MENU_BUTTON_WIDTH * (sT - 1))/MENU_BUTTON_WIDTH;
-    float value = [self lerp:(1 - percent) min:MIN_MENU_FONT max:MAX_MENU_FONT];
-    btn.titleLabel.font = [UIFont systemFontOfSize:value];
     [self changeColorForButton:btn red:(1 - percent)];
     
     if((int)xx%MENU_BUTTON_WIDTH == 0)
         return;
     UIButton *btn2 = (UIButton *)[_navScrollV viewWithTag:sT + 1];
-    float value2 = [self lerp:percent min:MIN_MENU_FONT max:MAX_MENU_FONT];
-    btn2.titleLabel.font = [UIFont systemFontOfSize:value2];
     [self changeColorForButton:btn2 red:percent];
 }
 
@@ -265,44 +276,44 @@
 
 #pragma mark --
 #pragma mark delegate -
-- (void)didFinishRequestWithString:(NSString *)strResult
-{
-    NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray * dataArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    NSMutableArray *array0 = [NSMutableArray array];
-    NSMutableArray *array1 = [NSMutableArray array];
-    NSMutableArray *array2 = [NSMutableArray array];
-    NSMutableArray *array3 = [NSMutableArray array];
-    NSMutableArray *array4 = [NSMutableArray array];
-    NSMutableArray *array5 = [NSMutableArray array];
-    NSMutableArray *array6 = [NSMutableArray array];
-    for (NSDictionary *subDic in dataArr) {
-        if ([subDic[@"WEEK"] integerValue] == Sun) {
-            [array0 addObject:subDic[@"START_TIME"]];
-        }else if ([subDic[@"WEEK"] integerValue] == Mon){
-            [array1 addObject:subDic[@"START_TIME"]];
-        }else if ([subDic[@"WEEK"] integerValue] == Tues){
-            [array2 addObject:subDic[@"START_TIME"]];
-        }else if ([subDic[@"WEEK"] integerValue] == Wed){
-            [array3 addObject:subDic[@"START_TIME"]];
-        }else if ([subDic[@"WEEK"] integerValue] == Thur){
-            [array4 addObject:subDic[@"START_TIME"]];
-        }else if ([subDic[@"WEEK"] integerValue] == Fri){
-            [array5 addObject:subDic[@"START_TIME"]];
-        }else if ([subDic[@"WEEK"] integerValue] == Sat){
-            [array6 addObject:subDic[@"START_TIME"]];
-        }
-    }
-    
-    _mutDic = [NSMutableDictionary dictionary];
-    [_mutDic setObject:array0 forKey:[NSString stringWithFormat:@"%d", Sun]];
-    [_mutDic setObject:array1 forKey:[NSString stringWithFormat:@"%d", Mon]];
-    [_mutDic setObject:array2 forKey:[NSString stringWithFormat:@"%d", Tues]];
-    [_mutDic setObject:array3 forKey:[NSString stringWithFormat:@"%d", Wed]];
-    [_mutDic setObject:array4 forKey:[NSString stringWithFormat:@"%d", Thur]];
-    [_mutDic setObject:array5 forKey:[NSString stringWithFormat:@"%d", Fri]];
-    [_mutDic setObject:array6 forKey:[NSString stringWithFormat:@"%d", Sat]];
-    
-    [self customSelfUI];
-}
+//- (void)didFinishRequestWithString:(NSString *)strResult
+//{
+//    NSData * data = [strResult dataUsingEncoding:NSUTF8StringEncoding];
+//    NSArray * dataArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+//    NSMutableArray *array0 = [NSMutableArray array];
+//    NSMutableArray *array1 = [NSMutableArray array];
+//    NSMutableArray *array2 = [NSMutableArray array];
+//    NSMutableArray *array3 = [NSMutableArray array];
+//    NSMutableArray *array4 = [NSMutableArray array];
+//    NSMutableArray *array5 = [NSMutableArray array];
+//    NSMutableArray *array6 = [NSMutableArray array];
+//    for (NSDictionary *subDic in dataArr) {
+//        if ([subDic[@"WEEK"] integerValue] == Sun) {
+//            [array0 addObject:subDic[@"START_TIME"]];
+//        }else if ([subDic[@"WEEK"] integerValue] == Mon){
+//            [array1 addObject:subDic[@"START_TIME"]];
+//        }else if ([subDic[@"WEEK"] integerValue] == Tues){
+//            [array2 addObject:subDic[@"START_TIME"]];
+//        }else if ([subDic[@"WEEK"] integerValue] == Wed){
+//            [array3 addObject:subDic[@"START_TIME"]];
+//        }else if ([subDic[@"WEEK"] integerValue] == Thur){
+//            [array4 addObject:subDic[@"START_TIME"]];
+//        }else if ([subDic[@"WEEK"] integerValue] == Fri){
+//            [array5 addObject:subDic[@"START_TIME"]];
+//        }else if ([subDic[@"WEEK"] integerValue] == Sat){
+//            [array6 addObject:subDic[@"START_TIME"]];
+//        }
+//    }
+//    
+//    _mutDic = [NSMutableDictionary dictionary];
+//    [_mutDic setObject:array0 forKey:[NSString stringWithFormat:@"%d", Sun]];
+//    [_mutDic setObject:array1 forKey:[NSString stringWithFormat:@"%d", Mon]];
+//    [_mutDic setObject:array2 forKey:[NSString stringWithFormat:@"%d", Tues]];
+//    [_mutDic setObject:array3 forKey:[NSString stringWithFormat:@"%d", Wed]];
+//    [_mutDic setObject:array4 forKey:[NSString stringWithFormat:@"%d", Thur]];
+//    [_mutDic setObject:array5 forKey:[NSString stringWithFormat:@"%d", Fri]];
+//    [_mutDic setObject:array6 forKey:[NSString stringWithFormat:@"%d", Sat]];
+//    
+//    [self customSelfUI];
+//}
 @end
