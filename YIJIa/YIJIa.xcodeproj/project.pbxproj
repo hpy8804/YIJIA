@@ -87,8 +87,8 @@
 		2680AF9B1AB6BEB700151A0C /* 周0_灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF491AB6BEB700151A0C /* 周0_灰色.png */; };
 		2680AF9C1AB6BEB700151A0C /* 周0_红色.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4A1AB6BEB700151A0C /* 周0_红色.png */; };
 		2680AF9D1AB6BEB700151A0C /* 12.“服务”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */; };
-		2680AF9E1AB6BEB700151A0C /* 13.“空闲”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */; };
-		2680AF9F1AB6BEB700151A0C /* 14.“休息”图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */; };
+		2680AF9E1AB6BEB700151A0C /* 空闲图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4C1AB6BEB700151A0C /* 空闲图标.png */; };
+		2680AF9F1AB6BEB700151A0C /* 休息图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4D1AB6BEB700151A0C /* 休息图标.png */; };
 		2680AFA01AB6BEB700151A0C /* 15.顶栏--每周X排班.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4E1AB6BEB700151A0C /* 15.顶栏--每周X排班.png */; };
 		2680AFA11AB6BEB700151A0C /* 16.“休息”按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF4F1AB6BEB700151A0C /* 16.“休息”按钮.png */; };
 		2680AFA21AB6BEB700151A0C /* 17.“工作”按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680AF501AB6BEB700151A0C /* 17.“工作”按钮.png */; };
@@ -236,8 +236,8 @@
 		2680AF491AB6BEB700151A0C /* 周0_灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周0_灰色.png"; sourceTree = "<group>"; };
 		2680AF4A1AB6BEB700151A0C /* 周0_红色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "周0_红色.png"; sourceTree = "<group>"; };
 		2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12.“服务”图标.png"; sourceTree = "<group>"; };
-		2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13.“空闲”图标.png"; sourceTree = "<group>"; };
-		2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14.“休息”图标.png"; sourceTree = "<group>"; };
+		2680AF4C1AB6BEB700151A0C /* 空闲图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空闲图标.png"; sourceTree = "<group>"; };
+		2680AF4D1AB6BEB700151A0C /* 休息图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "休息图标.png"; sourceTree = "<group>"; };
 		2680AF4E1AB6BEB700151A0C /* 15.顶栏--每周X排班.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "15.顶栏--每周X排班.png"; sourceTree = "<group>"; };
 		2680AF4F1AB6BEB700151A0C /* 16.“休息”按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16.“休息”按钮.png"; sourceTree = "<group>"; };
 		2680AF501AB6BEB700151A0C /* 17.“工作”按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "17.“工作”按钮.png"; sourceTree = "<group>"; };
@@ -480,8 +480,8 @@
 				2680AF3A1AB6BEB700151A0C /* 10.顶栏--时间表.png */,
 				2680AF3B1AB6BEB700151A0C /* 11.排班圆形图标 */,
 				2680AF4B1AB6BEB700151A0C /* 12.“服务”图标.png */,
-				2680AF4C1AB6BEB700151A0C /* 13.“空闲”图标.png */,
-				2680AF4D1AB6BEB700151A0C /* 14.“休息”图标.png */,
+				2680AF4C1AB6BEB700151A0C /* 空闲图标.png */,
+				2680AF4D1AB6BEB700151A0C /* 休息图标.png */,
 				2680AF4E1AB6BEB700151A0C /* 15.顶栏--每周X排班.png */,
 				2680AF4F1AB6BEB700151A0C /* 16.“休息”按钮.png */,
 				2680AF501AB6BEB700151A0C /* 17.“工作”按钮.png */,
@@ -777,7 +777,7 @@
 				262F9C981AD60A6600A89C31 /* Default-568h@2x.png in Resources */,
 				2680AF8B1AB6BEB700151A0C /* Thumbs.db in Resources */,
 				26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */,
-				2680AF9F1AB6BEB700151A0C /* 14.“休息”图标.png in Resources */,
+				2680AF9F1AB6BEB700151A0C /* 休息图标.png in Resources */,
 				2680AF9B1AB6BEB700151A0C /* 周0_灰色.png in Resources */,
 				2680AF9C1AB6BEB700151A0C /* 周0_红色.png in Resources */,
 				2680AF821AB6BEB700151A0C /* 新手@2x.png in Resources */,
@@ -799,7 +799,7 @@
 				2680AF921AB6BEB700151A0C /* 周2_红色.png in Resources */,
 				26D97F641ABACAA00043A887 /* HistoryViewCell.xib in Resources */,
 				2680AF851AB6BEB700151A0C /* 4.订单底栏.png in Resources */,
-				2680AF9E1AB6BEB700151A0C /* 13.“空闲”图标.png in Resources */,
+				2680AF9E1AB6BEB700151A0C /* 空闲图标.png in Resources */,
 				265EC8A51ABC18AD001FE9F3 /* 设置_灰色@2x.png in Resources */,
 				2680AF811AB6BEB700151A0C /* 新手.png in Resources */,
 				2680AF8D1AB6BEB700151A0C /* 10.顶栏--时间表.png in Resources */,

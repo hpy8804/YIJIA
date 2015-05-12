@@ -12,6 +12,7 @@
 #import "httpConfigure.h"
 #import "AppDelegate.h"
 #import "UIImageView+WebCache.h"
+#import "HUD.h"
 
 @interface SettingViewController ()
 {
@@ -120,7 +121,7 @@
             break;
         case 2:
         {
-            
+            [HUD showUIBlockingIndicatorWithText:@"当前已是最新版本!" withTimeout:kTimeoutCount];
         }
             break;
         case 3:

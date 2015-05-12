@@ -9,16 +9,6 @@
 #import "Util.h"
 #import "UINavigationBar+CustomBar.h"
 
-typedef enum{
-    SUN = 1,
-    MON,
-    TUES,
-    WED,
-    THUR,
-    FRI,
-    SAT
-}Week;
-
 @implementation Util
 
 + (void)setNavigationCtrollerBackImg:(UINavigationController *)naviCtl
@@ -65,43 +55,93 @@ typedef enum{
     NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     now=[NSDate date];
     comps = [calendar components:unitFlags fromDate:now];
-    NSInteger week = [comps weekday];
-    
     NSMutableArray *mutArrDates = [NSMutableArray array];
-    if (week - 1 == 0) {
-        //sun
-        for (int i = 1; i < 7; i++) {
-            NSDate *dateCur = [NSDate dateWithTimeIntervalSinceNow:i*3600*24];
-            NSInteger month = [[calendar components:unitFlags fromDate:dateCur] month];
-            NSInteger day = [[calendar components:unitFlags fromDate:dateCur] day];
-            [mutArrDates addObject:[NSString stringWithFormat:@"%d.%d", month, day]];
-        }
-    }else if (week - 1 == 6){
-        //sat
-        for (int i = 1; i < 7; i++) {
-            NSDate *dateCur = [NSDate dateWithTimeIntervalSinceNow:-i*3600*24];
-            NSInteger month = [[calendar components:unitFlags fromDate:dateCur] month];
-            NSInteger day = [[calendar components:unitFlags fromDate:dateCur] day];
-            [mutArrDates addObject:[NSString stringWithFormat:@"%d.%d", month, day]];
-        }
-    }else{
-        //between
-        for (int i = MON; i < week; i++) {
-            NSDate *dateCur = [NSDate dateWithTimeIntervalSinceNow:-i*3600*24];
-            NSInteger month = [[calendar components:unitFlags fromDate:dateCur] month];
-            NSInteger day = [[calendar components:unitFlags fromDate:dateCur] day];
-            [mutArrDates addObject:[NSString stringWithFormat:@"%d.%d", month, day]];
-        }
-        
-        for (int j = 0; j < (SAT-week)+1; j++) {
-            NSDate *dateCur = [NSDate dateWithTimeIntervalSinceNow:j*3600*24];
-            NSInteger month = [[calendar components:unitFlags fromDate:dateCur] month];
-            NSInteger day = [[calendar components:unitFlags fromDate:dateCur] day];
-            [mutArrDates addObject:[NSString stringWithFormat:@"%d.%d", month, day]];
-        }
+
+    [mutArrDates addObject:[NSString stringWithFormat:@"%d-%.2d-%.2d",[comps year],[comps month], [comps day]]];
+    for (int i = 1; i < 6; i++) {
+        NSDate *dateCur = [NSDate dateWithTimeIntervalSinceNow:i*3600*24];
+        NSInteger year = [[calendar components:unitFlags fromDate:dateCur] year];
+        NSInteger month = [[calendar components:unitFlags fromDate:dateCur] month];
+        NSInteger day = [[calendar components:unitFlags fromDate:dateCur] day];
+        [mutArrDates addObject:[NSString stringWithFormat:@"%d-%.2d-%.2d",year,month, day]];
     }
     
     return [NSArray arrayWithArray:mutArrDates];
     
+}
+
++ (NSArray *)obtainOneWeekDaysFromNow
+{
+    NSMutableArray *mutArrWeeks = [NSMutableArray array];
+    NSArray *arrdatas = [self judgeOneWeekDayFromNow];
+    for (int i = 0; i < arrdatas.count; i++) {
+        NSString *strDetail = arrdatas[i];
+        NSDateComponents *_comps = [[NSDateComponents alloc] init];
+        [_comps setDay:[[strDetail substringWithRange:NSMakeRange(8, 2)] integerValue]];
+        [_comps setMonth:[[strDetail substringWithRange:NSMakeRange(5, 2)] integerValue]];
+        [_comps setYear:[[strDetail substringWithRange:NSMakeRange(0, 4)] integerValue]];
+        NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+        NSDate *_date = [gregorian dateFromComponents:_comps];
+        NSDateComponents *weekdayComponents =[gregorian components:NSWeekdayCalendarUnit fromDate:_date];
+        int _weekday = [weekdayComponents weekday];
+        NSString *strWeek = nil;
+        switch (_weekday) {
+            case 1:
+            {
+                strWeek = [NSString stringWithFormat:@"%d", SUN];
+            }
+                break;
+            case 2:
+            {
+                strWeek = [NSString stringWithFormat:@"%d", MON];
+            }
+                break;
+            case 3:
+            {
+                strWeek = [NSString stringWithFormat:@"%d", TUES];
+            }
+                break;
+            case 4:
+            {
+                strWeek = [NSString stringWithFormat:@"%d", WED];
+            }
+                break;
+            case 5:
+            {
+                strWeek = [NSString stringWithFormat:@"%d", THUR];
+            }
+                break;
+            case 6:
+            {
+                strWeek = [NSString stringWithFormat:@"%d", FRI];
+            }
+                break;
+            case 7:
+            {
+                strWeek = [NSString stringWithFormat:@"%d", SAT];
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        [mutArrWeeks addObject:strWeek];
+    }
+    
+    return mutArrWeeks;
+}
+
++ (NSInteger)weekFromDateString:(NSString *)dateString
+{
+    NSDateComponents *_comps = [[NSDateComponents alloc] init];
+    [_comps setDay:[[dateString substringWithRange:NSMakeRange(8, 2)] integerValue]];
+    [_comps setMonth:[[dateString substringWithRange:NSMakeRange(5, 2)] integerValue]];
+    [_comps setYear:[[dateString substringWithRange:NSMakeRange(0, 4)] integerValue]];
+    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *_date = [gregorian dateFromComponents:_comps];
+    NSDateComponents *weekdayComponents =[gregorian components:NSWeekdayCalendarUnit fromDate:_date];
+    NSInteger _weekday = [weekdayComponents weekday];
+    return _weekday;
 }
 @end

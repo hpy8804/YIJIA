@@ -32,10 +32,11 @@
 
 - (void)customSelfData
 {
-    _constArrData = @[@"8:00", @"8:30", @"9:00", @"9:30", @"10:00", @"10:30",
-                      @"11:00", @"11:30", @"12:00", @"12:30", @"13:00", @"13:30",
-                      @"14:00", @"14:30", @"15:00", @"15:30", @"16:00", @"16:30",
-                      @"17:00", @"17:30", @"18:00", @"18:30", @"19:00", @"19:30"];
+    _constArrData = @[ @"8:30", @"9:00", @"9:30", @"10:00", @"10:30", @"11:00",
+                       @"11:30", @"12:00", @"12:30", @"13:00", @"13:30", @"14:00",
+                       @"14:30", @"15:00", @"15:30", @"16:00", @"16:30", @"17:00",
+                       @"17:30", @"18:00", @"18:30", @"19:00", @"19:30", @"20:00",
+                       @"20:30", @"21:00", @"21:30", @"22:00"];
 }
 
 - (void)customSelfUI
@@ -49,7 +50,7 @@
 #pragma mark -
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 24;
+    return _constArrData.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -63,10 +64,10 @@
     cell.text.text = strTitleTime;
     if ([_arrData containsObject:strTitleTime]) {
         cell.textStatus.text = @"休息";
-        cell.backgroundColor = [UIColor redColor];
+        cell.backgroundColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0];
     }else{
         cell.textStatus.text = @"空闲";
-        cell.backgroundColor = [UIColor whiteColor];
+        cell.backgroundColor = [UIColor colorWithRed:249/255.0f green:127/255.0f blue:164/255.0f alpha:1.0];
     }
     [cell sizeToFit];
     return cell;
