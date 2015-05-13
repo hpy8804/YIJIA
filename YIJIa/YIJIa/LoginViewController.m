@@ -47,6 +47,14 @@
     }];
     
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_userName resignFirstResponder];
+    [_password resignFirstResponder];
+    
+    return YES;
+}
 #pragma mark -
 
 - (void)customSelfUI
