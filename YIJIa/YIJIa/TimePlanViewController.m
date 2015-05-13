@@ -28,6 +28,9 @@
     NSMutableDictionary *_mutDicWeek;
     NSMutableDictionary *_mutDicDate;
     BOOL bIsChangeWork;
+    UIView *_switchView;
+    UIButton *btnSelectAll;
+    UIButton *btnUnSelectAll;
 }
 
 @end
@@ -63,6 +66,7 @@
                 NSString *strTime = [strDateString substringToIndex:10];
                 NSString *strTimeSub = [strDateString substringFromIndex:11];
                 NSInteger week = [Util weekFromDateString:strTime];
+                
                 if (week == SUN) {
                     [array0 addObject:strTimeSub];
                 }else if (week == MON){
@@ -112,7 +116,10 @@
     [_navScrollV setShowsHorizontalScrollIndicator:NO];
     NSArray *arrWeek = [Util obtainOneWeekDaysFromNow];
     NSArray *arrDays = [Util judgeOneWeekDayFromNow];
+    _mutDicDate = [NSMutableDictionary dictionary];
     for (int i = 0; i < arrWeek.count; i++) {
+        [_mutDicDate setObject:[arrDays[i] substringToIndex:10] forKey:[NSString stringWithFormat:@"%d", ([arrWeek[i] integerValue])]];
+        
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setFrame:CGRectMake((MENU_BUTTON_WIDTH+13) * i+4, 0, MENU_BUTTON_WIDTH, MENU_HEIGHT)];
         NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", ([arrWeek[i] integerValue]-1)];
@@ -134,6 +141,28 @@
     [_navScrollV setContentSize:CGSizeMake(MENU_BUTTON_WIDTH * 6, MENU_HEIGHT)];
     [self.view addSubview:_navScrollV];
     
+    _switchView = [[UIView alloc] initWithFrame:_navScrollV.frame];
+    _switchView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:_switchView];
+    _switchView.hidden = YES;
+    btnSelectAll = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnSelectAll setFrame:CGRectMake((APP_Frame_Width-100*2)/2, 10, 100, 30)];
+    [btnSelectAll setTitle:@"全选" forState:UIControlStateNormal];
+    [btnSelectAll setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnSelectAll setTitleColor:[UIColor colorWithRed:249/255.0f green:127/255.0f blue:164/255.0f alpha:1.0] forState:UIControlStateSelected];
+    [btnSelectAll setBackgroundColor:[UIColor lightGrayColor]];
+    [btnSelectAll addTarget:self action:@selector(handleSelectAll) forControlEvents:UIControlEventTouchUpInside];
+    
+    btnUnSelectAll = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnUnSelectAll setFrame:CGRectMake((APP_Frame_Width-100*2)/2+100+1, 10, 100, 30)];
+    [btnUnSelectAll setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnUnSelectAll setTitleColor:[UIColor colorWithRed:249/255.0f green:127/255.0f blue:164/255.0f alpha:1.0] forState:UIControlStateSelected];
+    [btnUnSelectAll setTitle:@"全不选" forState:UIControlStateNormal];
+    [btnUnSelectAll setBackgroundColor:[UIColor lightGrayColor]];
+    [btnUnSelectAll addTarget:self action:@selector(handleUnSelectAll) forControlEvents:UIControlEventTouchUpInside];
+    [_switchView addSubview:btnSelectAll];
+    [_switchView addSubview:btnUnSelectAll];
+    
     _scrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navScrollV.frame), APP_Frame_Width, APP_Frame_Height_Use)];
     [_scrollV setPagingEnabled:YES];
     [_scrollV setShowsHorizontalScrollIndicator:NO];
@@ -154,7 +183,8 @@
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         NSString *strKey = [NSString stringWithFormat:@"%d", [arr[i] integerValue]];
         NSMutableArray *mutArr = _mutDicWeek[strKey];
-        CustomCollectionView *view = [[CustomCollectionView alloc] initWithFrame:CGRectMake(scrollV.frame.size.width * i, 0, scrollV.frame.size.width, scrollV.frame.size.height) collectionViewLayout:flowLayout array:mutArr];
+        NSString *strDate = _mutDicDate[strKey];
+        CustomCollectionView *view = [[CustomCollectionView alloc] initWithFrame:CGRectMake(scrollV.frame.size.width * i, 0, scrollV.frame.size.width, scrollV.frame.size.height) collectionViewLayout:flowLayout array:mutArr dateString:strDate];
         view.autoresizesSubviews = YES;
         view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         view.tag = i+1;
@@ -166,12 +196,13 @@
 
 - (void)changeColorForButton:(UIButton *)btn red:(float)nRedPercent
 {
+    NSArray *arrWeek = [Util obtainOneWeekDaysFromNow];
     if (nRedPercent == 1) {
-        NSString *strImage = [NSString stringWithFormat:@"周%d_红色", btn.tag+1];
+        NSString *strImage = [NSString stringWithFormat:@"周%d_红色", ([arrWeek[btn.tag-1] integerValue]-1)];
         [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }else{
-        NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", btn.tag+1];
+        NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", ([arrWeek[btn.tag-1] integerValue]-1)];
         [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }
@@ -256,6 +287,31 @@
     [self changeColorForButton:btn2 red:percent];
 }
 
+- (void)handleSelectAll
+{
+    btnSelectAll.selected = YES;
+    btnUnSelectAll.selected = NO;
+    int tag = _scrollV.contentOffset.x/APP_Frame_Width+1;
+    CustomCollectionView *subView = (CustomCollectionView *)[_scrollV viewWithTag:tag];
+    subView.arrData = [NSMutableArray arrayWithArray:@[ @"8:30", @"9:00", @"9:30", @"10:00", @"10:30", @"11:00",
+                                                        @"11:30", @"12:00", @"12:30", @"13:00", @"13:30", @"14:00",
+                                                        @"14:30", @"15:00", @"15:30", @"16:00", @"16:30", @"17:00",
+                                                        @"17:30", @"18:00", @"18:30", @"19:00", @"19:30", @"20:00",
+                                                        @"20:30", @"21:00", @"21:30", @"22:00"]];
+    [subView reloadData];
+}
+
+- (void)handleUnSelectAll
+{
+    btnSelectAll.selected = NO;
+    btnUnSelectAll.selected = YES;
+    
+    int tag = _scrollV.contentOffset.x/APP_Frame_Width+1;
+    CustomCollectionView *subView = (CustomCollectionView *)[_scrollV viewWithTag:tag];
+    subView.arrData = [NSMutableArray array];
+    [subView reloadData];
+}
+
 - (void)handleChangeWork
 {
     int tag = _scrollV.contentOffset.x/APP_Frame_Width+1;
@@ -267,18 +323,20 @@
         bIsChangeWork = NO;
         self.navigationItem.rightBarButtonItem.title = @"修改排班";
         
-        [self saveTimeArange:subView.arrData week:tag];
+        [self saveTimeArange:subView.arrData date:subView.strDate];
     }
     subView.bIsChanging = bIsChangeWork;
     
     [UIView animateWithDuration:0.3f animations:^{
         if (bIsChangeWork) {
             _navScrollV.hidden = YES;
-            _scrollV.frame = CGRectMake(0, 0, APP_Frame_Width, APP_Frame_Height_Use+CGRectGetHeight(_navScrollV.frame));
+            _switchView.hidden = NO;
+//            _scrollV.frame = CGRectMake(0, 0, APP_Frame_Width, APP_Frame_Height_Use+CGRectGetHeight(_navScrollV.frame));
             _scrollV.scrollEnabled = NO;
         }else{
             _navScrollV.hidden = NO;
-            _scrollV.frame = CGRectMake(0, CGRectGetMaxY(_navScrollV.frame), APP_Frame_Width, APP_Frame_Height_Use);
+            _switchView.hidden = YES;
+//            _scrollV.frame = CGRectMake(0, CGRectGetMaxY(_navScrollV.frame), APP_Frame_Width, APP_Frame_Height_Use);
             _scrollV.scrollEnabled = YES;
         }
     } completion:^(BOOL finished) {
@@ -286,12 +344,32 @@
     }];
 }
 
-- (void)saveTimeArange:(NSMutableArray *)mutArr week:(NSInteger)week
+- (void)saveTimeArange:(NSMutableArray *)mutArr date:(NSString *)strDate
 {
     NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
-    NSString *strUserName = [defaultUser objectForKey:kUserName];
+    NSString *strUserNO = [defaultUser objectForKey:kTech_Number];
     
-//    kModefyTechURL
+    NSMutableString *mutStrDateTime = [NSMutableString string];
+    for (int i = 0; i < mutArr.count; i++) {
+        NSString *strSub = [NSString stringWithFormat:@"%@ %@,", strDate, mutArr[i]];
+        [mutStrDateTime appendString:strSub];
+    }
+    if (mutStrDateTime.length > 1) {
+        [mutStrDateTime replaceCharactersInRange:NSMakeRange(mutStrDateTime.length-1, 1) withString:@""];
+    }else {
+        [mutStrDateTime appendString:@""];
+    }
+    
+    NSString *strReturnDateTime = [mutStrDateTime stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dic = @{@"techNumber":strUserNO, @"date":strDate, @"dateTime":strReturnDateTime};
+    [[HttpRequest sharedHttpRequest] postUrl:kModefyTechURL withParam:dic didFinishBlock:^(NSString *strFeedback) {
+        {
+            NSLog(@"strFeedBack:%@", strFeedback);
+        }
+    } didFailedBlock:^(NSString *strFeedback) {
+        {
+        }
+    }];
 }
 
 @end

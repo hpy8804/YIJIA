@@ -20,11 +20,12 @@
 
 @implementation CustomCollectionView
 
-- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout array:(NSMutableArray *)arr
+- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout array:(NSMutableArray *)arr dateString:(NSString *)date
 {
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
         [self customSelfData];
         _arrData = arr;
+        _strDate = date;
         [self customSelfUI];
     }
     return self;

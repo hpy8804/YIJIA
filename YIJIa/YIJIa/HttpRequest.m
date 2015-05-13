@@ -30,9 +30,10 @@ singleton_implementation(HttpRequest)
         [mutBodyString appendString:subString];
         [mutBodyString appendString:@"&"];
     }
-    [mutBodyString replaceCharactersInRange:NSMakeRange(mutBodyString.length-1, 1) withString:@""];
     
-    NSURL *postURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", strURL, mutBodyString]];
+    [mutBodyString replaceCharactersInRange:NSMakeRange(mutBodyString.length-1, 1) withString:@""];
+    NSString *strResource = [NSString stringWithFormat:@"%@%@", strURL, mutBodyString];
+    NSURL *postURL = [NSURL URLWithString:strResource];
     NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:postURL];
     
     NSURLConnection *connect = [[NSURLConnection alloc] initWithRequest:req delegate:self];
@@ -76,7 +77,7 @@ singleton_implementation(HttpRequest)
 {
     NSString *strError = [error domain];
     [HUD hideUIBlockingIndicator];
-    [HUD showUIBlockingIndicatorWithText:@"用户名或者密码错误" withTimeout:kTimeoutCount];
+    [HUD showUIBlockingIndicatorWithText:@"请求失败，请检查服务器" withTimeout:kTimeoutCount];
     _errorBlock(strError);
 }
 @end
