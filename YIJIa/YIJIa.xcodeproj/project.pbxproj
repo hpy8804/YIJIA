@@ -117,10 +117,6 @@
 		26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3000E1AC0499D0066E2C8 /* HistoryDetailViewController.m */; };
 		26B300111AC0499D0066E2C8 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B3000F1AC0499D0066E2C8 /* HistoryDetailViewController.xib */; };
 		26B3001B1AC19F950066E2C8 /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B3001A1AC19F950066E2C8 /* HistoryModel.m */; };
-		26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */; };
-		26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */; };
-		26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F561ABA992D0043A887 /* DateTimeViewController.m */; };
-		26D97F591ABA992D0043A887 /* DateTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F571ABA992D0043A887 /* DateTimeViewController.xib */; };
 		26D97F631ABACAA00043A887 /* HistoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F611ABACAA00043A887 /* HistoryViewCell.m */; };
 		26D97F641ABACAA00043A887 /* HistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D97F621ABACAA00043A887 /* HistoryViewCell.xib */; };
 		26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D97F671ABB072A0043A887 /* LoginViewController.m */; };
@@ -274,12 +270,6 @@
 		26B300191AC19F950066E2C8 /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
 		26B3001A1AC19F950066E2C8 /* HistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryModel.m; sourceTree = "<group>"; };
 		26D97F461ABA94FA0043A887 /* ComMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacros.h; sourceTree = "<group>"; };
-		26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTimeViewController.h; sourceTree = "<group>"; };
-		26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTimeViewController.m; sourceTree = "<group>"; };
-		26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTimeViewController.xib; sourceTree = "<group>"; };
-		26D97F551ABA992D0043A887 /* DateTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeViewController.h; sourceTree = "<group>"; };
-		26D97F561ABA992D0043A887 /* DateTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeViewController.m; sourceTree = "<group>"; };
-		26D97F571ABA992D0043A887 /* DateTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTimeViewController.xib; sourceTree = "<group>"; };
 		26D97F601ABACAA00043A887 /* HistoryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewCell.h; sourceTree = "<group>"; };
 		26D97F611ABACAA00043A887 /* HistoryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewCell.m; sourceTree = "<group>"; };
 		26D97F621ABACAA00043A887 /* HistoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewCell.xib; sourceTree = "<group>"; };
@@ -580,12 +570,6 @@
 				2680AEC11AB6B8A400151A0C /* MainViewController.h */,
 				2680AEC21AB6B8A400151A0C /* MainViewController.m */,
 				2680AEC31AB6B8A400151A0C /* MainViewController.xib */,
-				26D97F4D1ABA98DA0043A887 /* OrderTimeViewController.h */,
-				26D97F4E1ABA98DA0043A887 /* OrderTimeViewController.m */,
-				26D97F4F1ABA98DA0043A887 /* OrderTimeViewController.xib */,
-				26D97F551ABA992D0043A887 /* DateTimeViewController.h */,
-				26D97F561ABA992D0043A887 /* DateTimeViewController.m */,
-				26D97F571ABA992D0043A887 /* DateTimeViewController.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -813,9 +797,7 @@
 				2680AF7E1AB6BEB700151A0C /* 16.顶栏--备注.png in Resources */,
 				2680AFA21AB6BEB700151A0C /* 17.“工作”按钮.png in Resources */,
 				2680AF891AB6BEB700151A0C /* 服务地址图标@2x.png in Resources */,
-				26D97F511ABA98DA0043A887 /* OrderTimeViewController.xib in Resources */,
 				2680AF8C1AB6BEB700151A0C /* 定位图标_蓝色.png in Resources */,
-				26D97F591ABA992D0043A887 /* DateTimeViewController.xib in Resources */,
 				2680AF881AB6BEB700151A0C /* 预约时间图标@2x.png in Resources */,
 				2680AFA31AB6BEB700151A0C /* 18.“服务”按钮.png in Resources */,
 				265EC8A71ABC18AD001FE9F3 /* 首页_灰色@2x.png in Resources */,
@@ -892,7 +874,6 @@
 				26D97F691ABB072A0043A887 /* LoginViewController.m in Sources */,
 				2680AEBD1AB6B6DC00151A0C /* Util.m in Sources */,
 				26B300101AC0499D0066E2C8 /* HistoryDetailViewController.m in Sources */,
-				26D97F581ABA992D0043A887 /* DateTimeViewController.m in Sources */,
 				268911C21AD3AAFB00C21106 /* CustomCollectionView.m in Sources */,
 				2680AEB91AB6B68600151A0C /* BaseViewController.m in Sources */,
 				2680AEC91AB6B8BE00151A0C /* HistoryViewController.m in Sources */,
@@ -900,7 +881,6 @@
 				2680AE971AB6B4C000151A0C /* AppDelegate.m in Sources */,
 				268911CA1AD3C08C00C21106 /* CollectionViewCell.m in Sources */,
 				2680AECE1AB6B8DF00151A0C /* SettingViewController.m in Sources */,
-				26D97F501ABA98DA0043A887 /* OrderTimeViewController.m in Sources */,
 				2680AEC41AB6B8A400151A0C /* MainViewController.m in Sources */,
 				26B3001B1AC19F950066E2C8 /* HistoryModel.m in Sources */,
 				265EC8931ABBF33F001FE9F3 /* HttpRequest.m in Sources */,

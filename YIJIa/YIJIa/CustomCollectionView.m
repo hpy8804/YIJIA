@@ -66,9 +66,11 @@
     if ([_arrData containsObject:strTitleTime]) {
         cell.textStatus.text = @"休息";
         cell.backgroundColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0];
+        cell.textStatus.backgroundColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0];
     }else{
         cell.textStatus.text = @"空闲";
         cell.backgroundColor = [UIColor colorWithRed:249/255.0f green:127/255.0f blue:164/255.0f alpha:1.0];
+        cell.textStatus.backgroundColor = [UIColor colorWithRed:249/255.0f green:127/255.0f blue:164/255.0f alpha:1.0];
     }
     [cell sizeToFit];
     return cell;

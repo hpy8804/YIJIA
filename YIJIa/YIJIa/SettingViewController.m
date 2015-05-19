@@ -50,8 +50,9 @@
             _name.text = tech_info[@"list"][0][@"TECH_NAME"];
             _age.text = [NSString stringWithFormat:@"%d岁", [tech_info[@"list"][0][@"TECH_AGE"] integerValue]];
             _location.text = tech_info[@"list"][0][@"ADDRESS"];
-            _experience.text = [tech_info[@"list"][0][@"TECH_INTRO"] substringToIndex:6];
-            _experience.hidden = YES;
+            NSString *strTechInfo = tech_info[@"list"][0][@"TECH_INTRO"];
+            NSRange range = [strTechInfo rangeOfString:@"经验"];
+            _experience.text = [strTechInfo substringToIndex:range.location+range.length];
             _finishedWork.text = [NSString stringWithFormat:@"%d单", [tech_info[@"list"][1][@"COUNT"] integerValue]];
         }
         
@@ -75,6 +76,9 @@
     _tableView.tableFooterView = [[UIView alloc] init];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.scrollEnabled = NO;
+    
+    _portrait.layer.masksToBounds = YES;
+    _portrait.layer.cornerRadius = _portrait.frame.size.width/2.0;
 }
 
 #pragma mark - tableview delegate & datasource

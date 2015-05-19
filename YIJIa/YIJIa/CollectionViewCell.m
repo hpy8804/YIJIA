@@ -22,7 +22,7 @@
         self.text.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.text];
         
-        self.textStatus = [[UILabel alloc]initWithFrame:CGRectMake(7, CGRectGetMaxY(self.text.frame)+8, CGRectGetWidth(self.frame)-10, 20)];
+        self.textStatus = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.text.frame)+10, CGRectGetWidth(self.frame), 30)];
         self.textStatus.backgroundColor = [UIColor clearColor];
         self.textStatus.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.textStatus];
