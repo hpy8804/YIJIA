@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "UIImageView+WebCache.h"
 #import "HUD.h"
+#import "ChangePasswordViewController.h"
 
 @interface SettingViewController ()
 {
@@ -67,7 +68,7 @@
 }
 - (void)initSelfData
 {
-    arrAllDatas = @[@"时间安排", @"我的二维码", @"检查更新", @"退出登录"];
+    arrAllDatas = @[@"时间安排", @"我的二维码", @"检查更新",@"修改密码", @"退出登录"];
 }
 
 - (void)customSelfUI
@@ -129,6 +130,12 @@
         }
             break;
         case 3:
+        {
+            ChangePasswordViewController *vcChangePassword = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController" bundle:nil];
+            [self.navigationController pushViewController:vcChangePassword animated:YES];
+        }
+            break;
+        case 4:
         {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
                                                                 message:@"确定要退出登录吗?"

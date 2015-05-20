@@ -11,23 +11,28 @@
 #import "httpConfigure.h"
 #import "HttpRequest.h"
 #import "UIImageView+WebCache.h"
+#import <MessageUI/MessageUI.h>
+#import "CommentViewController.h"
+#import "AddCommentViewController.h"
 
 #define kImgCellHeight 120
 
-@interface HistoryDetailViewController ()
+@interface HistoryDetailViewController ()<MFMessageComposeViewControllerDelegate>
 {
     NSString *strComment;
+    UIButton *btnCall;
+    UIButton *btnSMS;
 }
 @end
 
 @implementation HistoryDetailViewController
+@synthesize m_webView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customSelfData];
     [self customSelfUI];
-    [self fetchComment];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,16 +46,34 @@
 {
 
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [_detailTableView reloadData];
+}
 - (void)customSelfUI
 {
     self.title = @"订单详情";
+    
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+    self.m_webView = webView;
+    
+    btnCall = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnCall setFrame:CGRectMake(240, 7, 30, 30)];
+    [btnCall setImage:PNGIMAGE(@"电话图标") forState:UIControlStateNormal];
+    [btnCall addTarget:self action:@selector(handleCallAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    btnSMS = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnSMS setFrame:CGRectMake(280, 7, 30, 30)];
+    [btnSMS setImage:PNGIMAGE(@"信息") forState:UIControlStateNormal];
+    [btnSMS addTarget:self action:@selector(showMessageView) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)fetchComment
+- (void)handleCallAction
 {
-//    HttpRequest *_historyRequest = [[HttpRequest alloc] initWithDelegate:self];
-//    NSString *strReq = kComment(_modelHistory.order_id);
-//    [_historyRequest sendRequestWithURLString:strReq];
+    NSString *telStr=[[NSString alloc]initWithFormat:@"%@%@",@"tel://",_modelHistory.mobile];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:telStr]];
+    [m_webView loadRequest:request];
 }
 
 #pragma mark - tableview delegate & datasource
@@ -75,7 +98,7 @@
             break;
         case 2:
         {
-            return 4;
+            return 5;
         }
             break;
             
@@ -97,13 +120,17 @@
     for (UIView *subView in cell.contentView.subviews) {
         [subView removeFromSuperview];
     }
+    cell.detailTextLabel.text = nil;
+    cell.imageView.image = nil;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
             {
-                cell.textLabel.text = _modelHistory.user_name;
-                cell.detailTextLabel.text = _modelHistory.mobile;
+                cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", _modelHistory.user_name, _modelHistory.mobile];
+                [cell.contentView addSubview:btnCall];
+                [cell.contentView addSubview:btnSMS];
             }
                 break;
             case 1:
@@ -162,20 +189,45 @@
                 break;
             case 1:
             {
-                cell.textLabel.text = @"订单状态";
-                cell.detailTextLabel.text = @"已完成";
+                cell.textLabel.text = @"付款状态";
+                switch ([_modelHistory.pay_status intValue]) {
+                    case 0:
+                    {
+                        cell.detailTextLabel.text = @"未支付";
+                    }
+                        break;
+                    case 1:
+                    {
+                        cell.detailTextLabel.text = @"已支付";
+                    }
+                        break;
+                        
+                    default:
+                        break;
+                }
+                
             }
                 break;
             case 2:
             {
-                cell.textLabel.text = @"用户评价";
-                cell.detailTextLabel.text = strComment;
+                cell.textLabel.text = @"订单状态";
+                cell.detailTextLabel.text = @"已完成";
             }
                 break;
             case 3:
             {
+                cell.textLabel.text = @"用户评价";
+                cell.detailTextLabel.text = strComment;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                
+            }
+                break;
+            case 4:
+            {
                 cell.textLabel.text = @"添加备注";
-                cell.detailTextLabel.text = @"这是个新客户，没有产品使用经验，可以忽悠";
+                NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+                cell.detailTextLabel.text = [defaultUser objectForKey:[NSString stringWithFormat:@"comment:%@", _modelHistory.order_id]];;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
                 break;
                 
@@ -198,7 +250,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.section == 2) {
+        if (indexPath.row == 3) {
+            CommentViewController *vcComment = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
+            vcComment.order_id = _modelHistory.order_id;
+            [self.navigationController pushViewController:vcComment animated:YES];
+        }else if (indexPath.row == 4){
+            AddCommentViewController *vcAddComment = [[AddCommentViewController alloc] initWithNibName:@"AddCommentViewController" bundle:nil];
+            vcAddComment.order_id = _modelHistory.order_id;
+            [self.navigationController pushViewController:vcAddComment animated:YES];
+        }
+    }
 }
 
 #pragma mark delegate -
@@ -208,6 +272,65 @@
     NSDictionary * dataArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
     strComment = dataArr[@"CONTENT"];
     [self.detailTableView reloadData];
+}
+
+
+- (void)showMessageView
+{
+    
+    if( [MFMessageComposeViewController canSendText] ){
+        
+        MFMessageComposeViewController * controller = [[MFMessageComposeViewController alloc]init]; //autorelease];
+        
+        controller.recipients = [NSArray arrayWithObject:_modelHistory.mobile];
+        controller.body = @"";
+        controller.messageComposeDelegate = self;
+        
+        [self presentViewController:controller animated:YES completion:nil];
+        
+        [[[[controller viewControllers] lastObject] navigationItem] setTitle:@"测试短信"];//修改短信界面标题
+    }else{
+        
+        [self alertWithTitle:@"提示信息" msg:@"设备没有短信功能"];
+    }
+}
+
+
+//MFMessageComposeViewControllerDelegate
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    
+    [controller dismissViewControllerAnimated:NO completion:nil];
+    
+    switch ( result ) {
+            
+        case MessageComposeResultCancelled:
+            
+            [self alertWithTitle:@"提示信息" msg:@"发送取消"];
+            break;
+        case MessageComposeResultFailed:// send failed
+            [self alertWithTitle:@"提示信息" msg:@"发送失败"];
+            break;
+        case MessageComposeResultSent:
+            [self alertWithTitle:@"提示信息" msg:@"发送成功"];
+            break;
+        default:
+            break;
+    }
+}
+
+
+- (void) alertWithTitle:(NSString *)title msg:(NSString *)msg {
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:msg
+                                                   delegate:self
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"确定", nil];
+    
+    [alert show];  
+    
 }
 
 @end

@@ -22,6 +22,8 @@
 @interface MainViewController ()
 {
     CustomSegmentControl *customSegment;
+    BOOL bIsOrderTime;
+    BOOL bIsDateTime;
 }
 @end
 
@@ -55,6 +57,9 @@
     if (!customSegment.superview) {
         [self.navigationController.navigationBar addSubview:customSegment];
     }
+    
+    bIsOrderTime = NO;
+    bIsDateTime = NO;
 }
 
 - (void)segmentChanged:(id)sender
@@ -62,17 +67,20 @@
     UIButton *btn = (UIButton *)sender;
     switch (btn.tag) {
         case Button_tag_orderTime:{
-            
+            bIsOrderTime = YES;
+            bIsDateTime = NO;
         }
             break;
         case Button_tag_dateTime:{
-            
+            bIsOrderTime = NO;
+            bIsDateTime = YES;
         }
             break;
             
         default:
             break;
     }
+    [self.tableView reloadData];
 }
 
 #pragma mark - UINavigationController delegate method
@@ -128,6 +136,7 @@
             historyModel.subscribe_time = [Util countTimeFromTimeCount:[dataArr[i][@"SUBSCRIBE_TIME"] doubleValue]];
             historyModel.indent_price = [NSString stringWithFormat:@"%.1f", [dataArr[i][@"INDENT_PRICE"]doubleValue]];
             historyModel.pay_status = dataArr[i][@"PAY_STATUS"];
+            historyModel.pay_type = dataArr[i][@"PAY_TYPE"];
             historyModel.finish_status = dataArr[i][@"FINISH_STATUS"];
             historyModel.comment_status = dataArr[i][@"COMMENT_STATUS"];
             historyModel.coupon_code = dataArr[i][@"COUPON_CODE"];
@@ -166,8 +175,33 @@
     HistoryModel *modelData = _mutArrDatas[indexPath.row];
     cell.sub_name.text = modelData.sub_name;
     cell.price.text = [NSString stringWithFormat:@"%@元", modelData.indent_price];
-    cell.order_time.text = [NSString stringWithFormat:@"%@", modelData.subscribe_time];
+    if (bIsOrderTime) {
+        cell.order_time.text = [NSString stringWithFormat:@"%@", modelData.create_time];
+    }else if (bIsDateTime){
+        cell.order_time.text = [NSString stringWithFormat:@"%@", modelData.subscribe_time];
+    }
+    
     cell.adress.text = modelData.address;
+    switch ([modelData.pay_type integerValue]) {
+        case 1:
+        {
+            cell.payType.text = @"现金支付";
+        }
+            break;
+        case 2:
+        {
+            cell.payType.text = @"微信支付";
+        }
+            break;
+        case 3:
+        {
+            cell.payType.text = @"套餐支付";
+        }
+            break;
+            
+        default:
+            break;
+    }
     
     NSString *strURL = [NSString stringWithFormat:@"http://www.meiyanmeijia.com/wx/aiyijia/subject-image2.jsp?subId=%@", modelData.sub_id];
     [cell.iconImg sd_setImageWithURL:[NSURL URLWithString:strURL] placeholderImage:nil];

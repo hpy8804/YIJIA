@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -24,17 +24,17 @@
                         <rect key="frame" x="88" y="8" width="30" height="20"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="默认用户头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="FQd-Pb-yLs">
-                        <rect key="frame" x="14" y="37" width="99" height="82"/>
+                        <rect key="frame" x="20" y="35" width="88" height="88"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="水妍润泽护理" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jf-d7-2CW">
-                        <rect key="frame" x="136" y="37" width="102" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <rect key="frame" x="136" y="34" width="102" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="158元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-Ps-H9w">
-                        <rect key="frame" x="253" y="37" width="46" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <rect key="frame" x="253" y="34" width="46" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -50,6 +50,12 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="微信支付" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0L-M4-CUz">
+                        <rect key="frame" x="197" y="8" width="100" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -57,6 +63,7 @@
                 <outlet property="guest" destination="Tgg-OR-WZt" id="lCp-yd-NLg"/>
                 <outlet property="iconImg" destination="FQd-Pb-yLs" id="Ht9-Vi-2mH"/>
                 <outlet property="order_time" destination="EGf-zq-7Te" id="axT-4t-7Ps"/>
+                <outlet property="payType" destination="T0L-M4-CUz" id="23O-PB-yu7"/>
                 <outlet property="price" destination="YIg-Ps-H9w" id="Qft-vW-aFi"/>
                 <outlet property="share" destination="73j-hv-bo6" id="Ona-oo-YHk"/>
                 <outlet property="sub_name" destination="7jf-d7-2CW" id="98m-5n-nkc"/>

@@ -30,7 +30,7 @@
 #define kTechPortrait @"http://www.meiyanmeijia.com/wx/aiyijia/tech-image.jsp"
 
 //查询评论
-#define kComment(_order_id) [NSString stringWithFormat:@"%@/standInterface/queryOne.do?sql=select * from ayj_user_comment where order_id='%@'", kBaseURL, _order_id]
+#define kGetComment @"http://www.meiyanmeijia.com/backend_service/ibeauty/getComment.do"
 
 #define kTechnician_info(_techNO) [NSString stringWithFormat:@"%@/getBeauty.do?techNumber=%@", kBaseURL, _techNO]
 
@@ -39,4 +39,7 @@
 
 //修改排班
 #define kModefyTechURL @"http://www.meiyanmeijia.com/backend_service/ibeauty/updateRestTime.do"
+
+//修改密码
+#define kChangePassword @"http://www.meiyanmeijia.com/backend_service/ibeauty/updatePwd.do"
 #endif

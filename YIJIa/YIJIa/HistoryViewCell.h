@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *order_time;
 @property (weak, nonatomic) IBOutlet UILabel *adress;
 @property (weak, nonatomic) IBOutlet UILabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *payType;
+
 + (id)reuseableCell:(UITableView*)tableView WithCellIdentifier:(NSString *)cellIdentifier;
 @end

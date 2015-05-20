@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *subscribe_time;
 @property (strong, nonatomic) NSString *indent_price;
 @property (strong, nonatomic) NSString *pay_status;
+@property (strong, nonatomic) NSString *pay_type;
 @property (strong, nonatomic) NSString *finish_status;
 @property (strong, nonatomic) NSString *comment_status;
 @property (strong, nonatomic) NSString *coupon_code;
