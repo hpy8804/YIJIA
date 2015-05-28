@@ -23,7 +23,9 @@ typedef enum{
 + (void)setNavigationCtrollerBackImg:(UINavigationController *)naviCtl;
 + (UIImage*)imageWithColor:(UIColor*)color;
 + (NSString *)countTimeFromTimeCount:(double)timeCount;
++ (NSString *)timeStringFromTimeCount:(double)timeCount;
 + (NSArray *)judgeOneWeekDayFromNow;
 + (NSArray *)obtainOneWeekDaysFromNow;
 + (NSInteger)weekFromDateString:(NSString *)dateString;
++ (NSString *)newDateFromLastDate:(NSString *)strStartTime nCount:(double)nCount;
 @end

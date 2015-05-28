@@ -20,12 +20,13 @@
 
 @implementation CustomCollectionView
 
-- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout array:(NSMutableArray *)arr dateString:(NSString *)date
+- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout array:(NSMutableArray *)arr servicesArr:(NSMutableArray *)arrayservices dateString:(NSString *)date
 {
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
         [self customSelfData];
         _arrData = arr;
         _strDate = date;
+        _arrServiceData = arrayservices;
         [self customSelfUI];
     }
     return self;
@@ -67,6 +68,10 @@
         cell.textStatus.text = @"休息";
         cell.backgroundColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0];
         cell.textStatus.backgroundColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0];
+    }else if ([_arrServiceData containsObject:strTitleTime]){
+        cell.textStatus.text = @"服务";
+        cell.backgroundColor = [UIColor colorWithRed:116/255.0f green:181/255.0f blue:196/255.0f alpha:1.0];
+        cell.textStatus.backgroundColor = [UIColor colorWithRed:116/255.0f green:181/255.0f blue:196/255.0f alpha:1.0];
     }else{
         cell.textStatus.text = @"空闲";
         cell.backgroundColor = [UIColor colorWithRed:249/255.0f green:127/255.0f blue:164/255.0f alpha:1.0];
@@ -94,13 +99,16 @@
 {
     if (self.bIsChanging) {
         NSString *strTitleTime = _constArrData[indexPath.row];
-        if ([_arrData containsObject:strTitleTime]) {
-            [_arrData removeObject:strTitleTime];
-        }else{
-            [_arrData addObject:strTitleTime];
+        if (![_arrServiceData containsObject:strTitleTime]) {
+            if ([_arrData containsObject:strTitleTime]) {
+                [_arrData removeObject:strTitleTime];
+            }else{
+                [_arrData addObject:strTitleTime];
+            }
+            
+            [self reloadData];
         }
         
-        [self reloadData];
     }
 }
 

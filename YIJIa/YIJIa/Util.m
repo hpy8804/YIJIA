@@ -46,6 +46,20 @@
     return dateString;
 }
 
++ (NSString *)timeStringFromTimeCount:(double)timeCount
+{
+    double lastactivityInterval = timeCount/1000;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY/MM/dd HH:mm"];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+    
+    NSString* dateString = [formatter stringFromDate:date];
+    return dateString;
+}
+
 + (NSArray *)judgeOneWeekDayFromNow
 {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -143,5 +157,28 @@
     NSDateComponents *weekdayComponents =[gregorian components:NSWeekdayCalendarUnit fromDate:_date];
     NSInteger _weekday = [weekdayComponents weekday];
     return _weekday;
+}
+
++(NSDate*) convertDateFromString:(NSString*)uiDate
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
+    NSDate *date=[formatter dateFromString:uiDate];
+    return date;
+}
+
++ (NSString *)newDateFromLastDate:(NSString *)strStartTime nCount:(double)nCount
+{
+    NSDateFormatter *date = [[NSDateFormatter alloc] init];
+    [date setDateFormat:@"yyyy/MM/dd HH:mm"];
+    
+    NSDate *dateStart = [self convertDateFromString:strStartTime];
+    
+//    NSDate *newDate = [NSDate dateWithTimeInterval:nCount sinceDate:dateStart];
+//    NSString *strNewDate = [[NSString alloc] initWithString:[date stringFromDate:newDate]];
+    NSDate *newDate = [dateStart dateByAddingTimeInterval:nCount];
+    NSString *strNewDate = [[NSString alloc] initWithString:[date stringFromDate:newDate]];
+    
+    return strNewDate;
 }
 @end

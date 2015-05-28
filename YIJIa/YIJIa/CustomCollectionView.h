@@ -10,7 +10,8 @@
 
 @interface CustomCollectionView : UICollectionView<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) NSMutableArray *arrData;
+@property (strong, nonatomic) NSMutableArray *arrServiceData;
 @property (strong, nonatomic) NSString *strDate;
 @property (assign, nonatomic) BOOL bIsChanging;
-- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout array:(NSMutableArray *)arr dateString:(NSString *)date;
+- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout array:(NSMutableArray *)arr servicesArr:(NSMutableArray *)arrayservices dateString:(NSString *)date;
 @end

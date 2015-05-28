@@ -26,6 +26,7 @@
     TouchPropagatedScrollView *_navScrollV;
     UIScrollView *_scrollV;
     NSMutableDictionary *_mutDicWeek;
+    NSMutableDictionary *_mutDicWeekForService;
     NSMutableDictionary *_mutDicDate;
     BOOL bIsChangeWork;
     UIView *_switchView;
@@ -53,6 +54,121 @@
         NSData * data = [strFeedback dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
         if ([dic[@"success"] boolValue]) {
+            NSArray *arrServiceTimes = dic[@"list"][0];
+            NSMutableArray *arrayService0 = [NSMutableArray array];
+            NSMutableArray *arrayService1 = [NSMutableArray array];
+            NSMutableArray *arrayService2 = [NSMutableArray array];
+            NSMutableArray *arrayService3 = [NSMutableArray array];
+            NSMutableArray *arrayService4 = [NSMutableArray array];
+            NSMutableArray *arrayService5 = [NSMutableArray array];
+            NSMutableArray *arrayService6 = [NSMutableArray array];
+            for (int j = 0; j < arrServiceTimes.count; j++) {
+                NSDictionary *dicService = arrServiceTimes[j];
+                NSString *strServiceTime = [Util countTimeFromTimeCount:[dicService[@"SUBSCRIBE_TIME"] doubleValue]];
+                NSString *strCmpareTime = [[Util timeStringFromTimeCount:[dicService[@"SUBSCRIBE_TIME"] doubleValue]] substringToIndex:10];
+                int timeLength = [dicService[@"LENGTH"] intValue];
+                int nCount = 0;
+                if (timeLength%30 != 0) {
+                    nCount = timeLength/30 + 1;
+                }else{
+                    nCount = timeLength/30;
+                }
+                
+                NSString *strTime = [strServiceTime substringToIndex:11];
+                NSInteger week = [Util weekFromDateString:strTime];
+                
+                for (int m = 1; m <= nCount; m++) {
+                    NSString *strServiceTimeBefore = [Util newDateFromLastDate:strServiceTime nCount:-m*30*60];
+                    NSString *strServiceTimeBeforeSub = [strServiceTimeBefore substringFromIndex:11];
+                    if (week == SUN) {
+                        if (![strServiceTimeBefore hasPrefix:strCmpareTime] || [arrayService0 containsObject:strServiceTimeBeforeSub]) {
+                            continue;
+                        }
+                        [arrayService0 addObject:strServiceTimeBeforeSub];
+                    }else if (week == MON){
+                        if (![strServiceTimeBefore hasPrefix:strCmpareTime] || [arrayService1 containsObject:strServiceTimeBeforeSub]) {
+                            continue;
+                        }
+                        [arrayService1 addObject:strServiceTimeBeforeSub];
+                    }else if (week == TUES){
+                        if (![strServiceTimeBefore hasPrefix:strCmpareTime] || [arrayService2 containsObject:strServiceTimeBeforeSub]) {
+                            continue;
+                        }
+                        [arrayService2 addObject:strServiceTimeBeforeSub];
+                    }else if (week == WED){
+                        if (![strServiceTimeBefore hasPrefix:strCmpareTime] || [arrayService3 containsObject:strServiceTimeBeforeSub]) {
+                            continue;
+                        }
+                        [arrayService3 addObject:strServiceTimeBeforeSub];
+                    }else if (week == THUR){
+                        if (![strServiceTimeBefore hasPrefix:strCmpareTime] || [arrayService4 containsObject:strServiceTimeBeforeSub]) {
+                            continue;
+                        }
+                        [arrayService4 addObject:strServiceTimeBeforeSub];
+                    }else if (week == FRI){
+                        if (![strServiceTimeBefore hasPrefix:strCmpareTime] || [arrayService5 containsObject:strServiceTimeBeforeSub]) {
+                            continue;
+                        }
+                        [arrayService5 addObject:strServiceTimeBeforeSub];
+                    }else if (week == SAT){
+                        if (![strServiceTimeBefore hasPrefix:strCmpareTime] || [arrayService6 containsObject:strServiceTimeBeforeSub]) {
+                            continue;
+                        }
+                        [arrayService6 addObject:strServiceTimeBeforeSub];
+                    }
+                }
+                for (int n = 0; n < 2*nCount; n++) {
+                    NSString *strServiceTimeAfter = [Util newDateFromLastDate:strServiceTime nCount:n*30*60];
+                    NSString *strServiceTimeAfterSub = [strServiceTimeAfter substringFromIndex:11];
+                    if (week == SUN) {
+                        if (![strServiceTimeAfter hasPrefix:strCmpareTime] || [arrayService0 containsObject:strServiceTimeAfterSub]) {
+                            continue;
+                        }
+                        [arrayService0 addObject:strServiceTimeAfterSub];
+                    }else if (week == MON){
+                        if (![strServiceTimeAfter hasPrefix:strCmpareTime] || [arrayService1 containsObject:strServiceTimeAfterSub]) {
+                            continue;
+                        }
+                        [arrayService1 addObject:strServiceTimeAfterSub];
+                    }else if (week == TUES){
+                        if (![strServiceTimeAfter hasPrefix:strCmpareTime] || [arrayService2 containsObject:strServiceTimeAfterSub]) {
+                            continue;
+                        }
+                        [arrayService2 addObject:strServiceTimeAfterSub];
+                    }else if (week == WED){
+                        if (![strServiceTimeAfter hasPrefix:strCmpareTime] || [arrayService3 containsObject:strServiceTimeAfterSub]) {
+                            continue;
+                        }
+                        [arrayService3 addObject:strServiceTimeAfterSub];
+                    }else if (week == THUR){
+                        if (![strServiceTimeAfter hasPrefix:strCmpareTime] || [arrayService4 containsObject:strServiceTimeAfterSub]) {
+                            continue;
+                        }
+                        [arrayService4 addObject:strServiceTimeAfterSub];
+                    }else if (week == FRI){
+                        if (![strServiceTimeAfter hasPrefix:strCmpareTime] || [arrayService5 containsObject:strServiceTimeAfterSub]) {
+                            continue;
+                        }
+                        [arrayService5 addObject:strServiceTimeAfterSub];
+                    }else if (week == SAT){
+                        if (![strServiceTimeAfter hasPrefix:strCmpareTime] || [arrayService6 containsObject:strServiceTimeAfterSub]) {
+                            continue;
+                        }
+                        [arrayService6 addObject:strServiceTimeAfterSub];
+                    }
+                }
+                
+            }
+            
+            _mutDicWeekForService = [NSMutableDictionary dictionary];
+            [_mutDicWeekForService setObject:arrayService0 forKey:[NSString stringWithFormat:@"%d", SUN]];
+            [_mutDicWeekForService setObject:arrayService1 forKey:[NSString stringWithFormat:@"%d", MON]];
+            [_mutDicWeekForService setObject:arrayService2 forKey:[NSString stringWithFormat:@"%d", TUES]];
+            [_mutDicWeekForService setObject:arrayService3 forKey:[NSString stringWithFormat:@"%d", WED]];
+            [_mutDicWeekForService setObject:arrayService4 forKey:[NSString stringWithFormat:@"%d", THUR]];
+            [_mutDicWeekForService setObject:arrayService5 forKey:[NSString stringWithFormat:@"%d", FRI]];
+            [_mutDicWeekForService setObject:arrayService6 forKey:[NSString stringWithFormat:@"%d", SAT]];
+            
             NSArray *arrDatas = dic[@"list"][1];
             NSMutableArray *array0 = [NSMutableArray array];
             NSMutableArray *array1 = [NSMutableArray array];
@@ -183,8 +299,9 @@
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         NSString *strKey = [NSString stringWithFormat:@"%d", [arr[i] integerValue]];
         NSMutableArray *mutArr = _mutDicWeek[strKey];
+        NSMutableArray *mutServiceArr = _mutDicWeekForService[strKey];
         NSString *strDate = _mutDicDate[strKey];
-        CustomCollectionView *view = [[CustomCollectionView alloc] initWithFrame:CGRectMake(scrollV.frame.size.width * i, 0, scrollV.frame.size.width, scrollV.frame.size.height) collectionViewLayout:flowLayout array:mutArr dateString:strDate];
+        CustomCollectionView *view = [[CustomCollectionView alloc] initWithFrame:CGRectMake(scrollV.frame.size.width * i, 0, scrollV.frame.size.width, scrollV.frame.size.height) collectionViewLayout:flowLayout array:mutArr servicesArr:mutServiceArr dateString:strDate];
         view.autoresizesSubviews = YES;
         view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         view.tag = i+1;
@@ -296,11 +413,13 @@
     btnUnSelectAll.selected = NO;
     int tag = _scrollV.contentOffset.x/APP_Frame_Width+1;
     CustomCollectionView *subView = (CustomCollectionView *)[_scrollV viewWithTag:tag];
-    subView.arrData = [NSMutableArray arrayWithArray:@[ @"8:30", @"9:00", @"9:30", @"10:00", @"10:30", @"11:00",
+    NSMutableArray *mutArr = [NSMutableArray arrayWithArray:@[ @"8:30", @"9:00", @"9:30", @"10:00", @"10:30", @"11:00",
                                                         @"11:30", @"12:00", @"12:30", @"13:00", @"13:30", @"14:00",
                                                         @"14:30", @"15:00", @"15:30", @"16:00", @"16:30", @"17:00",
                                                         @"17:30", @"18:00", @"18:30", @"19:00", @"19:30", @"20:00",
                                                         @"20:30", @"21:00", @"21:30", @"22:00"]];
+    [mutArr removeObjectsInArray:subView.arrServiceData];
+    subView.arrData = mutArr;
     [subView reloadData];
 }
 
