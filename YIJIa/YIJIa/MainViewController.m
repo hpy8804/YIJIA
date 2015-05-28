@@ -47,6 +47,7 @@
 
 - (void)customSelfUI
 {
+    self.title = @"首页";
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.navigationController.delegate = self;
     customSegment = [[CustomSegmentControl alloc] initWithFrame:CGRectMake(0, 0, APP_Frame_Width, 44)];
@@ -60,6 +61,7 @@
     
     bIsOrderTime = NO;
     bIsDateTime = NO;
+    
 }
 
 - (void)segmentChanged:(id)sender

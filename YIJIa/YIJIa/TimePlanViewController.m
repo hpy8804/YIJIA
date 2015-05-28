@@ -196,15 +196,18 @@
 
 - (void)changeColorForButton:(UIButton *)btn red:(float)nRedPercent
 {
-    NSArray *arrWeek = [Util obtainOneWeekDaysFromNow];
-    if (nRedPercent == 1) {
-        NSString *strImage = [NSString stringWithFormat:@"周%d_红色", ([arrWeek[btn.tag-1] integerValue]-1)];
-        [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    }else{
-        NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", ([arrWeek[btn.tag-1] integerValue]-1)];
-        [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    if (btn)
+    {
+        NSArray *arrWeek = [Util obtainOneWeekDaysFromNow];
+        if (nRedPercent == 1) {
+            NSString *strImage = [NSString stringWithFormat:@"周%d_红色", ([arrWeek[btn.tag-1] integerValue]-1)];
+            [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        }else{
+            NSString *strImage = [NSString stringWithFormat:@"周%d_灰色", ([arrWeek[btn.tag-1] integerValue]-1)];
+            [btn setBackgroundImage:PNGIMAGE(strImage) forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        }
     }
 }
 

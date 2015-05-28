@@ -116,6 +116,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:strIndentifier];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     for (UIView *subView in cell.contentView.subviews) {
         [subView removeFromSuperview];
@@ -123,6 +124,8 @@
     cell.detailTextLabel.text = nil;
     cell.imageView.image = nil;
     cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0f];
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
@@ -262,6 +265,19 @@
             vcAddComment.order_id = _modelHistory.order_id;
             [self.navigationController pushViewController:vcAddComment animated:YES];
         }
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
 

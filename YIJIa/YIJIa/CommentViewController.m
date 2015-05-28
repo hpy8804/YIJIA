@@ -49,7 +49,7 @@
             if (!dataDic[@"obj"]) {
                 _commentTextView.text = @"没有评价";
             }else{
-                _commentTextView.text = dataDic[@"obj"];;
+                _commentTextView.text = dataDic[@"obj"][@"CONTENT"];;
             }
         }else{
             _commentTextView.text = @"没有评价";
