@@ -50,15 +50,16 @@
     self.title = @"首页";
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.navigationController.delegate = self;
-    customSegment = [[CustomSegmentControl alloc] initWithFrame:CGRectMake(0, 0, APP_Frame_Width, 44)];
+    customSegment = [[CustomSegmentControl alloc] initWithFrame:CGRectMake(0, 0, APP_Frame_Width-44, 44)];
     __weak MainViewController *weakSelf = self;
     customSegment.handleSwitchSegment = ^(UIButton *btn){
         [weakSelf segmentChanged:btn];
     };
-    if (!customSegment.superview) {
-        [self.navigationController.navigationBar addSubview:customSegment];
-    }
+//    if (!customSegment.superview) {
+//        [self.navigationController.navigationBar addSubview:customSegment];
+//    }
     
+    self.navigationItem.titleView = customSegment;
     bIsOrderTime = NO;
     bIsDateTime = NO;
     
